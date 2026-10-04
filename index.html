@@ -10,6 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="10 kg">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAJjUlEQVR4nO3dS49URRQH8P+5YevX8Au4MYoO7ExGFIJDMDEqvhVDYnRjomsTFy6EGFA24GhgIyExYGSM+Igo6oKP4ae4Luo+6tbjds90nVvdt/5nMelJT585fe5vuqvvVN2Shy58AkAAACI1zA0AUkt3GzUEYt3lPMTcBmoR9N8OM0j7Q2JlczKYu0IPGanHfoiT3K5nmC1STzCb85CmAGDwrUQKAJaop88WqKfPMJbNqieabZihud3X03/bZKj6RlAGZQwzVJRBGUEZgroCZVBGSAaAijIow8nQFVD1vaMMyhgW0A5IKYMyvAIqyqCMoAwBKsqI1VO4DPQfZd1nThkoXAask2CU4WazeheoZ/YypH3loAw3m9W7QD0lyADqijIoIyhDgIoyKCMoA2IPSCmDMobZ+pNgfe8oI1RPaTLQnQTre0cZoXoKlAFzEqzvHWWE6ilThsCb7EMZlNE8WoaTfSiDMtDKEHuyD2VQBiwZ6Cb7UAZlYCgD9piDMgIF9L0bqWeeMqQbc1BGoIC+dyP1zFYG0EwTpAzKcGWYASllUEZABoCKMigjKEPsFW+UQRlOtnZAShmU4dZTVwBlgDK8emrxZ59TBmV0GQazzymDMroM9oCUMkbqKVEGmsk+lDFWT6EyAFSUMVpPuTKkOwnm1UoZpcuAdQkGyvAKKFuGtP+ypwyvgOJlmAEpZXgFUAaak2CUQRkBGbAm+1AGZbgFtANSyqAMrwB39jllBOrxeleCDDizzykjUI/Xu0JkyGDFG2VQhiUD1iUYKIMyBjLaMQdlUIYnA0BFGYF6vN4VKAPmJFiod5SxIJtVzzxlSGSyD2UsyGbVM1sZ6C41SRmU4WerKKO7izKcbBVlUEYwG7DUfiuUgQJlWANSyqAMON8u2G+FMlCsDBndb4UyULIMxPdboQwULkMi+61QBigD3Yo3yqAMP9uhiWXc3/kMS8cT350rQcbuka+X78mrvz0/jQwB5OGrH04j4/6pfbCw48kb5+YqY/foPljY8drvp7VlIDLZZ41kAPj1xOeU4cTlw9fa5FoyxF7x1uZcLxkmfjlxnjKc+OrwNVUZ6Fa8tTnXUYaJu8fPU4YTXz5+XU8GhpN90svociWJechI2xM9GeLPPk8rY1+fTRbGz89emIGMfX02WRiXHruuJAPOgHRtXzOs2GwZGl1RkiH27PPkMlQasfEy6lVb4IeODHSzz3VkKDSi+y2bKUPp9VRDhgwvwaBydjx5bLYMhZ4oyYDg0IbKuHPsC//ep75/ax1kfHv0ql/bi3dfsJInDg0ZaC5vrSNDqxERGQB+ePriesoAcPXIbldA2lCSIfalJhVkKDQiLsPE7e2LayjDxJWt3WWf575CRwaG+62suwxggQwTt7YvraEME1e2vln4M/sNJRkSXfGWQobSsGPpmH4EmjOSy0B4xRtlHOizie4TGg0NGQiseEsnIyOPbJ9ac4SSDHFXvCWWkfWPya1nnjJMaMjAYMVbchn5epZBRs4nqyIjNiBNOUM4U2Q5B5ozksvA+H4rGysDyCAj+4A0sQwZ2W9ldRmSr1/Ty8j4x6AkA8AhRRn5Grb30u/T/9Kr/03/O02oyEBwv5VUMrK/sxQSSjLEn+xDGZsYGjLgTPZJLSPnGK2cUJIh9mSf5DL44jFVqMgARle8YUUZ1DFVaMiAxFe8YWUZtDFNKMmQ2Io3UMYGhY4MBFe8IZkMDkinCCUZsnC/lVVk5J7SUU6oyMD4fiuUsSmhIUNG9ltZXQZ5TBNKMhDbbyWRDI45JgkdGQjut5JKBt9ZpgklGYHJPpSxiaEhA6gPzVLG9u6jg1fE9tb+5mdEzh84GbojofuU4qEkQ/wVb0gnI+Nkn+ll5Pxz0JEBZ8Ub5iGjKQBFyLAKSCsDsC9vnVpGxjeX6WXkfrLpZUh7EmxWMgDkkJHzlVJDBsyKN8xNBihjdRnSvK3oyFiDAel0MnL/OaSXAXdAmlZG1oZNLSPnk1WRISP7rawuI2O7ppeR9cn29SSUgdh+K2sr4+SPryz8mdM/vYQMMuq3/zi1sLZzf51c+DMHCA0ZMCfBlGSojDkEz90Z85FLhrn99r0xH5slQ/zZ52stoy1g586Z4L15ZZiHvHNvJ1ibkgy7trQy0F1qUkWGyltLU9vO3hn/wACZZZibZ//cCWazEqYMJRkSvrw10sjQsGEdCaynjFg2O0P6UJCBwOWtkVCGypijrwfDA7MJMlReTHVkiHt5a6SUodIIyvBCSQa6FW8qMhSasekyNMYc6DqdVAbaSzCoyBBg+9abSZ68iVN7ZzZfRv3e3yfStAMA8NGDbSUZ0lxqsn/mSCjDZEvQgD42Xkb76GShJwPN24qaDBE8ffuN1VsA4NTeyzORIXj/nzQvHh8/2G6fbHoZstx+KweXYbIdu/36il2YkwyT7f1/jq/YE20ZEHtAqiPD1PHMDwf3MT8Z5tsP/j1+4J5MIAOoZevGu9oy7N7dfOry8i2YxwjUyeZkEODTR24u3xPVEWh3l3mIbN04O5mMYDbnWFpHAiXIgPsQN0Pg4HkZNGQgvt8KZYQKiGdbdCQC9ay5DEHs8taUUbwMSPDy1pRBGVJL4PLWlEEZMhxzeL2jjNJlAPblrSmDMmSQrZ3sQxmUIW62ijIoIyhD7BVvoAzKGGarKIMygtkQ3W8lfCRAGeXIkPB+K+EjAcooSgYC+62EjwQoozQZ4q54Cx8JUEaBMjDYbyV8JEAZZcoQqfuTYJTh1lO2DDRjjvCRAGWULAPN/1YogzI8GWINSCmDMgYy0F1qkjIow5EhC1e8RY4EZcxfBsZXvEWOBGUUIQMjK96c3lGGk2H2MiS24s3pHWU4GUqQAfOPN8qgjGA9I/utUEagnnJkIL7fCmUE6ilKhkT2W6GMQD2lyehXvEWOBGWUKwPN5a0pgzI8GTLcb4UyAvUUKwPWgJQyAvWULEMWrnijjGJlYHzFG2WULAMjK94oo3AZElvxRhmUAYRWvFEGZZgM4/utUIaboRwZGN1vhTLcDEXJkPh+K5ThZihNBiL7rVCGm6FAGZDa32+FMtwMZcqQZrJP+EiAMkqWgeHsc8pwM5QsQ/wVb+0XyihdBpwVb+0XyqAMwF7x1n6hDMpoMlSUQRlBGTBjjvaHKIMyBhms/VbaW5RBGSaDPyClDMqAexKs6z5lUIa5bQ9IKYMyBvV0A1LKoAynntqdfU4ZlNE9pKIMygjKEH/FG2WMH4lF9cxHBpwVb5QRqadEGSL4H7Hooa9prdvsAAAAAElFTkSuQmCC">
 <title>The 10 kg Project — Training, Nutrition & Progress</title>
 <meta name="description" content="Evidence-based 20-week recomposition program and tracker: 4-day upper/lower + optional specialization day, nutrition targets, shoulder &amp; elbow protocol.">
@@ -260,6 +261,20 @@ details[open] summary::before{transform:rotate(90deg)}
 /* footer */
 footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 0;color:var(--ink3);font-size:13px}
 @media print{.topbar,.hero::after,.seg,#toasts{display:none!important}.view{display:block!important}}
+
+
+/* ===================== Android / Chrome ===================== */
+/* Chrome Android inflates text in wide blocks; keep our own scale */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { color-scheme: light dark; }
+/* Chrome's form autofill + tap highlight colouring */
+button, .srow, summary { -webkit-tap-highlight-color: rgba(14,165,233,.16); }
+input, select, textarea { -webkit-tap-highlight-color: rgba(14,165,233,.16); }
+/* Android keyboard (Gboard) can cover the field you are editing: leave room */
+input:focus, select:focus, textarea:focus { scroll-margin-bottom: 45vh; scroll-margin-top: 90px; }
+#sheet .sheet { overscroll-behavior: contain; }
+/* Chrome may render its own dark scheme; keep our tokens authoritative */
+[data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea { color-scheme: dark; }
 
 /* ===================== iOS / mobile & tablet ===================== */
 button, .seg button, nav.tabs button { touch-action: manipulation; }   /* no 300 ms tap delay */
@@ -876,11 +891,19 @@ button, .seg button, nav.tabs button { touch-action: manipulation; }   /* no 300
       <div class="callout warn" style="margin-bottom:0"><b>Security:</b> a key in localStorage is visible to anyone using this browser profile, and browser-side calls are visible in the network tab. Use a restricted/throwaway key if you care. Never commit a key to GitHub — this app never stores it in a file.</div>
     </div>
 
+    <div class="card acc-cool hidden" id="installCard">
+      <div class="accent"></div>
+      <h3 style="margin-top:0">📲 Install this as an app</h3>
+      <p class="small">Your browser can install this tracker to your home screen and run it full-screen, offline, with its own icon.</p>
+      <div class="row"><button class="btn primary" id="installBtn">Install app</button>
+      <span class="small">iOS Safari: Share → Add to Home Screen. Android Chrome: menu ⋮ → Add to Home screen (or tap Install above).</span></div>
+    </div>
+
     <div class="card">
       <h3 style="margin-top:0">Publish this on GitHub Pages (5 minutes)</h3>
       <ol class="small">
         <li>Create a new repository on GitHub — e.g. <code>gym</code> — and make it <b>public</b> (the free Pages tier requires it).</li>
-        <li>Upload <b><code>index.html</code></b> (required) and <b><code>README.md</code></b> (optional, just text GitHub shows under the repo). <b>That's the whole upload</b> — no folders, no app.js, no config. The site is one self-contained file with no build step and no external dependencies.</li>
+        <li>Upload these four files to the repository root (all in the <code>upload-to-github</code> folder): <b><code>index.html</code></b> (the whole app), <b><code>manifest.webmanifest</code></b> and the two icons <b><code>icon-192.png</code></b> + <b><code>icon-512.png</code></b> (optional but they give Android/Chrome a proper installable app), plus <b><code>README.md</code></b> if you want text on the repo page. No folders, no build step, no dependencies. If you only upload <code>index.html</code>, everything still works — you just lose the Android install icon.</li>
         <li>In the repo: <b>Settings → Pages → Source: Deploy from a branch → Branch: main → / (root) → Save</b>.</li>
         <li>Wait ~60 seconds. Your site is live at <code>https://&lt;your-username&gt;.github.io/gym/</code> — bookmark it and add it to your home screen.</li>
         <li>To update the site later, just edit the file in the GitHub web editor and commit; Pages redeploys automatically.</li>
@@ -1690,7 +1713,12 @@ function ring(pct, size, stroke, label, sub){
 
 /* ------------------------------- NAV ------------------------------- */
 const PRIMARY_VIEWS = ['today','train','progress','nutrition'];
-function closeSheet(){ const sh=el('sheet'); if(sh){ sh.classList.remove('open'); sh.remove(); } }
+function closeSheet(skipHistory){
+  const sh=el('sheet');
+  if(!sh) return;
+  sh.classList.remove('open'); sh.remove();
+  if(!skipHistory) syncSheetHistory(false);   /* consume our own history entry */
+}
 function syncMobTabs(view){
   const bar = el('mobtabs'); if(!bar) return;
   const inPrimary = PRIMARY_VIEWS.indexOf(view) >= 0;
@@ -1716,6 +1744,7 @@ function moreSheet(){
     '</div>';
   document.body.appendChild(wrapEl);
   requestAnimationFrame(()=>wrapEl.classList.add('open'));
+  syncSheetHistory(true);
 }
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close-sheet]')){ closeSheet(); return; }
@@ -1732,12 +1761,13 @@ document.addEventListener('click', e=>{
 });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSheet(); });
 
-function show(view){
-  closeSheet();
+function show(view, fromHistory){
+  closeSheet(true);
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id==='v-'+view));
   document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===view)));
   syncMobTabs(view);
-  if(location.hash.slice(1)!==view) history.replaceState(null,'','#'+view);
+  if(!fromHistory) syncHistory(view);
+  else if(location.hash.slice(1)!==view) history.replaceState(null,'','#'+view);
   window.scrollTo({top:0,behavior:'instant'});
   if(view==='today') renderToday();
   if(view==='train') renderTrain();
@@ -1987,6 +2017,55 @@ document.addEventListener('change', e=>{
     refreshRowState(date, ex.id);
     updateSummary(date);
   }
+});
+/* ---------------- navigation history (Android back button, iOS edge swipe) ----------------
+   Design: one history entry per view change, and one per sheet opening.
+   Back button  -> closes the sheet if open, otherwise returns to the previous tab.
+   ------------------------------------------------------------------------------------- */
+let suppressHash = false, expectPop = false;
+function histState(){ return (S.hist = S.hist || { views:[], mode:'replace', prevMode:'replace' }); }
+function syncHistory(view){
+  histState();
+  if(suppressHash){ suppressHash = false; }
+  const h = S.hist;
+  const url = '#'+view;
+  /* first entry of the session replaces whatever the browser shipped with */
+  if(h.mode==='replace'){ h.views=[view]; h.mode='push'; try{ history.replaceState({gymView:view}, '', url); }catch(e){} return; }
+  /* re-selecting the current tab must not stack duplicate entries */
+  if(h.views[h.views.length-1]===view){ try{ history.replaceState({gymView:view}, '', url); }catch(e){} return; }
+  try{ history.pushState({gymView:view}, '', url); h.views.push(view); }
+  catch(e){ try{ history.replaceState({gymView:view}, '', url); }catch(e2){} h.views=[view]; }
+}
+function syncSheetHistory(open){
+  histState();
+  const h = S.hist;
+  if(open){
+    if(h.mode==='sheet') return;                       /* already accounted for */
+    h.prevMode = h.mode;
+    let pushed = false;
+    try{ history.pushState({gymSheet:1}, '', location.hash||'#today'); pushed = true; }catch(e){ pushed = false; }
+    h.sheetPushed = pushed;
+    h.mode = 'sheet';
+  } else if(h.mode==='sheet'){
+    h.mode = h.prevMode || 'replace';
+    if(h.sheetPushed){ expectPop = true; try{ history.back(); }catch(e){ expectPop=false; } }
+    h.sheetPushed = false;
+  }
+}
+window.addEventListener('popstate', ()=>{
+  const h = histState();
+  if(expectPop){ expectPop = false; return; }          /* we asked for this pop ourselves */
+  if(h.mode==='sheet'){ h.mode = h.prevMode || 'replace'; closeSheet(true); return; }
+  if(h.mode==='push' && h.views.length>1){
+    h.views.pop();
+    const prev = h.views[h.views.length-1] || 'today';
+    suppressHash = true;
+    show(prev, true);
+    if(h.views.length<=1) h.mode = 'replace';
+    return;
+  }
+  /* nothing left to go back to inside the app: re-pin the entry so Back never leaves a blank page */
+  try{ history.pushState({gymView:(h.views[h.views.length-1]||'today')}, '', location.hash||'#today'); }catch(e){}
 });
 let activeDate = todayISO();
 function refreshRowState(date, exId){
@@ -2662,7 +2741,12 @@ async function runAiModels(){
 /* =============================== BOOT =============================== */
 applyTheme();
 const initView = (location.hash||'#today').slice(1);
-show(el('v-'+initView)? initView : 'today');
+const bootView = el('v-'+initView)? initView : 'today';
+S.hist = { views:[bootView], mode:'replace', prevMode:'replace' };
+try{ history.replaceState({gymView:bootView}, '', '#'+bootView); }catch(e){}
+show(bootView);
+setTimeout(()=>{ histState().mode = 'push'; }, 0);   /* from here on every tab change is a real entry */
+el('installBtn') && (el('installBtn').onclick = installApp);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('details[open]').forEach(d=>d.open=false); });
 window.addEventListener('beforeunload', ()=>save(true));
 /* re-render charts on rotation / resize (debounced) */
@@ -2679,11 +2763,32 @@ window.addEventListener('resize', ()=>{
     }
   }, 220);
 });
+/* ---------------- Android: Chrome install (Add to Home screen without the hidden menu) ---------------- */
+let installEvent = null;
+window.addEventListener('beforeinstallprompt', e=>{
+  e.preventDefault();
+  installEvent = e;
+  const card = el('installCard');
+  if(card && !card.dataset.shown){ card.dataset.shown='1'; card.classList.remove('hidden'); }
+});
+function installApp(){
+  if(!installEvent){
+    toast('Open the browser menu (⋮) → “Add to Home screen”');
+    return;
+  }
+  installEvent.prompt();
+  installEvent.userChoice.then(c=>{
+    toast(c && c.outcome==='accepted' ? '✓ Installing…' : 'No problem — you can install any time from this tab');
+    installEvent = null;
+  });
+}
+window.addEventListener('appinstalled', ()=>{ installEvent=null; toast('✓ Installed — open it from your home screen'); });
+
 /* when launched from the iPhone home screen, hide the browser-ish hints */
 if(window.navigator.standalone || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)){
   document.documentElement.dataset.standalone = '1';
 }
 
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4553d1bb831d120',t:'MTc5MTEyNzk0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
