@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>The 10 kg Project — Training, Nutrition & Progress</title>
+<meta name="description" content="Evidence-based 20-week recomposition program and tracker: 4-day upper/lower + optional specialization day, nutrition targets, shoulder &amp; elbow protocol.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8B%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+/* ============================== TOKENS ============================== */
+:root{
+  --bg:#f4f7fb; --bg2:#eaeff7; --card:#ffffff; --card2:#fbfdff;
+  --ink:#0d1b2a; --ink2:#48586c; --ink3:#7688a0;
+  --line:#dde5ef; --line2:#c9d5e4;
+  --navy:#0b1b33; --navy2:#12294a;
+  --sky:#0ea5e9; --cyan:#22d3ee; --teal:#0d9488; --lime:#84cc16; --lime2:#a3e635;
+  --coral:#fb7185; --amber:#f59e0b; --violet:#8b5cf6;
+  --grad-main:linear-gradient(135deg,#0ea5e9 0%,#22d3ee 45%,#a3e635 100%);
+  --grad-warm:linear-gradient(135deg,#fb7185 0%,#f59e0b 100%);
+  --grad-cool:linear-gradient(135deg,#8b5cf6 0%,#0ea5e9 100%);
+  --grad-teal:linear-gradient(135deg,#0d9488 0%,#22d3ee 100%);
+  --shadow:0 1px 2px rgba(13,27,42,.05),0 10px 24px -14px rgba(13,27,42,.18);
+  --shadow-lg:0 20px 50px -24px rgba(13,27,42,.35);
+  --r:18px; --r-sm:12px; --r-lg:26px;
+  --ok:#16a34a; --okbg:#e8f8ee; --warn:#b45309; --warnbg:#fdf3e3; --bad:#dc2626; --badbg:#fdeaea;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+[data-theme="dark"]{
+  --bg:#070d18; --bg2:#0b1424; --card:#0f1b2e; --card2:#132239;
+  --ink:#eaf2ff; --ink2:#a4b6cf; --ink3:#7d90ab;
+  --line:#1d2c45; --line2:#2a3d5c;
+  --navy:#0a1526; --navy2:#0f2038;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 30px -18px rgba(0,0,0,.7);
+  --shadow-lg:0 24px 60px -26px rgba(0,0,0,.8);
+  --okbg:#0c2a1c; --warnbg:#2c2109; --badbg:#2c1111;
+}
+/* ============================== BASE ============================== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-attachment:fixed;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60vw 40vw at 12% -8%,rgba(14,165,233,.16),transparent 60%),
+    radial-gradient(50vw 40vw at 100% 0%,rgba(163,230,53,.14),transparent 62%),
+    radial-gradient(46vw 40vw at 50% 110%,rgba(139,92,246,.12),transparent 60%);
+}
+[data-theme="dark"] body::before{opacity:.75}
+h1,h2,h3,h4{line-height:1.18;letter-spacing:-.02em;margin:0 0 .35em}
+h1{font-size:clamp(26px,4.6vw,42px);font-weight:850}
+h2{font-size:clamp(21px,3vw,27px);font-weight:800}
+h3{font-size:18px;font-weight:750}
+h4{font-size:15px;font-weight:750}
+p{margin:.5em 0}
+a{color:var(--sky)}
+small,.small{font-size:13.4px;color:var(--ink2)}
+ul,ol{margin:.5em 0 .5em 1.15em;padding:0}
+li{margin:.28em 0}
+code{font-family:var(--mono);font-size:13px;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 5px}
+::selection{background:rgba(163,230,53,.45)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.gradtext{background:var(--grad-main);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hidden{display:none !important}
+/* ============================== TOPBAR ============================== */
+.topbar{
+  position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);
+  background:color-mix(in srgb,var(--card) 82%,transparent);
+  border-bottom:1px solid var(--line);
+}
+[data-theme="dark"] .topbar{background:rgba(11,20,36,.82)}
+.topbar .bar{display:flex;align-items:center;gap:14px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:15.5px;white-space:nowrap}
+.brand .logo{
+  width:34px;height:34px;border-radius:11px;background:var(--grad-main);
+  display:grid;place-items:center;font-size:18px;box-shadow:0 6px 16px -6px rgba(14,165,233,.8)
+}
+.brand .t small{display:block;font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase;line-height:1}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{
+  border:0;background:transparent;color:var(--ink2);font:inherit;font-size:14px;font-weight:650;
+  padding:8px 12px;border-radius:11px;cursor:pointer;white-space:nowrap;transition:.18s;display:flex;gap:7px;align-items:center
+}
+nav.tabs button:hover{background:var(--bg2);color:var(--ink)}
+nav.tabs button[aria-selected="true"]{background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+[data-theme="dark"] nav.tabs button[aria-selected="true"]{background:var(--grad-main);color:#04121f}
+.iconbtn{
+  border:1px solid var(--line);background:var(--card);color:var(--ink);width:36px;height:36px;border-radius:11px;
+  cursor:pointer;display:grid;place-items:center;font-size:16px;transition:.18s;flex:none
+}
+.iconbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+/* ============================== CARDS / LAYOUT ============================== */
+main{padding:22px 0 90px}
+.view{display:none;animation:fade .32s ease both}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;
+  box-shadow:var(--shadow);margin:14px 0;transition:transform .2s,box-shadow .2s
+}
+.card.hover:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.card.tint{background:linear-gradient(180deg,var(--card),var(--card2))}
+.card .accent{height:5px;border-radius:99px;background:var(--grad-main);margin:-18px -20px 14px;border-radius:var(--r) var(--r) 0 0}
+.card.acc-teal .accent{background:var(--grad-teal)}
+.card.acc-warm .accent{background:var(--grad-warm)}
+.card.acc-cool .accent{background:var(--grad-cool)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g23{grid-template-columns:1.55fr 1fr}
+.g32{grid-template-columns:1fr 1.4fr}
+@media(max-width:980px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g23,.g32{grid-template-columns:1fr}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.between{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.spacer{flex:1}
+/* ============================== HERO ============================== */
+.hero{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);color:#fff;
+  background:linear-gradient(135deg,#08172c 0%,#0d2a4a 42%,#0c5568 78%,#0d9488 100%);
+  padding:26px;box-shadow:var(--shadow-lg);margin-bottom:6px
+}
+.hero::after{
+  content:"";position:absolute;inset:-40% -10% auto auto;width:60%;height:150%;
+  background:radial-gradient(circle at 30% 30%,rgba(163,230,53,.5),transparent 55%),
+             radial-gradient(circle at 70% 70%,rgba(34,211,238,.55),transparent 55%);
+  filter:blur(22px);opacity:.75;animation:float 16s ease-in-out infinite alternate;pointer-events:none
+}
+@keyframes float{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-16px,18px,0) rotate(6deg)}}
+.hero .inner{position:relative;z-index:2;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hero .kicker{text-transform:uppercase;letter-spacing:.18em;font-size:11.5px;font-weight:800;opacity:.9}
+.hero h1{margin:.25em 0 .2em;color:#fff}
+.hero p{margin:0;max-width:60ch;color:rgba(255,255,255,.9)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);color:#fff;
+  border-radius:99px;padding:5px 12px;font-size:12.5px;font-weight:650
+}
+/* progress ring */
+.ring{position:relative;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring .mid b{font-size:26px;font-weight:850;display:block}
+.ring .mid span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+/* ============================== STATS ============================== */
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad-main)}
+.stat.t2::before{background:var(--grad-teal)}.stat.t3::before{background:var(--grad-warm)}.stat.t4::before{background:var(--grad-cool)}
+.stat .v{font-size:27px;font-weight:850;letter-spacing:-.02em;line-height:1.15}
+.stat .l{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:750;color:var(--ink3)}
+.stat .d{font-size:13px;color:var(--ink2);margin-top:2px}
+/* ============================== CONTROLS ============================== */
+button.btn{
+  font:inherit;font-weight:700;font-size:14px;border-radius:12px;border:1px solid var(--line2);
+  background:var(--card);color:var(--ink);padding:9px 15px;cursor:pointer;transition:.18s;display:inline-flex;gap:8px;align-items:center
+}
+button.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+button.btn.primary{background:var(--navy);color:#fff;border-color:transparent}
+[data-theme="dark"] button.btn.primary{background:var(--grad-main);color:#04121f}
+button.btn.lime{background:var(--grad-main);color:#04121f;border-color:transparent}
+button.btn.warm{background:var(--grad-warm);color:#fff;border-color:transparent}
+button.btn.ghost{background:transparent}
+button.btn.sm{font-size:12.5px;padding:6px 11px;border-radius:10px}
+button.btn[disabled]{opacity:.5;cursor:not-allowed}
+input,select,textarea{
+  font:inherit;font-size:14.5px;color:var(--ink);background:var(--card);border:1px solid var(--line2);
+  border-radius:11px;padding:8px 11px;transition:.18s;width:100%
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.18)}
+input[type=number]{-moz-appearance:textfield}
+label.f{display:block;font-size:12.5px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.field{min-width:0}
+.seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;font:inherit;font-size:13px;font-weight:700;color:var(--ink2);padding:6px 12px;border-radius:9px;cursor:pointer;transition:.16s}
+.seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+/* ============================== TABLES ============================== */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:14.2px;margin:10px 0}
+.tbl th,.tbl td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.tbl thead th{background:var(--bg2);font-size:12.4px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);font-weight:800;position:sticky;top:0}
+.tbl tbody tr:hover td{background:var(--card2)}
+.tbl td.num,.tbl th.num{text-align:center;font-variant-numeric:tabular-nums}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* ============================== BADGES ============================== */
+.b{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:750;white-space:nowrap;border:1px solid transparent}
+.b-teal{background:rgba(34,211,238,.16);color:#0e7490;border-color:rgba(34,211,238,.4)}
+.b-lime{background:rgba(163,230,53,.2);color:#3f6212;border-color:rgba(163,230,53,.5)}
+.b-amber{background:var(--warnbg);color:var(--warn);border-color:rgba(245,158,11,.45)}
+.b-red{background:var(--badbg);color:var(--bad);border-color:rgba(220,38,38,.35)}
+.b-cool{background:rgba(139,92,246,.15);color:#6d28d9;border-color:rgba(139,92,246,.4)}
+.b-grey{background:var(--bg2);color:var(--ink2);border-color:var(--line2)}
+[data-theme="dark"] .b-teal{color:#67e8f9}[data-theme="dark"] .b-lime{color:#bef264}
+[data-theme="dark"] .b-cool{color:#c4b5fd}[data-theme="dark"] .b-amber{color:#fcd34d}
+/* ============================== EXERCISE ROWS ============================== */
+.ex{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card2);padding:12px 13px;margin:10px 0}
+.ex.done{border-color:rgba(22,163,74,.5);background:linear-gradient(180deg,rgba(22,163,74,.07),transparent)}
+.ex .top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.ex .name{font-weight:750;font-size:15.5px}
+.ex .meta{font-size:12.8px;color:var(--ink2);margin-top:2px}
+.ex .cue{font-size:12.8px;color:var(--ink3);margin-top:6px;border-left:3px solid var(--line2);padding-left:9px}
+.setrow{display:grid;grid-template-columns:34px repeat(3,74px) 44px;gap:7px;align-items:center;margin-top:8px}
+.setrow .n{font-size:12px;font-weight:800;color:var(--ink3);text-align:center}
+.setrow input{padding:6px 8px;font-size:13.5px;text-align:center}
+.setrow .chk{width:40px;height:34px}
+@media(max-width:560px){.setrow{grid-template-columns:28px repeat(3,1fr) 40px}}
+.pill{font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:99px;background:var(--bg2);color:var(--ink2);border:1px solid var(--line2);white-space:nowrap}
+/* ============================== RINGS / BARS ============================== */
+.bar{height:10px;border-radius:99px;background:var(--bg2);overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;background:var(--grad-main);border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.bar.warm > i{background:var(--grad-warm)}.bar.teal > i{background:var(--grad-teal)}
+.spark{width:100%;height:auto;display:block}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.6px;color:var(--ink2);margin-top:8px}
+.chart-legend i{display:inline-block;width:14px;height:4px;border-radius:9px;vertical-align:middle;margin-right:5px}
+/* heatmap */
+.heat{display:grid;grid-template-columns:auto repeat(20,1fr);gap:4px;font-size:10.5px;overflow-x:auto;padding-bottom:4px}
+.heat .cell{aspect-ratio:1;border-radius:6px;background:var(--bg2);border:1px solid var(--line);position:relative;min-width:14px}
+.heat .cell.plan{border-style:dashed}
+.heat .cell.done{background:var(--grad-main);border-color:transparent}
+.heat .cell.cardio{background:var(--grad-cool);border-color:transparent}
+.heat .cell.miss{background:var(--badbg);border-color:rgba(220,38,38,.35)}
+.heat .lbl{color:var(--ink3);font-weight:700;display:flex;align-items:center}
+/* callouts */
+.callout{border-radius:var(--r-sm);padding:13px 15px;margin:12px 0;border:1px solid var(--line);background:var(--card2);font-size:14.2px}
+.callout.warn{background:var(--warnbg);border-color:rgba(245,158,11,.4)}
+.callout.ok{background:var(--okbg);border-color:rgba(22,163,74,.35)}
+.callout.bad{background:var(--badbg);border-color:rgba(220,38,38,.35)}
+.callout b:first-child{color:var(--ink)}
+blockquote{margin:12px 0;padding:2px 0 2px 14px;border-left:3px solid var(--cyan);color:var(--ink2);font-style:italic}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14.2px}
+.kv:last-child{border-bottom:0}
+.kv b{font-variant-numeric:tabular-nums;white-space:nowrap}
+details{border:1px solid var(--line);border-radius:var(--r-sm);padding:0 14px;background:var(--card2);margin:10px 0}
+details[open]{padding-bottom:10px}
+summary{cursor:pointer;font-weight:750;padding:12px 0;font-size:15px;list-style:none;display:flex;gap:9px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";color:var(--cyan);transition:.2s;display:inline-block}
+details[open] summary::before{transform:rotate(90deg)}
+/* toast */
+#toasts{position:fixed;right:16px;bottom:16px;z-index:200;display:flex;flex-direction:column;gap:9px;align-items:flex-end;pointer-events:none}
+.toast{
+  background:var(--navy);color:#fff;padding:11px 15px;border-radius:13px;font-size:14px;font-weight:650;
+  box-shadow:var(--shadow-lg);animation:toast .35s cubic-bezier(.2,.9,.3,1.3) both;max-width:330px
+}
+[data-theme="dark"] .toast{background:var(--card2);border:1px solid var(--line2)}
+.toast.pr{background:var(--grad-warm);color:#fff}
+@keyframes toast{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 0;color:var(--ink3);font-size:13px}
+@media print{.topbar,.hero::after,.seg,#toasts{display:none!important}.view{display:block!important}}
+</style>
+</head>
+<body>
+
+<div id="toasts"></div>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="logo">🏋️</span>
+      <span class="t">10 kg Project<small>Recomp OS</small></span>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist">
+      <button data-view="today" aria-selected="true">⚡ Today</button>
+      <button data-view="train">🏋️ Train</button>
+      <button data-view="progress">📈 Progress</button>
+      <button data-view="nutrition">🥗 Nutrition</button>
+      <button data-view="method">📚 Method</button>
+      <button data-view="injury">🩹 Shoulder &amp; Elbows</button>
+      <button data-view="data">⚙️ Data</button>
+    </nav>
+    <button class="iconbtn" id="themeBtn" title="Toggle dark mode">🌙</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============================== TODAY ============================== -->
+  <section class="view active" id="v-today">
+    <div class="hero">
+      <div class="inner">
+        <div>
+          <div class="kicker" id="todayKicker">Loading…</div>
+          <h1 id="todayTitle">The 10 kg Project</h1>
+          <p id="todaySub">Evidence-based recomposition: 4 core lifting days, an optional specialization day, and everything needed to lose ~10 kg of fat while getting visibly more muscular.</p>
+          <div class="chips" id="todayChips"></div>
+        </div>
+        <div class="ring" id="heroRing"></div>
+      </div>
+    </div>
+    <div id="todayBanners"></div>
+    <div id="weekTypeRow"></div>
+    <div class="grid g3" id="todayStats" style="margin-top:14px"></div>
+    <div class="grid g23" style="margin-top:6px">
+      <div>
+        <div id="todaySession"></div>
+      </div>
+      <div>
+        <div id="weighCard"></div>
+        <div id="proteinCard"></div>
+        <div id="activityCard"></div>
+      </div>
+    </div>
+    <div id="prehabCard"></div>
+  </section>
+
+  <!-- ============================== TRAIN ============================== -->
+  <section class="view" id="v-train">
+    <h2>Training</h2>
+    <p class="small">Tap a day, log every set. Values autosave to this browser. <b>All exercises below are already shoulder- and elbow-adjusted</b> — see the <a href="#injury">Shoulder &amp; Elbows</a> tab for the reasoning and the load-management rules.</p>
+    <div class="callout"><b>Scheduling:</b> <b>Saturday and Sunday are always rest.</b> In a <b>4-day week</b>: Mon Upper A · Tue Lower A · Thu Upper B · Fri Lower B (Wednesday off). In a <b>5-day week</b>, Wednesday becomes the Delt &amp; Arm Day. Missed a session? Slide it into any free weekday — the pattern matters, not the weekday. Switch the week type on the <a href="#today">Today</a> tab or in <a href="#data">Data</a>.</div>
+    <div class="seg" id="dayPicker" style="margin:12px 0"></div>
+    <div class="row" style="margin-bottom:8px">
+      <div class="field" style="max-width:190px">
+        <label class="f" for="logDate">Logging date</label>
+        <input type="date" id="logDate">
+      </div>
+      <div class="field" style="max-width:220px">
+        <label class="f">Session controls</label>
+        <div class="row">
+          <button class="btn sm" id="completeAll">✓ Complete all</button>
+          <button class="btn sm ghost" id="clearSession">Clear</button>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div id="sessionSummary"></div>
+    </div>
+    <div id="sessionBody"></div>
+    <div class="card acc-cool">
+      <div class="accent"></div>
+      <h3>Progression rules (double progression)</h3>
+      <ol class="small">
+        <li>Own the <b>top of the rep range at the target RIR on every set</b> → next session add 2.5 kg (upper) or 5 kg (lower) and reset to the bottom of the range.</li>
+        <li>Added load but missed the bottom of the range → stay there until you own it.</li>
+        <li>Same load/reps for <b>3 sessions</b> → add a set, tweak technique, or swap to the substitute for 4 weeks.</li>
+        <li><b>Shoulder or elbow talking to you?</b> Train at RIR 3–4 that week, cut the sets that provoke it in half, keep every rep pain-free (≤3/10 and settling within 24 h). Pain is a load-management signal, not a character test.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================== PROGRESS ============================== -->
+  <section class="view" id="v-progress">
+    <h2>Progress</h2>
+    <p class="small">The scale lies daily and tells the truth monthly. Judge by the <b>7-day average</b>, the tape, and the logbook — never by a single morning.</p>
+    <div class="grid g4" id="progressStats" style="margin-top:12px"></div>
+    <div class="card acc-teal">
+      <div class="accent"></div>
+      <div class="between">
+        <h3 style="margin:0">Body weight &amp; 7-day average</h3>
+        <div class="seg" id="rangePicker">
+          <button data-range="28" aria-selected="true">4 weeks</button>
+          <button data-range="56">8 weeks</button>
+          <button data-range="140">All 20 weeks</button>
+        </div>
+      </div>
+      <div id="weightChart"></div>
+      <div class="chart-legend">
+        <span><i style="background:#94a3b8"></i>Daily weight</span>
+        <span><i style="background:var(--grad-main)"></i>7-day average</span>
+        <span><i style="background:var(--coral)"></i>Target path to 75 kg</span>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="card acc-warm">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">Waist circumference</h3>
+        <div id="waistChart"></div>
+        <p class="small" style="margin-top:6px">Fat loss shows up here before it shows up on the scale — and creatine water weight never affects it.</p>
+      </div>
+      <div class="card acc-cool">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">Completed hard sets per week</h3>
+        <div id="volumeChart"></div>
+        <div class="chart-legend">
+          <span><i style="background:var(--grad-main)"></i>Sets logged</span>
+          <span><i style="background:var(--amber)"></i>Deload weeks</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">20-week consistency map</h3>
+      <div id="heatmap"></div>
+      <div class="chart-legend">
+        <span><i style="background:var(--grad-main)"></i>Session logged</span>
+        <span><i style="background:var(--grad-cool)"></i>Cardio / optional day</span>
+        <span><i style="background:var(--badbg)"></i>Planned but missed</span>
+        <span><i style="background:var(--bg2);border:1px dashed var(--line2)"></i>Rest day</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Strength &amp; PR board</h3>
+      <p class="small">Estimated 1RM uses Epley (<code>load × (1 + reps/30)</code>). Rising e1RM while body weight falls is the signature of successful recomposition.</p>
+      <div class="scrollx" id="prTable"></div>
+    </div>
+  </section>
+
+  <!-- ============================== NUTRITION ============================== -->
+  <section class="view" id="v-nutrition">
+    <h2>Nutrition</h2>
+    <div class="grid g4" id="targetCards" style="margin-top:12px"></div>
+    <div id="nutritionBuilder"></div>
+    <div class="card acc-warm">
+      <div class="accent"></div>
+      <h3 style="margin-top:0">Your 2,200 kcal day (~190 g protein)</h3>
+      <div class="scrollx">
+      <table class="tbl">
+        <thead><tr><th>Meal</th><th>Example</th><th class="num">Protein</th><th class="num">kcal</th></tr></thead>
+        <tbody>
+          <tr><td><b>07:30 Breakfast</b></td><td>200 g 0% labneh or Greek yogurt + 40 g oats + 1 whole egg + 3 egg whites + fruit + coffee</td><td class="num">~45 g</td><td class="num">~530</td></tr>
+          <tr><td><b>12:30 Campus lunch</b></td><td>200 g grilled chicken/turkey shish + 150 g cooked bulgur or rice + big fattoush or tabbouleh + 1 tsp olive oil</td><td class="num">~65 g</td><td class="num">~650</td></tr>
+          <tr><td><b>17:00 Pre/post workout</b></td><td>1 scoop whey + 1 banana + 20 g nuts (or 200 g 0% yogurt + honey)</td><td class="num">~30 g</td><td class="num">~330</td></tr>
+          <tr><td><b>20:30 Dinner</b></td><td>150 g lean kofta or lean beef/kibbeh baked (not fried) + 200 g cooked lentils or chickpeas + salad + vegetables</td><td class="num">~50 g</td><td class="num">~690</td></tr>
+          <tr><td colspan="2" style="text-align:right"><b>Total</b></td><td class="num"><b>~190 g</b></td><td class="num"><b>~2,200</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="margin-top:0">Local protein building blocks</h3>
+        <div class="scrollx">
+        <table class="tbl">
+          <thead><tr><th>Food</th><th class="num">Protein</th><th class="num">kcal</th></tr></thead>
+          <tbody>
+            <tr><td>0% labneh / Greek yogurt</td><td class="num">9–10 g / 100 g</td><td class="num">~55</td></tr>
+            <tr><td>Chicken breast, skinless, grilled</td><td class="num">31 g / 100 g</td><td class="num">~165</td></tr>
+            <tr><td>Canned tuna in water</td><td class="num">25 g / 100 g</td><td class="num">~110</td></tr>
+            <tr><td>Lean beef / kofta (5–10% fat)</td><td class="num">26–30 g / 100 g</td><td class="num">~180</td></tr>
+            <tr><td>Eggs (whole)</td><td class="num">6 g each</td><td class="num">~70</td></tr>
+            <tr><td>Lentils / chickpeas / foul (cooked)</td><td class="num">7–9 g / 100 g</td><td class="num">~115</td></tr>
+            <tr><td>Light akkawi / light halloumi</td><td class="num">15–22 g / 100 g</td><td class="num">~120–250</td></tr>
+            <tr><td>Bulgur / freekeh (cooked)</td><td class="num">4–5 g / 100 g</td><td class="num">~85–110</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Seven rules that do 90% of the work</h3>
+        <ol class="small">
+          <li><b>Protein at every meal, 40–50 g</b> — even distribution beats one huge evening meal.</li>
+          <li><b>Pre-log, don't post-log.</b> Decide tomorrow's food tonight.</li>
+          <li><b>Weigh food for two weeks, then eyeball forever.</b></li>
+          <li><b>Same breakfast, same lunch</b> most days. Boring is under-rated.</li>
+          <li><b>Liquid calories are the enemy</b> — juice, sweetened coffee, arak nights. One night out can erase three days of deficit.</li>
+          <li><b>Restaurant strategy:</b> grilled meat + salad + rice; skip fried food, toum and the bread basket.</li>
+          <li><b>One planned flexible meal per week</b> — portioned, enjoyed, then straight back on.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== METHOD ============================== -->
+  <section class="view" id="v-method">
+    <h2>The method</h2>
+    <p class="small">Eight rules, each tied to the evidence that produced it — then the program, the block plan, and the supplement deep-dives.</p>
+    <div class="grid g2" id="rulesGrid"></div>
+
+    <h3 style="margin-top:26px">The week at a glance</h3>
+    <div class="scrollx">
+    <table class="tbl">
+      <thead><tr><th>Day</th><th>Session</th><th>Focus</th><th class="num">Time</th></tr></thead>
+      <tbody>
+        <tr><td><b>Day 1</b></td><td><b>Upper A</b></td><td>Chest, back, side delts, triceps</td><td class="num">~55 min</td></tr>
+        <tr><td><b>Day 2</b></td><td><b>Lower A</b></td><td>Quads, hamstrings, glutes, calves</td><td class="num">~55 min</td></tr>
+        <tr><td>Day 3 <span class="b b-amber">optional</span></td><td><b>Delt &amp; Arm Day</b> (5-day weeks)</td><td>Arms, delts, calves + conditioning · otherwise rest/walk</td><td class="num">~45 min</td></tr>
+        <tr><td><b>Day 4</b></td><td><b>Upper B</b></td><td>Delts, lats, chest, arms</td><td class="num">~55 min</td></tr>
+        <tr><td><b>Day 5</b></td><td><b>Lower B</b></td><td>Hinge, single-leg, hamstrings, calves</td><td class="num">~55 min</td></tr>
+        <tr><td><b>Sat + Sun</b></td><td><b>Rest</b></td><td>Walk, eat protein, sleep 7–9 h</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small"><b>Your layout:</b> Mon Upper A · Tue Lower A · <b>Wed free</b> · Thu Upper B · Fri Lower B — with Wednesday switching to the Delt &amp; Arm Day in 5-day weeks. Weekends off, always.</p>
+
+    <h3 style="margin-top:26px">The 20-week block plan</h3>
+    <div class="scrollx">
+    <table class="tbl">
+      <thead><tr><th>Weeks</th><th>Block</th><th>What changes</th><th>Effort target</th></tr></thead>
+      <tbody>
+        <tr><td><b>1–2</b></td><td>Ramp &amp; technique</td><td>Same exercises, 2 sets each, conservative loads</td><td>4–5 RIR</td></tr>
+        <tr><td><b>3–7</b></td><td>Build</td><td>Target sets/reps. Beat the logbook weekly</td><td>2–3 RIR compounds · 1–2 RIR isolation</td></tr>
+        <tr><td><b>8</b></td><td><b>Deload</b></td><td>Half the sets, −20% load</td><td>4–5 RIR</td></tr>
+        <tr><td><b>9–14</b></td><td>Push</td><td>+1–2 sets on lagging muscles; one intensifier set per session</td><td>1–2 RIR compounds · 0–1 RIR isolation</td></tr>
+        <tr><td><b>15</b></td><td><b>Deload</b></td><td>Half the sets, −20% load</td><td>4–5 RIR</td></tr>
+        <tr><td><b>16–20</b></td><td>Refine</td><td>Continue push; re-tune calories</td><td>1–2 RIR</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout warn"><b>Weeks 1–2 are the most important weeks in the plan.</b> Unaccustomed high-volume eccentric work in a detrained muscle can cause exertional rhabdomyolysis — severe soreness, swelling, weakness and cola-coloured urine that needs an emergency department, not rest. Two weeks at 2 sets per exercise and 4–5 RIR is the evidence-based way to buy tendon and neuromuscular adaptation before loading increases.</div>
+
+    <h3 style="margin-top:26px">Why this beats the famous programs</h3>
+    <div class="scrollx">
+    <table class="tbl">
+      <thead><tr><th>Program</th><th>Structure</th><th>Where it falls short for you</th></tr></thead>
+      <tbody>
+        <tr><td><b>Starting Strength / StrongLifts 5×5</b></td><td>3 days · full body · 3×5 squat each session</td><td>~6–9 hard sets per muscle per week and almost none for arms, side delts and upper back. Squatting 3×/week adds low-back fatigue, not growth, and linear loading stalls in 8–12 weeks. No autoregulation, no deload logic, no fat-loss integration.</td></tr>
+        <tr><td><b>5/3/1</b></td><td>4 days · one main lift/day · monthly progression</td><td>Built for maximal strength over years, not visible muscle in 5 months: ~3–5 weekly sets per muscle unless you bolt on extra volume templates, and progress is deliberately slow.</td></tr>
+        <tr><td><b>Reddit PPL (6 days)</b></td><td>6 days · 75–90 min · 20+ sets per session</td><td>Great volume, impossible logistics during Med-II, and adherence is the biggest single determinant of results. Same weekly volume compressed into a schedule you'll actually complete beats a perfect one you won't.</td></tr>
+        <tr><td><b>PHUL / PHAT</b></td><td>4–5 days · power + hypertrophy</td><td>The closest relatives, and PHUL is genuinely good — but both are static: no RIR targets, no deload schedule, no progression rules, generic arm/delt volume. PHAT's very high volume in a 500 kcal deficit is a fast route to stalled lifts and tendon pain.</td></tr>
+        <tr><td><b>Arnold / bodybuilding splits</b></td><td>5–6 days · one or two body parts/day</td><td>Once-weekly training per muscle at equal volume is less efficient than 2×/week, and quality drops in marathon sessions. It worked for Arnold — who trained twice daily, in a surplus, with pharmacological assistance. You're doing none of those.</td></tr>
+        <tr><td><b>This program</b></td><td>4 core days + optional 5th · 2×/week per muscle</td><td>Built for <i>your</i> constraints: rusty technique (ramp weeks + technique cues), a deficit (volume capped at what you can recover from while losing 0.6 kg/week), medical school (55-minute sessions, 4-day floor), your physique goal (2×/week chest, back and side delts + specialization day), <b>and your shoulder and elbows</b> (every exercise selected for joint tolerance, with a prehab block).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">Whey protein — mechanism first, then the verdict</h3>
+    <div class="grid g2">
+      <div class="card">
+        <h4 style="margin-top:0">How it actually works</h4>
+        <ol class="small">
+          <li><b>Fast delivery.</b> Whey empties the stomach in ~20–30 min, producing the sharpest rise in plasma amino acids of any common protein, peaking ~60–90 min.</li>
+          <li><b>The leucine trigger.</b> A 20–40 g dose delivers ~2.5–3 g of leucine — the threshold for maximal muscle protein synthesis stimulation in young adults. Leucine is sensed by the protein <i>Sestrin2</i>, which releases its inhibition of GATOR2, allowing mTORC1 to switch on translation initiation in muscle.</li>
+          <li><b>Substrate + insulin.</b> Whey supplies the complete set of essential amino acids needed to build myofibrillar protein, and its insulinogenic amino acids give a modest insulin rise that supports amino acid uptake.</li>
+          <li><b>The result:</b> MPS rises 2–3× above fasting for ~2–3 h, then falls back — the <b>"muscle-full"</b> phenomenon. That's precisely why <i>four</i> feedings beat one giant evening meal: each feeding only buys a few hours of signal.</li>
+          <li><b>Where it fails:</b> if total daily protein is already adequate, extra whey adds almost nothing. It closes a gap; it doesn't open a bonus.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">The evidence, graded</h4>
+        <ul class="small">
+          <li><span class="b b-lime">Strong</span> Protein supplementation + resistance training increases lean mass (~+0.6 kg pooled) and modestly increases strength; the effect is much larger when baseline intake is under ~1.6 g/kg/day.</li>
+          <li><span class="b b-lime">Strong</span> Hypertrophy plateaus near <b>1.6 g/kg/day in energy balance</b>.</li>
+          <li><span class="b b-lime">Strong</span> In a <b>deficit</b>, 2.2–3.1 g/kg of fat-free mass preserves lean tissue far better than low protein — one trial had lifters at 2.4 g/kg <i>gaining</i> lean mass while losing fat.</li>
+          <li><span class="b b-amber">Moderate</span> Protein timing barely matters alone; total intake and distribution across 3–5 feedings dominate. The "anabolic window" is hours-to-a-day wide, not 30 minutes.</li>
+          <li><span class="b b-lime">Strong</span> Higher-protein diets are safe for kidneys in healthy people.</li>
+          <li><span class="b b-grey">Not supported</span> Isolate vs concentrate vs hydrolysate differences are trivial at matched leucine. BCAAs, mass gainers and collagen are not substitutes.</li>
+        </ul>
+        <div class="callout ok" style="margin-bottom:0"><b>Verdict: yes, as a tool.</b> 190 g of protein inside 2,200 kcal is genuinely hard with Lebanese food alone when a hospital day swallows your lunch. 1–2 scoops (25–40 g each, ~110–160 kcal) is the cheapest way to protect the protein number. Concentrate is fine unless lactose-sensitive; choose third-party tested (Informed Sport / NSF). It's a convenience product, not a requirement — 250 g of 0% labneh ≈ 24 g protein, a can of tuna ≈ 25–30 g. Don't buy BCAAs.</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:26px">Creatine — and the creatinine trap</h3>
+    <div class="callout"><b>Language matters here, and you'll use it with patients:</b> the supplement is <b>creatine</b>; <b>creatinine</b> is its metabolic waste product that we measure in serum to estimate GFR. Confusing the two generates half of the kidney myths in this category.</div>
+    <div class="grid g2">
+      <div class="card">
+        <h4 style="margin-top:0">How it actually works</h4>
+        <ol class="small">
+          <li><b>The phosphagen system.</b> Your ATP pool holds ~2–3 seconds of maximal work. <b>Creatine kinase</b> transfers a phosphate from phosphocreatine to ADP: <code>PCr + ADP → Cr + ATP</code> — essentially instantaneous, and what powers the first 5–10 seconds of every heavy set.</li>
+          <li><b>More PCr = more work.</b> Supplementing raises muscle PCr stores ~20%. Faster ATP regeneration between reps and between sets means more reps per set, faster inter-set recovery, and more high-quality volume per session.</li>
+          <li><b>Buffering and shuttling.</b> PCr buffers intramuscular H⁺ (creatine users often report <i>fewer</i> cramps — the cramp myth is backwards), and mitochondrial creatine kinase shuttles phosphates between mitochondria and myofibrils.</li>
+          <li><b>Hypertrophy is indirect but real.</b> Creatine doesn't directly build muscle: it raises training performance → more mechanical tension and volume → more growth. Secondary signals include intracellular cell swelling and possible effects on satellite cells and protein breakdown. Headline trials: ~+1–2 kg lean mass and 5–10% more strength versus placebo + training over 4–12 weeks.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">The evidence, graded</h4>
+        <ul class="small">
+          <li><span class="b b-lime">Very strong</span> The most effective legal ergogenic supplement for high-intensity capacity, strength, power and lean mass alongside resistance training (ISSN position stand, 2017 — not overturned).</li>
+          <li><span class="b b-lime">Strong</span> <b>3 g/day is enough</b>; loading only saturates faster (5 days vs ~28), it doesn't raise the ceiling.</li>
+          <li><span class="b b-lime">Strong (null)</span> Time of day, with/without food, training vs rest days — none of it matters. Saturation is the point.</li>
+          <li><span class="b b-lime">Strong</span> Safe for kidneys, liver and muscle in healthy people, without dehydration or cramping; studied up to 5 years. A 2025 meta-analysis (21 studies): modest rise in serum creatinine, <b>no change in measured or estimated GFR</b>.</li>
+          <li><span class="b b-amber">Insufficient data</span> Pre-existing kidney disease or reduced eGFR, pregnancy, adolescents: caution, not alarm.</li>
+        </ul>
+        <div class="callout warn" style="margin-bottom:8px"><b>The creatinine trap.</b> Creatine degrades to creatinine at ~1.6–2% of the pool per day. Add 5 g/day and you increase the pool, so serum creatinine rises ~0.05–0.2 mg/dL — enough to push a normal 1.0 toward 1.2 and "create" stage 2–3 CKD out of an eGFR equation. Direct GFR, cystatin C, proteinuria and albuminuria all stay normal. Tell any clinician taking bloods, or ask for cystatin C. And as a future doctor: never diagnose renal impairment on serum creatinine alone in a muscular young man who lifts or takes creatine. Same trap applies to post-leg-day CK, AST and ALT — draw labs 48–72 h after your last session.</div>
+        <div class="callout ok" style="margin-bottom:0"><b>Verdict: take it.</b> Creatine <i>monohydrate</i>, 3–5 g/day, every day including rest days, timed however you'll remember. Don't bother loading. Skip HCl, buffered and nitrate forms — no demonstrated superiority, 3–10× the price. ~$5–10/month, the best evidence-to-price ratio in this whole document. Expect <b>+1–2 kg of intracellular water in weeks 1–2</b>: the muscle looks fuller because water moved <i>into</i> the cell.</div>
+      </div>
+    </div>
+    <div class="callout"><b>Also worth your money:</b> caffeine 3–6 mg/kg (~250–400 mg) 30–60 min pre-training — excellent evidence, no meaningful downside in a healthy 23-year-old, just not after 14:00, because sleep is your most anabolic supplement. Everything else (fat burners, test boosters, BCAAs, glutamine, SARMs) ranges from useless to dangerous.</div>
+
+    <div class="card">
+      <h3 style="margin-top:0">The honest caveat</h3>
+      <p class="small">No trial has ever compared <i>this exact program</i> to StrongLifts in a 23-year-old Lebanese medical student. What I've done is more defensible: taken the variables with meta-analytic support — weekly volume, frequency, proximity to failure, range of motion, protein dose, rate of weight loss, supplement efficacy, concurrent-training sequencing — and assembled them inside your real constraints. Your logbook is the experiment; the primary outcomes are strength on four lifts, waist circumference, and body weight over 20 weeks.</p>
+    </div>
+
+    <h3 style="margin-top:26px">References</h3>
+    <ol class="small" id="refList">
+      <li>Refalo MC, et al. <i>Resistance Training Dose–Response: A Meta-Regression of Weekly Volume and Frequency Using Fractional Set Counting.</i> Sports Medicine (2025) — ~0.24% additional hypertrophy per weekly set; no plateau, only diminishing returns; counting indirect sets as 0.5 best predicts growth.</li>
+      <li>Baz-Valle E, et al. <i>A Systematic Review of the Effects of Different Resistance Training Volumes on Muscle Hypertrophy.</i> J Strength Cond Res (2022) — 12–20 weekly sets is the optimum zone for most muscles.</li>
+      <li>Grgic M, Refalo MC, et al. <i>Influence of Resistance Training Proximity-to-Failure on Skeletal Muscle Hypertrophy: A Systematic Review with Meta-Analysis.</i> Sports Medicine (2022) — no extra hypertrophy from failure at matched volume; proximity matters more at low loads.</li>
+      <li>Schoenfeld BJ, et al. — training frequency meta-analytic work: 2×/week ≥ 1×/week at equal volume.</li>
+      <li>Wolf M, et al. (2023–2025) — range of motion and hypertrophy: full ROM contains the stretched position, which is what matters; lengthened partials are not a shortcut.</li>
+      <li>Morton RW, et al. <i>Protein supplementation and resistance training-induced gains in muscle mass and strength.</i> Br J Sports Med (2018) — the 1.6 g/kg/day plateau.</li>
+      <li>Helms ER, et al.; ISSN position stand on diets and body composition (2017) — 2.3–3.1 g/kg FFM in hypocaloric conditions; 0.5–1.0% body weight/week loss rate.</li>
+      <li>Longland TM, et al. Am J Clin Nutr (2016) — 2.4 vs 1.2 g/kg in a deficit: lean mass gained while fat lost.</li>
+      <li>Garthe I, et al. — slower (0.7%/week) beats faster (1.4%/week) weight loss for lean-mass retention.</li>
+      <li>Schumann M, et al. <i>Compatibility of Concurrent Aerobic and Strength Training.</i> Sports Medicine (2022) — no interference with hypertrophy (SMD −0.01) or maximal strength (−0.06); explosive strength attenuated same-session.</li>
+      <li>Petré H, et al. Sports Medicine (2021) — interference concentrated in trained lifters doing same-session work.</li>
+      <li>Alsayed A, et al. JISSN (2025) — resistance training preserves fat-free mass; cardio is not disadvantaged for fat loss.</li>
+      <li>Schoenfeld BJ &amp; Aragon AA. JISSN (2018); Atherton PJ, et al. — protein dose per meal and the "muscle-full" hypothesis.</li>
+      <li>Devries MC, et al. J Nutr (2018) — kidney function does not differ between higher- and lower-protein diets in healthy adults.</li>
+      <li>Kreider RB, et al. <i>ISSN position stand: safety and efficacy of creatine supplementation.</i> JISSN (2017).</li>
+      <li>Naeini F, et al. <i>Effect of creatine supplementation on kidney function: a systematic review and meta-analysis.</i> BMC Nephrology (2025) — modest creatinine rise, no change in GFR.</li>
+      <li>Current perspectives on creatine safety (2025) — no renal dysfunction or cancer risk in healthy users; use non-creatinine biomarkers if concerned; GI effects dose-dependent.</li>
+    </ol>
+  </section>
+
+  <!-- ============================== INJURY ============================== -->
+  <section class="view" id="v-injury">
+    <h2>Shoulder &amp; elbows</h2>
+    <p class="small">Your history — <b>right shoulder discomfort plus soreness in both elbows after heavy sessions, settling within days</b> — is the classic presentation of a load-related musculotendinous irritation pattern, not an acute structural injury. That's a working hypothesis from a history alone, so here's the honest framing and the plan.</p>
+    <div class="grid g3">
+      <div class="card acc-warm">
+        <div class="accent"></div>
+        <h4 style="margin-top:0">Most likely contributors</h4>
+        <ul class="small">
+          <li><b>Shoulder:</b> rotator-cuff / subacromial irritation from pressing with a pronated barbell grip and wide elbow flare, plus overhead work and wide-grip pulldowns.</li>
+          <li><b>Elbows (both sides):</b> the flexor–pronator mass (medial) and wrist extensor origin (lateral) working overtime — supinated curls, straight-bar work, heavy gripping in rows, RDLs and pull-ups, plus a sudden jump in volume.</li>
+          <li><b>Systemic factor:</b> going from inconsistent training to a full program concentrates a lot of new load into tendons that adapt more slowly than muscle and nerve. Tendons need 6–12 weeks to remodel; your enthusiasm is faster than your collagen.</li>
+        </ul>
+      </div>
+      <div class="card acc-teal">
+        <div class="accent"></div>
+        <h4 style="margin-top:0">Why it settles in a few days (and what that tells us)</h4>
+        <p class="small">Pain that resolves within days of unloading is a strong signal of a <b>reactive, load-driven</b> process rather than a degenerative or structural one — the tendon or musculotendinous junction gets irritated, inflammation and sensitisation follow, then settle when the load drops. That's exactly the population where <b>load management plus progressive loading</b> works, and where rest alone fails: full rest deconditions the tendon and guarantees the pain returns when you reload.</p>
+        <p class="small">So the plan is not "stop" — it's <b>change the levers (grip, angle, range) and keep loading within a pain envelope</b>.</p>
+      </div>
+      <div class="card acc-cool">
+        <div class="accent"></div>
+        <h4 style="margin-top:0">Pain rules (the ones that matter)</h4>
+        <ul class="small">
+          <li><b>≤3/10 during</b> a set is acceptable <i>if</i> it eases as the set goes on and is gone within 24 h. Use it as a dial, not a light switch.</li>
+          <li><b>Worse the next morning, or lasting &gt;24 h</b> → cut the load 20–30%, halve the sets, or swap the exercise.</li>
+          <li><b>Never</b> train through sharp, catching or radiating pain.</li>
+          <li>Tendons respond to <b>slow, heavy-ish, controlled</b> loading: 3 s down, 1 s pause, smooth up. Not bouncing; not endless light reps.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout bad"><b>See a clinician in person (not a website) if you get:</b> night pain that wakes you, weakness or a dropping grip, numbness or tingling into the hand, swelling, locking or catching, pain at rest, pain after a single specific incident/trauma, or no improvement after 6–8 weeks of the plan below. As a med student: also get an actual shoulder exam done by someone who does them daily — the tests take three minutes and change the program completely.</div>
+
+    <div class="card">
+      <h3 style="margin-top:0">What changed in your program (and why)</h3>
+      <div class="scrollx">
+      <table class="tbl">
+        <thead><tr><th>Was</th><th>Now</th><th>Why it protects the shoulder/elbow</th></tr></thead>
+        <tbody>
+          <tr><td>Barbell bench press</td><td><b>Neutral-grip DB (or Swiss-bar / machine) press</b></td><td>A neutral wrist and semi-pronated forearm decompresses the elbow and lets the shoulder find a pain-free arc. A fixed barbell forces one joint path for every shoulder.</td></tr>
+          <tr><td>Incline barbell press</td><td><b>Incline neutral-grip DB press</b></td><td>Same reason, and it lets you stop short of the range that pinches.</td></tr>
+          <tr><td>Barbell overhead press</td><td><b>Landmine press or seated neutral DB press</b></td><td>Overhead pressing with a fixed bar is the single most common shoulder provoker. Landmine keeps a press pattern at a tolerable angle.</td></tr>
+          <tr><td>Wide pronated pulldown / pull-up</td><td><b>Neutral-grip or single-arm pulldown</b></td><td>Neutral grip with a shoulder-width or narrower path reduces anterior shoulder strain while keeping the lat stimulus.</td></tr>
+          <tr><td>Back squat with a barbell</td><td><b>Hack squat / leg press / box squat</b></td><td>A back-squat rack position demands shoulder external rotation and elbow extension under load — both of your sore spots — while your legs get nothing extra from it. Legs are trained just as well on machines.</td></tr>
+          <tr><td>Deadlift / RDL with mixed or double-overhand grip</td><td><b>Straps or trap bar, always for working sets</b></td><td>Grip is the first thing to fatigue and the flexor–pronator mass pays for it. Straps remove elbow load with zero cost to the training effect.</td></tr>
+          <tr><td>Straight-bar and incline supinated curls</td><td><b>Hammer, neutral-grip cable and preacher curls</b></td><td>Supination under load is provocative for medial elbow pain. Neutral grip keeps the same biceps stimulus with far less tendon irritation. Preacher curls also remove the stretch position that aggravates the elbow.</td></tr>
+          <tr><td>Straight-bar skullcrushers / close-grip bench</td><td><b>Rope overhead extension or neutral cable pushdown</b></td><td>Rope/neutral positions allow the wrist and elbow to rotate naturally; the long head still gets loaded in the stretched position.</td></tr>
+          <tr><td>Barbell upright rows, behind-neck anything</td><td><b>Gone entirely</b></td><td>Upright rows put the shoulder in impingement-prone internal rotation with abduction; behind-neck work is provocative for no benefit.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card acc-teal">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">The prehab block — 6–8 minutes, 2–3×/week</h3>
+        <p class="small">Do this at the <b>end</b> of Upper A, Upper B and (ideally) once more on a rest day. Tick each movement per session in the boxes below; it saves automatically.</p>
+        <div id="prehabRoutine"></div>
+      </div>
+      <div class="card acc-cool">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">Returning to barbell work</h3>
+        <p class="small">The goal isn't to avoid barbells forever — it's to earn them back with a tolerant tendon.</p>
+        <ol class="small">
+          <li><b>Weeks 1–3:</b> neutral-grip everything, straps on all pulls, prehab 3×/week, RIR 3 on pressing. Pain-free sets are the only ones that count.</li>
+          <li><b>Weeks 4–6:</b> if pain is gone and stays gone, reintroduce <i>one</i> barbell movement at a time — typically the flat press or a Swiss-bar version — at 60% of your previous load. Keep the prehab.</li>
+          <li><b>Weeks 7–10:</b> add a second barbell lift (e.g. barbell row before back squat, deadlift with straps before deadlift without). Increase 2.5 kg per session while pain stays 0–2/10 and resolves within 24 h.</li>
+          <li><b>Any flare:</b> step back one stage for two weeks. Flares are normal and are information about load, not failures of the plan.</li>
+        </ol>
+        <p class="small">Tendon pain typically takes <b>6–12 weeks</b> to become reliably quiet. Expect a wobbly line, not a straight one.</p>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="margin-top:0">If the shoulder is the main problem, add</h3>
+        <ul class="small">
+          <li><b>Scapular control first:</b> wall slides, prone Y/T raises, serratus punches — 2 × 12 each, controlled.</li>
+          <li><b>External rotation strength is the protective variable:</b> cable or band ER at the side, 3 × 15, plus the face pulls already in Upper B.</li>
+          <li><b>Pressing angle ladder:</b> start with landmine/incline path, progress toward flat, overhead last. Overhead pressing is the final skill you earn back, not the first.</li>
+          <li><b>Sleeping position matters:</b> sleeping on that shoulder or with the arm overhead keeps it irritated. Roll onto your back or the other side.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">If the elbows are the main problem, add</h3>
+        <ul class="small">
+          <li><b>Medial (inner) pain:</b> slow eccentric pronation/supination with a light hammer or bottle — 3 × 15, 3 s down.</li>
+          <li><b>Lateral (outer) pain:</b> slow eccentric wrist extension — 3 × 15, 3 s down (or a FlexBar "Tyler twist" if you have one).</li>
+          <li><b>Isometrics for relief:</b> 3 × 30–45 s holds at a low-mid intensity; isometric loading has an analgesic effect in tendinopathy and is useful on flare days.</li>
+          <li><b>Grip hygiene:</b> straps for every pulling set, thicker/neutral handles, avoid death-gripping the bar, take the money out of the flexor mass.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout ok"><b>Why this doesn't cost you results:</b> none of these substitutions remove training stimulus. Neutral-grip pressing builds the same chest and triceps; machine or hack squats build the same quads; straps and neutral handles change nothing about the muscle's job. The only thing traded away is a joint-provocation you don't need. What <i>would</i> cost you results is a 6-week layoff from an angry tendon — which is exactly what this plan is designed to prevent.</div>
+  </section>
+
+  <!-- ============================== DATA ============================== -->
+  <section class="view" id="v-data">
+    <h2>Data &amp; setup</h2>
+    <p class="small">Everything you log is stored <b>locally in this browser</b> (localStorage) — nothing is uploaded anywhere, which is what makes this work on free static hosting. That also means: use the same browser and device, and export a backup regularly.</p>
+    <div class="grid g2">
+      <div class="card acc-teal">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">Profile &amp; targets</h3>
+        <div class="grid g2">
+          <div class="field"><label class="f" for="pName">Name</label><input id="pName" placeholder="Your name"></div>
+          <div class="field"><label class="f" for="pStart">Program start date</label><input type="date" id="pStart"></div>
+          <div class="field"><label class="f" for="pStartW">Starting weight (kg)</label><input type="number" step="0.1" id="pStartW"></div>
+          <div class="field"><label class="f" for="pGoalW">Goal weight (kg)</label><input type="number" step="0.1" id="pGoalW"></div>
+          <div class="field"><label class="f" for="pKcal">Calorie target</label><input type="number" step="50" id="pKcal"></div>
+          <div class="field"><label class="f" for="pProt">Protein target (g)</label><input type="number" step="5" id="pProt"></div>
+          <div class="field"><label class="f" for="pDays">Training days this week</label><select id="pDays"><option value="4">4-day week (Mon/Tue/Thu/Fri)</option><option value="5">5-day week (+ Wed Delt &amp; Arm)</option></select></div>
+        </div>
+        <div class="row" style="margin-top:12px"><button class="btn primary" id="saveProfile">Save profile</button></div>
+        <p class="small" style="margin-top:10px">Estimated maintenance for 85 kg at your activity is ~2,700–2,800 kcal; 2,200 gives ~0.6 kg/week of loss. Judge it by results after two weeks, not by formula.</p>
+      </div>
+      <div class="card acc-cool">
+        <div class="accent"></div>
+        <h3 style="margin-top:0">Backup, restore, export</h3>
+        <div class="row">
+          <button class="btn primary" id="expJson">⬇️ Export backup (JSON)</button>
+          <button class="btn" id="impBtn">⬆️ Import backup</button>
+          <input type="file" id="impFile" accept="application/json" class="hidden">
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button class="btn" id="expWeights">📄 Weights CSV</button>
+          <button class="btn" id="expSessions">📄 Sessions CSV</button>
+          <button class="btn" id="expFood">📄 Nutrition CSV</button>
+          <button class="btn" id="copyMd">📋 Copy 4-week summary</button>
+        </div>
+        <p class="small" style="margin-top:10px">Export after every weekly check-in. If you clear your browser data or switch devices, the local copy is gone unless you have the JSON.</p>
+        <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+        <h4>Danger zone</h4>
+        <div class="row">
+          <button class="btn sm ghost" id="demoFill">Load 6 weeks of demo data</button>
+          <button class="btn sm warm" id="resetAll">Reset everything</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card acc-cool" id="aiCard">
+      <div class="accent"></div>
+      <h3 style="margin-top:0">🤖 AI nutrition estimator settings</h3>
+      <p class="small">Optional. The estimator works only if you paste your own API key — it is stored in <b>this browser's local storage only</b>, never in the file you upload to GitHub, and it is sent only to the provider you choose. A Gemini key from Google AI Studio has a free tier and takes about a minute to create. If you'd rather not use a key, the <b>Copy prompt</b> button on the Nutrition tab gives you the same result through ChatGPT or Claude manually.</p>
+      <div class="grid g3">
+        <div class="field"><label class="f" for="aiProvider">Provider</label>
+          <select id="aiProvider">
+            <option value="gemini">Google Gemini (free tier)</option>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic (Claude)</option>
+          </select></div>
+        <div class="field"><label class="f" for="aiModel">Model (blank = default)</label><input id="aiModel" placeholder="gemini-2.0-flash"></div>
+        <div class="field"><label class="f" for="aiKey">API key</label><input id="aiKey" type="password" placeholder="paste key"></div>
+      </div>
+      <div class="row" style="margin-top:10px"><button class="btn primary" id="saveAI">Save AI settings</button>
+      <button class="btn sm ghost" id="clearAI">Remove key</button><span id="aiStatus"></span></div>
+      <div class="callout warn" style="margin-bottom:0"><b>Security:</b> a key in localStorage is visible to anyone using this browser profile, and browser-side calls are visible in the network tab. Use a restricted/throwaway key if you care. Never commit a key to GitHub — this app never stores it in a file.</div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Publish this on GitHub Pages (5 minutes)</h3>
+      <ol class="small">
+        <li>Create a new repository on GitHub — e.g. <code>gym</code> — and make it <b>public</b> (the free Pages tier requires it).</li>
+        <li>Upload <b><code>index.html</code></b> (required) and <b><code>README.md</code></b> (optional, just text GitHub shows under the repo). <b>That's the whole upload</b> — no folders, no app.js, no config. The site is one self-contained file with no build step and no external dependencies.</li>
+        <li>In the repo: <b>Settings → Pages → Source: Deploy from a branch → Branch: main → / (root) → Save</b>.</li>
+        <li>Wait ~60 seconds. Your site is live at <code>https://&lt;your-username&gt;.github.io/gym/</code> — bookmark it and add it to your home screen.</li>
+        <li>To update the site later, just edit the file in the GitHub web editor and commit; Pages redeploys automatically.</li>
+      </ol>
+      <details>
+        <summary>Prefer the command line?</summary>
+        <pre class="small" style="white-space:pre-wrap"><code>git init
+git add index.html README.md
+git commit -m "Add 10 kg Project tracker"
+git branch -M main
+git remote add origin https://github.com/&lt;your-username&gt;/gym.git
+git push -u origin main</code></pre>
+        <p class="small">Then enable Pages as in step 3. Add to iPhone/Android home screen for an app-like feel.</p>
+      </details>
+      <div class="callout" style="margin-bottom:0"><b>A note on privacy:</b> a public repo means the <i>site</i> is public, but your logged data never leaves your browser, so nobody can see your weights, logs or photos unless you push a data file yourself. Don't commit your exported JSON if you care about that.</div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">What to send me at each check-in</h3>
+      <ul class="small">
+        <li>The 7-day average weight and waist circumference from the last two weeks (Weekly Check-in on the Progress tab, or just the numbers).</li>
+        <li>Your four main lifts: load × reps for the best set (the PR board has them).</li>
+        <li>Any joint pain score for the week (0–10), and which exercise provoked it.</li>
+        <li>Whether you hit 4 sessions, and what got in the way.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>The 10 kg Project</b> — general training, nutrition and prehab guidance for one specific person. Not a medical examination or a diagnosis; if anything here conflicts with advice from a clinician who has actually examined you, follow them. Data lives in your browser; export backups.</p>
+  </footer>
+</main>
+<script>
+/* =====================================================================
+   FOOD ENGINE — Lebanese + international database, quantity parser,
+   and optional AI estimation (Gemini / OpenAI / Anthropic).
+   All values are per 100 g (or 100 ml for drinks) as consumed.
+   Approximate by nature: cooked dishes vary with the cook, the oil
+   and the portion. Use them as a good estimate, not a lab result.
+   ===================================================================== */
+'use strict';
+
+/* cat: category · u: default serving weight in g · s: serving label
+   a: aliases / transliterations for matching */
+const FOODDB = [
+  /* ---------------- MEZZE & STARTERS ---------------- */
+  {n:'Hummus bi tahini', u:50, s:'2 tbsp (50 g)', k:230, p:7, c:14, f:17, cat:'Mezze', a:'hommos hummos humus houmous hummus'},
+  {n:'Hummus light (less tahini)', u:50, s:'2 tbsp (50 g)', k:180, p:7, c:15, f:11, cat:'Mezze', a:'hummos diet light'},
+  {n:'Baba ghanoush / Moutabal', u:60, s:'3 tbsp (60 g)', k:130, p:2, c:9, f:10, cat:'Mezze', a:'baba ganoush mtabbal moutabbal eggplant dip'},
+  {n:'Muhammara', u:50, s:'2 tbsp (50 g)', k:240, p:4, c:16, f:18, cat:'Mezze', a:'mouhamara red pepper dip'},
+  {n:'Toum (garlic sauce)', u:15, s:'1 tbsp (15 g)', k:620, p:2, c:6, f:66, cat:'Mezze', a:'garlic paste toumeyeh'},
+  {n:'Tarator (tahini sauce)', u:40, s:'2 tbsp (40 g)', k:350, p:6, c:8, f:33, cat:'Mezze', a:'tahina sauce sesame sauce'},
+  {n:'Tabbouleh', u:150, s:'1 small bowl (150 g)', k:120, p:3, c:15, f:6, cat:'Mezze', a:'tabouli tabbuleh parsley salad'},
+  {n:'Fattoush (with bread)', u:200, s:'1 bowl (200 g)', k:110, p:2, c:13, f:6, cat:'Mezze', a:'fattoush salad'},
+  {n:'Warak enab bi zeit (veg)', u:40, s:'2 pieces (40 g)', k:160, p:3, c:22, f:7, cat:'Mezze', a:'stuffed vine leaves wara2 enab dolma'},
+  {n:'Warak enab bi lahme (meat)', u:40, s:'2 pieces (40 g)', k:210, p:7, c:22, f:11, cat:'Mezze', a:'stuffed vine leaves meat'},
+  {n:'Kibbeh (fried)', u:60, s:'1 piece (60 g)', k:290, p:14, c:18, f:18, cat:'Mezze', a:'kubbeh kibbe fried'},
+  {n:'Kibbeh baked (seniyeh)', u:150, s:'1 slice (150 g)', k:200, p:13, c:16, f:9, cat:'Mezze', a:'kibbeh seniyeh oven kibbeh'},
+  {n:'Kibbeh nayyeh (raw)', u:100, s:'1 serving (100 g)', k:160, p:17, c:2, f:9, cat:'Mezze', a:'raw kibbeh'},
+  {n:'Sambousek cheese (fried)', u:45, s:'1 piece (45 g)', k:330, p:9, c:28, f:20, cat:'Mezze', a:'sambusek sambousik cheese pastry'},
+  {n:'Sambousek meat (fried)', u:45, s:'1 piece (45 g)', k:300, p:10, c:28, f:16, cat:'Mezze', a:'sambusek meat'},
+  {n:'Rkakat (cheese rolls, fried)', u:40, s:'1 roll (40 g)', k:320, p:10, c:26, f:19, cat:'Mezze', a:'rakakat cheese rolls'},
+  {n:'Fatayer spinach', u:70, s:'1 piece (70 g)', k:210, p:6, c:26, f:9, cat:'Mezze', a:'sabanegh spinach pie'},
+  {n:'Fatayer cheese', u:70, s:'1 piece (70 g)', k:300, p:9, c:27, f:17, cat:'Mezze', a:'jibneh pie'},
+  {n:'Fatayer meat', u:70, s:'1 piece (70 g)', k:270, p:11, c:27, f:13, cat:'Mezze', a:'lahm pie'},
+  {n:'Falafel (fried)', u:20, s:'1 piece (20 g)', k:330, p:13, c:32, f:17, cat:'Mezze', a:'falafil taameya'},
+  {n:'Batata harra', u:150, s:'1 plate (150 g)', k:200, p:3, c:26, f:10, cat:'Mezze', a:'spicy potatoes batata harra'},
+  {n:'Fried cauliflower', u:150, s:'1 plate (150 g)', k:150, p:3, c:12, f:10, cat:'Mezze', a:'arnabit meqli'},
+  {n:'Fried eggplant slices', u:150, s:'1 plate (150 g)', k:190, p:2, c:12, f:15, cat:'Mezze', a:'batenjen meqli fried aubergine'},
+  {n:'Makanek (pan-fried)', u:30, s:'2 pieces (30 g)', k:350, p:15, c:2, f:31, cat:'Mezze', a:'makanik sausages'},
+  {n:'Soujouk', u:30, s:'3 slices (30 g)', k:400, p:22, c:2, f:34, cat:'Mezze', a:'sujuk sujuk sausage'},
+  {n:'Grilled halloumi', u:30, s:'1 slice (30 g)', k:330, p:22, c:2, f:26, cat:'Mezze', a:'halloum grilled cheese'},
+  {n:'Shanklish', u:40, s:'1 serving (40 g)', k:250, p:17, c:3, f:19, cat:'Mezze', a:'shankleesh aged cheese'},
+  {n:'Makdous (stuffed eggplant)', u:60, s:'2 pieces (60 g)', k:220, p:3, c:6, f:21, cat:'Mezze', a:'makdous pickled eggplant'},
+  {n:'Olives (green or black)', u:15, s:'5 olives (15 g)', k:145, p:1, c:4, f:15, cat:'Mezze', a:'zeitoun olives'},
+  {n:'Balila (chickpeas, cumin)', u:150, s:'1 bowl (150 g)', k:160, p:8, c:25, f:4, cat:'Mezze', a:'balila boiled chickpeas'},
+  {n:'Foul mdammas (plain)', u:200, s:'1 bowl (200 g)', k:110, p:7, c:16, f:2, cat:'Mezze', a:'foul medames fava beans ful'},
+  {n:'Foul with tahini & lemon', u:200, s:'1 bowl (200 g)', k:150, p:8, c:16, f:7, cat:'Mezze', a:'foul tahini'},
+  {n:'Msabbaha', u:150, s:'1 bowl (150 g)', k:180, p:8, c:18, f:9, cat:'Mezze', a:'musabbaha chickpea yogurt'},
+  {n:'Fatteh hummus (yogurt, bread, nuts)', u:200, s:'1 bowl (200 g)', k:220, p:9, c:20, f:12, cat:'Mezze', a:'fatteh hummos'},
+  {n:'Fatteh (chicken or lamb)', u:200, s:'1 bowl (200 g)', k:230, p:12, c:18, f:12, cat:'Mezze', a:'fatte chicken fatteh'},
+  {n:'Hindbeh (dandelion greens)', u:150, s:'1 plate (150 g)', k:90, p:3, c:6, f:6, cat:'Mezze', a:'hindbe dandelion'},
+  {n:'Mloukhieh with chicken', u:250, s:'1 bowl (250 g)', k:130, p:9, c:8, f:7, cat:'Main dishes', a:'mloukhia molokhia jute leaves'},
+  {n:'Artichoke hearts with oil', u:100, s:'1 serving (100 g)', k:90, p:3, c:9, f:5, cat:'Mezze', a:'ardi shawki artichoke'},
+
+  /* ---------------- GRILLS & PROTEINS ---------------- */
+  {n:'Shish taouk (chicken skewer)', u:150, s:'1 skewer (150 g)', k:165, p:31, c:2, f:4, cat:'Grills', a:'tawook shish tawouk chicken skewer'},
+  {n:'Shish kebab (lamb)', u:150, s:'1 skewer (150 g)', k:250, p:26, c:0, f:16, cat:'Grills', a:'shish kebap lamb skewer'},
+  {n:'Kofta / kafta (grilled)', u:150, s:'2 pieces (150 g)', k:240, p:22, c:3, f:16, cat:'Grills', a:'kafta kefta kofta kebab minced meat'},
+  {n:'Mixed grill plate', u:250, s:'1 plate (250 g)', k:230, p:25, c:2, f:14, cat:'Grills', a:'mashawi mixed grill'},
+  {n:'Chicken breast, grilled, skinless', u:150, s:'1 breast (150 g)', k:165, p:31, c:0, f:3.6, cat:'Grills', a:'chicken breast sadr djej'},
+  {n:'Chicken thigh, grilled', u:120, s:'1 thigh (120 g)', k:210, p:26, c:0, f:11, cat:'Grills', a:'chicken thigh'},
+  {n:'Chicken wings, grilled', u:40, s:'1 wing (40 g)', k:240, p:27, c:0, f:15, cat:'Grills', a:'wings jawaneh'},
+  {n:'Beef steak, lean', u:200, s:'1 steak (200 g)', k:210, p:26, c:0, f:11, cat:'Grills', a:'steak lahm beef'},
+  {n:'Lamb chops', u:120, s:'2 chops (120 g)', k:290, p:25, c:0, f:21, cat:'Grills', a:'lamb riyash'},
+  {n:'Beef liver (sawda)', u:120, s:'1 serving (120 g)', k:190, p:26, c:4, f:7, cat:'Grills', a:'sawda kibdeh liver'},
+  {n:'Turkey breast', u:150, s:'150 g', k:150, p:29, c:0, f:3, cat:'Grills', a:'turkey'},
+  {n:'Grilled fish (sea bass/bream)', u:200, s:'1 fish (200 g)', k:130, p:24, c:0, f:4, cat:'Grills', a:'samak grilled fish seabass seabream'},
+  {n:'Fried fish', u:200, s:'1 fish (200 g)', k:230, p:20, c:8, f:13, cat:'Grills', a:'samak meqli fried fish'},
+  {n:'Smoked salmon', u:50, s:'3 slices (50 g)', k:180, p:18, c:0, f:12, cat:'Grills', a:'lox salmon'},
+  {n:'Tuna, canned in water (drained)', u:100, s:'1 can drained (100 g)', k:110, p:25, c:0, f:1, cat:'Grills', a:'tuna can light'},
+  {n:'Sardines in oil', u:100, s:'1 can (100 g)', k:208, p:25, c:0, f:11, cat:'Grills', a:'sardines'},
+  {n:'Shrimp / prawns, grilled', u:150, s:'10 pieces (150 g)', k:100, p:20, c:1, f:1.5, cat:'Grills', a:'shrimp prawns gambari'},
+
+  /* ---------------- BREADS, MANAKISH & SANDWICHES ---------------- */
+  {n:'Manakish zaatar', u:180, s:'1 medium (180 g)', k:300, p:6, c:38, f:12, cat:'Manakish', a:"manoushe manousheh mankoushe manakish zaater za'atar pie timeesh"},
+  {n:'Manakish jibneh (cheese)', u:180, s:'1 medium (180 g)', k:330, p:13, c:36, f:14, cat:'Manakish', a:'manoushe cheese jibneh pie'},
+  {n:"Manakish lahm b ajin (meat)", u:180, s:'1 medium (180 g)', k:300, p:14, c:32, f:12, cat:'Manakish', a:'manoushe meat lahm bi ajin'},
+  {n:'Manakish kishk', u:180, s:'1 medium (180 g)', k:300, p:11, c:36, f:11, cat:'Manakish', a:'kishk pie'},
+  {n:'Manakish sabanegh (spinach)', u:180, s:'1 medium (180 g)', k:260, p:7, c:36, f:9, cat:'Manakish', a:'spinach pie manoushe'},
+  {n:'Sfiha (small meat pie)', u:50, s:'1 piece (50 g)', k:260, p:11, c:26, f:12, cat:'Manakish', a:'sfiha lahm b ajin small'},
+  {n:'Kaak (sesame bread)', u:90, s:'1 kaak (90 g)', k:290, p:9, c:52, f:5, cat:'Manakish', a:'kaak bread sesame street bread'},
+  {n:'Kaak with cheese', u:120, s:'1 kaak (120 g)', k:340, p:12, c:50, f:10, cat:'Manakish', a:'kaak jibneh'},
+  {n:'Pita bread (khubz arabi)', u:90, s:'1 large pita (90 g)', k:275, p:9, c:55, f:1.2, cat:'Breads', a:'pita khubz arabi bread lebanese bread markouk'},
+  {n:'Baguette / French bread', u:60, s:'1/4 baguette (60 g)', k:280, p:9, c:55, f:1.5, cat:'Breads', a:'baguette french bread toast'},
+  {n:'Shawarma chicken (sandwich)', u:350, s:'1 sandwich (350 g)', k:220, p:14, c:20, f:10, cat:'Sandwiches', a:'shawerma chicken shawarma wrap'},
+  {n:'Shawarma beef (sandwich)', u:350, s:'1 sandwich (350 g)', k:260, p:14, c:20, f:14, cat:'Sandwiches', a:'shawerma meat beef shawarma wrap'},
+  {n:'Shawarma chicken plate', u:400, s:'1 plate (400 g)', k:180, p:15, c:14, f:8, cat:'Sandwiches', a:'shawarma plate chicken'},
+  {n:'Shawarma meat plate', u:400, s:'1 plate (400 g)', k:220, p:15, c:14, f:13, cat:'Sandwiches', a:'shawarma plate beef'},
+  {n:'Tawouk sandwich', u:300, s:'1 sandwich (300 g)', k:230, p:15, c:22, f:9, cat:'Sandwiches', a:'chicken tawouk sandwich'},
+  {n:'Falafel sandwich', u:300, s:'1 sandwich (300 g)', k:250, p:8, c:35, f:9, cat:'Sandwiches', a:'falafel wrap sandwich'},
+  {n:'Sujuk sandwich', u:250, s:'1 sandwich (250 g)', k:300, p:14, c:25, f:16, cat:'Sandwiches', a:'soujouk sandwich'},
+  {n:'Tuna sandwich', u:250, s:'1 sandwich (250 g)', k:210, p:14, c:26, f:6, cat:'Sandwiches', a:'tuna sandwich'},
+  {n:'Halloumi sandwich', u:250, s:'1 sandwich (250 g)', k:280, p:14, c:28, f:13, cat:'Sandwiches', a:'halloumi sandwich cheese'},
+  {n:'Cheese and zaatar sandwich', u:250, s:'1 sandwich (250 g)', k:290, p:13, c:34, f:11, cat:'Sandwiches', a:'jibneh zaatar sandwich'},
+  {n:'Chicken caesar wrap', u:300, s:'1 wrap (300 g)', k:240, p:14, c:20, f:11, cat:'Sandwiches', a:'caesar wrap chicken'},
+  {n:'Club sandwich', u:300, s:'1 sandwich (300 g)', k:240, p:14, c:22, f:12, cat:'Sandwiches', a:'club toast sandwich'},
+  {n:'Cheese toast / jibneh toast', u:150, s:'1 toast (150 g)', k:280, p:13, c:28, f:13, cat:'Sandwiches', a:'toast jibneh grilled cheese'},
+
+  /* ---------------- MAIN DISHES ---------------- */
+  {n:'Riz a djej (chicken & rice)', u:300, s:'1 plate (300 g)', k:165, p:12, c:20, f:4, cat:'Main dishes', a:'riz a djej chicken rice'},
+  {n:'Kafta w batata (tray bake)', u:300, s:'1 plate (300 g)', k:200, p:13, c:12, f:11, cat:'Main dishes', a:'kafta batata kofta potatoes'},
+  {n:'Mujadara (lentils & rice)', u:250, s:'1 plate (250 g)', k:155, p:6, c:27, f:3, cat:'Main dishes', a:'mujaddara mjadra lentils rice'},
+  {n:'Mjadara with fried onions', u:250, s:'1 plate (250 g)', k:175, p:6, c:28, f:5, cat:'Main dishes', a:'mjadra onions'},
+  {n:'Bamia (okra stew with meat)', u:250, s:'1 bowl (250 g)', k:110, p:7, c:7, f:5, cat:'Main dishes', a:'bamieh okra stew'},
+  {n:'Fasolia (green bean stew)', u:250, s:'1 bowl (250 g)', k:100, p:6, c:8, f:5, cat:'Main dishes', a:'green beans stew fasolia'},
+  {n:'Loubieh bi zeit', u:200, s:'1 bowl (200 g)', k:120, p:3, c:9, f:8, cat:'Main dishes', a:'loubieh green beans oil'},
+  {n:'Sheikh el mahshi', u:250, s:'1 piece (250 g)', k:180, p:9, c:8, f:12, cat:'Main dishes', a:'sheikh mahshi stuffed eggplant lamb'},
+  {n:'Kousa mahshi (stuffed zucchini)', u:250, s:'3 pieces (250 g)', k:120, p:5, c:14, f:5, cat:'Main dishes', a:'kousa stuffed zucchini'},
+  {n:'Mahshi (stuffed vegetables mix)', u:250, s:'1 plate (250 g)', k:130, p:5, c:16, f:5, cat:'Main dishes', a:'mahshi dolma stuffed'},
+  {n:'Sayadieh (fish & rice)', u:300, s:'1 plate (300 g)', k:160, p:11, c:20, f:4, cat:'Main dishes', a:'sayadieh sayadiah fish rice'},
+  {n:'Maghmour (eggplant & chickpea)', u:250, s:'1 bowl (250 g)', k:120, p:4, c:12, f:6, cat:'Main dishes', a:'maghmour moussaka lebanese'},
+  {n:'Makloubeh (upside-down rice)', u:300, s:'1 plate (300 g)', k:175, p:11, c:20, f:6, cat:'Main dishes', a:'maqloubeh maklouba'},
+  {n:'Frikeh with chicken', u:300, s:'1 plate (300 g)', k:170, p:12, c:22, f:4, cat:'Main dishes', a:'freekeh frikeh green wheat'},
+  {n:'Moghrabieh', u:300, s:'1 plate (300 g)', k:190, p:9, c:28, f:5, cat:'Main dishes', a:'moghrabiyeh moghrabieh pearls'},
+  {n:'Riz bi shaar (vermicelli rice)', u:200, s:'1 cup (200 g)', k:160, p:4, c:30, f:3, cat:'Main dishes', a:'rice vermicelli riz shaarieh'},
+  {n:'Chicken musakhan', u:300, s:'1 plate (300 g)', k:250, p:14, c:24, f:11, cat:'Main dishes', a:'musakhan sumac chicken'},
+  {n:'Kibbeh labanieh (in yogurt)', u:300, s:'1 bowl (300 g)', k:150, p:8, c:12, f:7, cat:'Main dishes', a:'kibbeh laban yogurt kibbeh'},
+  {n:'Shish barak (yogurt dumplings)', u:300, s:'1 bowl (300 g)', k:150, p:7, c:14, f:7, cat:'Main dishes', a:'shish barak'},
+  {n:'Dawoud basha (meatballs)', u:250, s:'1 bowl (250 g)', k:190, p:12, c:12, f:10, cat:'Main dishes', a:'daoud basha meatballs'},
+  {n:'Chicken curry with rice', u:350, s:'1 plate (350 g)', k:170, p:10, c:20, f:6, cat:'Main dishes', a:'curry chicken rice'},
+  {n:'Pasta with tomato sauce', u:250, s:'1 plate (250 g)', k:130, p:4, c:24, f:2, cat:'Main dishes', a:'pasta red sauce spaghetti napolitana'},
+  {n:'Pasta with white sauce', u:250, s:'1 plate (250 g)', k:210, p:8, c:22, f:10, cat:'Main dishes', a:'pasta bechamel white sauce'},
+  {n:'Macarona béchamel (baked pasta)', u:300, s:'1 slice (300 g)', k:200, p:8, c:24, f:8, cat:'Main dishes', a:'macarona bechamel pasta bake'},
+  {n:'Lasagna', u:300, s:'1 slice (300 g)', k:180, p:10, c:17, f:8, cat:'Main dishes', a:'lasagne'},
+  {n:'Rice pilaf, plain', u:200, s:'1 cup (200 g)', k:130, p:2.7, c:28, f:0.3, cat:'Main dishes', a:'rice plain white rice'},
+  {n:'Bulgur, cooked', u:200, s:'1 cup (200 g)', k:83, p:3, c:19, f:0.2, cat:'Main dishes', a:'burghul bulgar'},
+  {n:'Freekeh, cooked', u:200, s:'1 cup (200 g)', k:100, p:4, c:21, f:0.5, cat:'Main dishes', a:'frikeh plain'},
+  {n:'Quinoa, cooked', u:185, s:'1 cup (185 g)', k:120, p:4, c:21, f:2, cat:'Main dishes', a:'quinoa'},
+  {n:'Couscous, cooked', u:200, s:'1 cup (200 g)', k:112, p:4, c:23, f:0.2, cat:'Main dishes', a:'couscous'},
+  {n:'French fries', u:115, s:'medium portion (115 g)', k:310, p:3, c:41, f:15, cat:'Main dishes', a:'batata meqli fries chips potato'},
+  {n:'Baked potato (plain)', u:200, s:'1 medium (200 g)', k:93, p:2, c:21, f:0.1, cat:'Main dishes', a:'potato baked'},
+  {n:'Mashed potato with butter', u:200, s:'1 cup (200 g)', k:115, p:2, c:17, f:5, cat:'Main dishes', a:'mashed potatoes puree'},
+  {n:'Hummus with meat (hummus bi lahme)', u:250, s:'1 plate (250 g)', k:250, p:13, c:14, f:16, cat:'Main dishes', a:'hummus meat'},
+
+  /* ---------------- BREAKFAST ---------------- */
+  {n:'Labneh 0% fat', u:100, s:'1 small tub (100 g)', k:55, p:9, c:4, f:0.5, cat:'Breakfast', a:'labne light low fat labneh'},
+  {n:'Labneh full fat', u:50, s:'2 tbsp (50 g)', k:240, p:8, c:6, f:21, cat:'Breakfast', a:'labneh full labne'},
+  {n:'Labneh with olive oil', u:70, s:'1 serving (70 g)', k:300, p:7, c:5, f:28, cat:'Breakfast', a:'labneh zeit'},
+  {n:'Greek yogurt, 2%', u:170, s:'1 tub (170 g)', k:73, p:10, c:4, f:2, cat:'Breakfast', a:'greek yoghurt'},
+  {n:'Greek yogurt, 0%', u:170, s:'1 tub (170 g)', k:59, p:10, c:3.6, f:0.4, cat:'Breakfast', a:'greek yogurt fat free'},
+  {n:'Yogurt, full fat', u:170, s:'1 tub (170 g)', k:70, p:4, c:5, f:4, cat:'Breakfast', a:'laban yogurt plain'},
+  {n:'Laban / ayran (buttermilk)', u:200, s:'1 glass (200 ml)', k:40, p:3.3, c:4.7, f:1, cat:'Breakfast', a:'ayran laban drink buttermilk'},
+  {n:'Akkawi cheese, light', u:60, s:'2 slices (60 g)', k:170, p:17, c:4, f:9, cat:'Breakfast', a:'akkawi jibneh light cheese'},
+  {n:'Akkawi cheese, regular', u:60, s:'2 slices (60 g)', k:250, p:20, c:3, f:18, cat:'Breakfast', a:'akkawi cheese salty'},
+  {n:'Kashkaval cheese', u:40, s:'2 slices (40 g)', k:350, p:25, c:2, f:27, cat:'Breakfast', a:'kashkaval kashkawal'},
+  {n:'Mozzarella cheese', u:40, s:'2 slices (40 g)', k:280, p:22, c:2, f:20, cat:'Breakfast', a:'mozarella cheese'},
+  {n:'White cheese (jibneh baida)', u:50, s:'2 slices (50 g)', k:250, p:17, c:3, f:19, cat:'Breakfast', a:'jibneh baida white cheese feta'},
+  {n:'Egg, whole, boiled', u:50, s:'1 large (50 g)', k:155, p:13, c:1.1, f:11, cat:'Breakfast', a:'egg boiled eggs bayd'},
+  {n:'Egg, fried in oil', u:55, s:'1 large (55 g)', k:200, p:13, c:1, f:16, cat:'Breakfast', a:'fried egg bayd meqli'},
+  {n:'Scrambled eggs with butter', u:100, s:'2 eggs (100 g)', k:180, p:12, c:1, f:14, cat:'Breakfast', a:'scrambled eggs omelette'},
+  {n:'Egg white', u:33, s:'1 white (33 g)', k:52, p:11, c:0.7, f:0.2, cat:'Breakfast', a:'egg whites'},
+  {n:'Omelette with cheese', u:120, s:'2-egg omelette (120 g)', k:220, p:15, c:2, f:17, cat:'Breakfast', a:'omelet cheese eggs'},
+  {n:'Awarma (with eggs)', u:30, s:'2 tbsp (30 g)', k:400, p:12, c:3, f:38, cat:'Breakfast', a:'awarma awarme'},
+  {n:'Eggs with awarma', u:150, s:'1 pan (150 g)', k:280, p:13, c:2, f:25, cat:'Breakfast', a:'awarma eggs bayd awarma'},
+  {n:'Halaweh / halva (plain)', u:30, s:'1 slice (30 g)', k:500, p:12, c:60, f:27, cat:'Breakfast', a:'halawa halva halaweh tahini sweet'},
+  {n:'Grape molasses (dibs)', u:20, s:'1 tbsp (20 g)', k:290, p:0, c:73, f:0, cat:'Breakfast', a:'dibs dibs rman grape molasses'},
+  {n:'Tahini (sesame paste)', u:15, s:'1 tbsp (15 g)', k:595, p:17, c:21, f:54, cat:'Breakfast', a:'tahina tahini sesame paste'},
+  {n:'Oats, dry', u:40, s:'1/2 cup (40 g)', k:380, p:13, c:67, f:7, cat:'Breakfast', a:'oats oatmeal porridge shofan'},
+  {n:'Cornflakes', u:30, s:'1 bowl (30 g)', k:380, p:7, c:84, f:1, cat:'Breakfast', a:'corn flakes cereal'},
+  {n:'Granola / muesli', u:45, s:'1/2 cup (45 g)', k:450, p:10, c:65, f:18, cat:'Breakfast', a:'granola muesli cereal'},
+  {n:'Honey', u:21, s:'1 tbsp (21 g)', k:304, p:0.3, c:82, f:0, cat:'Breakfast', a:'honey asal'},
+  {n:'Jam / marmalade', u:20, s:'1 tbsp (20 g)', k:250, p:0.4, c:65, f:0.1, cat:'Breakfast', a:'jam jelly marmalade'},
+  {n:'Peanut butter', u:16, s:'1 tbsp (16 g)', k:590, p:25, c:20, f:50, cat:'Breakfast', a:'peanut butter pb'},
+  {n:'Nutella / chocolate spread', u:15, s:'1 tbsp (15 g)', k:540, p:6, c:58, f:31, cat:'Breakfast', a:'nutella choco spread hazelnut'},
+  {n:'Croissant', u:60, s:'1 croissant (60 g)', k:400, p:8, c:45, f:22, cat:'Breakfast', a:'croissant butter pastry'},
+  {n:'Zaatar mix (dry)', u:15, s:'1 tbsp (15 g)', k:300, p:9, c:30, f:17, cat:'Breakfast', a:'zaater zaatar spices thyme'},
+
+  /* ---------------- FRUITS ---------------- */
+  {n:'Apple', u:180, s:'1 medium (180 g)', k:52, p:0.3, c:14, f:0.2, cat:'Fruits', a:'apple tuffah'},
+  {n:'Banana', u:120, s:'1 medium (120 g)', k:89, p:1.1, c:23, f:0.3, cat:'Fruits', a:'banana moz'},
+  {n:'Orange', u:140, s:'1 medium (140 g)', k:47, p:0.9, c:12, f:0.1, cat:'Fruits', a:'orange burtuqal'},
+  {n:'Mandarin / clementine', u:90, s:'1 medium (90 g)', k:53, p:0.8, c:13, f:0.3, cat:'Fruits', a:'mandarin clementine youssef effendi'},
+  {n:'Grapes', u:150, s:'1 cup (150 g)', k:69, p:0.7, c:18, f:0.2, cat:'Fruits', a:'grapes anab'},
+  {n:'Watermelon', u:300, s:'1 slice (300 g)', k:30, p:0.6, c:8, f:0.2, cat:'Fruits', a:'watermelon bateekh'},
+  {n:'Cantaloupe / melon', u:200, s:'1 slice (200 g)', k:34, p:0.8, c:8, f:0.2, cat:'Fruits', a:'cantaloupe melon shammam'},
+  {n:'Strawberry', u:150, s:'1 cup (150 g)', k:32, p:0.7, c:7.7, f:0.3, cat:'Fruits', a:'strawberries farawla'},
+  {n:'Cherry', u:120, s:'1 cup (120 g)', k:63, p:1, c:16, f:0.2, cat:'Fruits', a:'cherries karaz'},
+  {n:'Peach', u:150, s:'1 medium (150 g)', k:39, p:0.9, c:10, f:0.3, cat:'Fruits', a:'peach khoukh'},
+  {n:'Nectarine', u:150, s:'1 medium (150 g)', k:44, p:1, c:10, f:0.3, cat:'Fruits', a:'nectarine'},
+  {n:'Pear', u:180, s:'1 medium (180 g)', k:57, p:0.4, c:15, f:0.1, cat:'Fruits', a:'pear njass'},
+  {n:'Plum', u:70, s:'1 medium (70 g)', k:46, p:0.7, c:11, f:0.3, cat:'Fruits', a:'plum plums barkouk'},
+  {n:'Apricot', u:40, s:'1 medium (40 g)', k:48, p:1.4, c:11, f:0.4, cat:'Fruits', a:'apricot mishmish'},
+  {n:'Fig, fresh', u:60, s:'1 fig (60 g)', k:74, p:0.8, c:19, f:0.3, cat:'Fruits', a:'figs teen'},
+  {n:'Pomegranate', u:200, s:'1 fruit (200 g)', k:83, p:1.7, c:19, f:1.2, cat:'Fruits', a:'pomegranate roman'},
+  {n:'Dates (medjool)', u:24, s:'1 date (24 g)', k:277, p:1.8, c:75, f:0.2, cat:'Fruits', a:'dates balah tamr'},
+  {n:'Raisins', u:30, s:'1 handful (30 g)', k:299, p:3, c:79, f:0.5, cat:'Fruits', a:'raisins zبيب zabeeb'},
+  {n:'Kiwi', u:80, s:'1 kiwi (80 g)', k:61, p:1.1, c:15, f:0.5, cat:'Fruits', a:'kiwi'},
+  {n:'Mango', u:200, s:'1 fruit (200 g)', k:60, p:0.8, c:15, f:0.4, cat:'Fruits', a:'mango'},
+  {n:'Pineapple', u:165, s:'1 cup (165 g)', k:50, p:0.5, c:13, f:0.1, cat:'Fruits', a:'pineapple ananas'},
+  {n:'Avocado', u:100, s:'1/2 avocado (100 g)', k:160, p:2, c:9, f:15, cat:'Fruits', a:'avocado abocado'},
+  {n:'Lemon / lime juice', u:30, s:'2 tbsp (30 g)', k:29, p:1, c:9, f:0.3, cat:'Fruits', a:'lemon lime juice'},
+  {n:'Persimmon', u:170, s:'1 fruit (170 g)', k:70, p:0.6, c:19, f:0.2, cat:'Fruits', a:'persimmon kaki'},
+  {n:'Prickly pear (shouki)', u:100, s:'1 fruit (100 g)', k:41, p:0.7, c:10, f:0.5, cat:'Fruits', a:'prickly pear sabra shouki'},
+  {n:'Loquat (askidinya)', u:60, s:'3 fruits (60 g)', k:47, p:0.4, c:12, f:0.2, cat:'Fruits', a:'loquat askidinya'},
+  {n:'Mulberry (toot)', u:100, s:'1 cup (100 g)', k:43, p:1.4, c:10, f:0.4, cat:'Fruits', a:'mulberry toot'},
+  {n:'Blueberries', u:100, s:'1 cup (100 g)', k:57, p:0.7, c:14, f:0.3, cat:'Fruits', a:'blueberries'},
+  {n:'Raspberries', u:100, s:'1 cup (100 g)', k:52, p:1.2, c:12, f:0.7, cat:'Fruits', a:'raspberries'},
+  {n:'Blackberries', u:100, s:'1 cup (100 g)', k:43, p:1.4, c:10, f:0.5, cat:'Fruits', a:'blackberries'},
+  {n:'Coconut, fresh', u:30, s:'1 piece (30 g)', k:354, p:3, c:15, f:33, cat:'Fruits', a:'coconut jawz hind'},
+  {n:'Dried figs', u:30, s:'2 pieces (30 g)', k:250, p:3, c:64, f:1, cat:'Fruits', a:'dried figs teen yabis'},
+  {n:'Dried apricots', u:30, s:'4 pieces (30 g)', k:240, p:3, c:63, f:0.5, cat:'Fruits', a:'dried apricots mishmish yabis'},
+
+  /* ---------------- VEGETABLES ---------------- */
+  {n:'Tomato', u:120, s:'1 medium (120 g)', k:18, p:0.9, c:3.9, f:0.2, cat:'Vegetables', a:'tomato banadoura'},
+  {n:'Cucumber', u:100, s:'1/2 cucumber (100 g)', k:15, p:0.7, c:3.6, f:0.1, cat:'Vegetables', a:'cucumber khyar'},
+  {n:'Lettuce / salad greens', u:80, s:'1 bowl (80 g)', k:15, p:1.4, c:2.9, f:0.2, cat:'Vegetables', a:'lettuce salad khass'},
+  {n:'Carrot', u:80, s:'1 carrot (80 g)', k:41, p:0.9, c:10, f:0.2, cat:'Vegetables', a:'carrot jazar'},
+  {n:'Bell pepper', u:100, s:'1 pepper (100 g)', k:26, p:1, c:6, f:0.3, cat:'Vegetables', a:'pepper capsicum felfel'},
+  {n:'Zucchini / courgette', u:120, s:'1 zucchini (120 g)', k:17, p:1.2, c:3.1, f:0.3, cat:'Vegetables', a:'zucchini courgette kousa'},
+  {n:'Eggplant / aubergine', u:120, s:'1/2 eggplant (120 g)', k:25, p:1, c:6, f:0.2, cat:'Vegetables', a:'eggplant aubergine batenjen'},
+  {n:'Cauliflower, raw', u:100, s:'1 cup (100 g)', k:25, p:1.9, c:5, f:0.3, cat:'Vegetables', a:'cauliflower arnabit'},
+  {n:'Broccoli', u:100, s:'1 cup (100 g)', k:34, p:2.8, c:7, f:0.4, cat:'Vegetables', a:'broccoli'},
+  {n:'Spinach', u:100, s:'1 cup (100 g)', k:23, p:2.9, c:3.6, f:0.4, cat:'Vegetables', a:'spinach sabanekh'},
+  {n:'Green beans', u:100, s:'1 cup (100 g)', k:31, p:1.8, c:7, f:0.1, cat:'Vegetables', a:'green beans fasolia khadra'},
+  {n:'Okra', u:100, s:'1 cup (100 g)', k:33, p:1.9, c:7, f:0.2, cat:'Vegetables', a:'okra bamia'},
+  {n:'Cabbage', u:100, s:'1 cup (100 g)', k:25, p:1.3, c:6, f:0.1, cat:'Vegetables', a:'cabbage malfouf'},
+  {n:'Onion', u:80, s:'1 medium (80 g)', k:40, p:1.1, c:9, f:0.1, cat:'Vegetables', a:'onion basal'},
+  {n:'Radish', u:50, s:'3 pieces (50 g)', k:16, p:0.7, c:3.4, f:0.1, cat:'Vegetables', a:'radish fijl'},
+  {n:'Beetroot', u:100, s:'1 beet (100 g)', k:43, p:1.6, c:10, f:0.2, cat:'Vegetables', a:'beetroot shamandar'},
+  {n:'Corn, sweet', u:100, s:'1 cob (100 g)', k:86, p:3.2, c:19, f:1.2, cat:'Vegetables', a:'corn sweetcorn'},
+  {n:'Green peas', u:100, s:'1 cup (100 g)', k:81, p:5, c:14, f:0.4, cat:'Vegetables', a:'peas bazella'},
+  {n:'Pumpkin / squash', u:100, s:'1 cup (100 g)', k:26, p:1, c:6.5, f:0.1, cat:'Vegetables', a:'pumpkin squash lakteh kar3a'},
+  {n:'Mushrooms', u:100, s:'1 cup (100 g)', k:22, p:3.1, c:3.3, f:0.3, cat:'Vegetables', a:'mushrooms champignon'},
+  {n:'Roasted potatoes with oil', u:150, s:'1 plate (150 g)', k:150, p:2.5, c:27, f:4, cat:'Vegetables', a:'roasted potatoes batata bel forn'},
+  {n:'Salad with olive oil dressing', u:150, s:'1 bowl (150 g)', k:100, p:1, c:4, f:8, cat:'Vegetables', a:'salad oil dressing salata'},
+
+  /* ---------------- DAIRY, NUTS & FATS ---------------- */
+  {n:'Milk, full fat', u:250, s:'1 glass (250 ml)', k:61, p:3.2, c:4.8, f:3.3, cat:'Dairy', a:'milk haleeb full'},
+  {n:'Milk, semi-skimmed', u:250, s:'1 glass (250 ml)', k:46, p:3.4, c:4.8, f:1.6, cat:'Dairy', a:'milk semi skimmed haleeb'},
+  {n:'Milk, skimmed', u:250, s:'1 glass (250 ml)', k:34, p:3.4, c:5, f:0.1, cat:'Dairy', a:'milk skim fat free haleeb'},
+  {n:'Almond / oat milk', u:250, s:'1 glass (250 ml)', k:15, p:0.6, c:0.6, f:1.2, cat:'Dairy', a:'almond milk oat milk plant milk'},
+  {n:'Butter', u:10, s:'1 tsp (5 g) / 1 slice', k:717, p:0.9, c:0.1, f:81, cat:'Fats', a:'butter zubde'},
+  {n:'Samneh / ghee', u:10, s:'1 tsp (5 g)', k:900, p:0, c:0, f:100, cat:'Fats', a:'ghee samneh clarified butter'},
+  {n:'Ashta (clotted cream)', u:40, s:'2 tbsp (40 g)', k:300, p:3, c:20, f:24, cat:'Dairy', a:'ashta cream clotted'},
+  {n:'Olive oil', u:10, s:'1 tsp (5 g) / 1 tbsp (14 g)', k:884, p:0, c:0, f:100, cat:'Fats', a:'olive oil zeit zaytoun'},
+  {n:'Almonds', u:28, s:'23 almonds (28 g)', k:579, p:21, c:22, f:50, cat:'Nuts', a:'almonds lawz'},
+  {n:'Walnuts', u:28, s:'1 handful (28 g)', k:654, p:15, c:14, f:65, cat:'Nuts', a:'walnuts jawz'},
+  {n:'Pistachios', u:28, s:'1 handful (28 g)', k:560, p:20, c:28, f:45, cat:'Nuts', a:'pistachios fustuk halabi'},
+  {n:'Cashews', u:28, s:'1 handful (28 g)', k:553, p:18, c:30, f:44, cat:'Nuts', a:'cashews kaju'},
+  {n:'Hazelnuts', u:28, s:'1 handful (28 g)', k:628, p:15, c:17, f:61, cat:'Nuts', a:'hazelnuts bondoq'},
+  {n:'Peanuts', u:28, s:'1 handful (28 g)', k:567, p:26, c:16, f:49, cat:'Nuts', a:'peanuts fustuk'},
+  {n:'Mixed nuts', u:30, s:'1 handful (30 g)', k:600, p:18, c:20, f:52, cat:'Nuts', a:'mixed nuts nuts mix'},
+  {n:'Pine nuts', u:15, s:'1 tbsp (15 g)', k:673, p:14, c:13, f:68, cat:'Nuts', a:'pine nuts snoubar'},
+  {n:'Sunflower seeds', u:28, s:'1 handful (28 g)', k:584, p:21, c:20, f:51, cat:'Nuts', a:'sunflower seeds'},
+  {n:'Pumpkin seeds', u:28, s:'1 handful (28 g)', k:559, p:30, c:11, f:49, cat:'Nuts', a:'pumpkin seeds pepitas'},
+  {n:'Chia seeds', u:12, s:'1 tbsp (12 g)', k:486, p:17, c:42, f:31, cat:'Nuts', a:'chia seeds'},
+  {n:'Flax seeds', u:12, s:'1 tbsp (12 g)', k:534, p:18, c:29, f:42, cat:'Nuts', a:'flax seeds linseed'},
+
+  /* ---------------- LEBANESE SWEETS & DESSERTS ---------------- */
+  {n:'Baklava', u:40, s:'1 piece (40 g)', k:430, p:6, c:45, f:26, cat:'Sweets', a:'baklawa baklava nuts pastry'},
+  {n:'Knefeh (cheese, with syrup)', u:150, s:'1 slice (150 g)', k:350, p:10, c:45, f:15, cat:'Sweets', a:'knafeh knefe konafa cheese dessert'},
+  {n:'Maamoul (dates)', u:40, s:'1 piece (40 g)', k:400, p:4, c:60, f:17, cat:'Sweets', a:'maamoul dates mamoul'},
+  {n:'Maamoul (walnut)', u:40, s:'1 piece (40 g)', k:450, p:6, c:55, f:23, cat:'Sweets', a:'maamoul walnuts'},
+  {n:'Muhalabieh (milk pudding)', u:150, s:'1 bowl (150 g)', k:130, p:3, c:22, f:3, cat:'Sweets', a:'mhalabieh muhallabia milk pudding'},
+  {n:'Rice pudding (riz bi laban)', u:170, s:'1 bowl (170 g)', k:140, p:3, c:24, f:3.5, cat:'Sweets', a:'rice pudding riz bel haleeb'},
+  {n:'Sfouf', u:60, s:'1 piece (60 g)', k:330, p:5, c:55, f:11, cat:'Sweets', a:'sfouf semolina cake turmeric'},
+  {n:'Namoura / basbousa', u:60, s:'1 piece (60 g)', k:380, p:4, c:60, f:15, cat:'Sweets', a:'namoura basbousa semolina syrup'},
+  {n:'Halawet el jibn', u:120, s:'1 piece (120 g)', k:320, p:7, c:50, f:11, cat:'Sweets', a:'halawet jibn cheese dessert'},
+  {n:'Gateau / chocolate cake', u:100, s:'1 slice (100 g)', k:380, p:5, c:50, f:18, cat:'Sweets', a:'cake gateau chocolate cake'},
+  {n:'Cheesecake', u:120, s:'1 slice (120 g)', k:320, p:6, c:30, f:20, cat:'Sweets', a:'cheesecake'},
+  {n:'Brownie', u:60, s:'1 piece (60 g)', k:460, p:6, c:50, f:26, cat:'Sweets', a:'brownie chocolate'},
+  {n:'Ice cream, vanilla', u:100, s:'2 scoops (100 g)', k:207, p:3.5, c:24, f:11, cat:'Sweets', a:'ice cream vanilla bouza glace'},
+  {n:'Ice cream bar (Magnum-style)', u:85, s:'1 bar (85 g)', k:360, p:4, c:32, f:23, cat:'Sweets', a:'magnum ice cream bar'},
+  {n:'Local bouza (Arabic ice cream)', u:120, s:'1 scoop (120 g)', k:200, p:3.5, c:25, f:10, cat:'Sweets', a:'bouza booza arabic ice cream'},
+  {n:'Bouza with pistachio', u:130, s:'1 serving (130 g)', k:250, p:5, c:28, f:14, cat:'Sweets', a:'bouza pistachio ashta'},
+  {n:'Chocolate chip cookie', u:30, s:'1 cookie (30 g)', k:480, p:6, c:64, f:22, cat:'Sweets', a:'cookie cookies chocolate chip'},
+  {n:'Donut', u:70, s:'1 donut (70 g)', k:400, p:6, c:45, f:22, cat:'Sweets', a:'donut doughnut'},
+  {n:'Muffin', u:110, s:'1 muffin (110 g)', k:380, p:6, c:50, f:17, cat:'Sweets', a:'muffin'},
+  {n:'Turkish delight (rahat lokum)', u:20, s:'1 piece (20 g)', k:330, p:0.2, c:85, f:0.1, cat:'Sweets', a:'turkish delight rahat lokum malban'},
+  {n:'Marshmallow', u:10, s:'1 piece (10 g)', k:320, p:1.8, c:81, f:0.2, cat:'Sweets', a:'marshmallow'},
+  {n:'Gummy candy', u:30, s:'1 handful (30 g)', k:340, p:6, c:79, f:0.1, cat:'Sweets', a:'gummy candy haribo jelly sweets'},
+  {n:'Mhalabiyeh with ashta', u:170, s:'1 bowl (170 g)', k:180, p:4, c:26, f:7, cat:'Sweets', a:'mhalabieh ashta'},
+
+  /* ---------------- CHIPS, SNACKS & CHOCOLATE ---------------- */
+  {n:'Chips / crisps (salted)', u:30, s:'small bag (30 g)', k:530, p:6, c:53, f:33, cat:'Snacks', a:'chips crisps lays chipsy potato chips'},
+  {n:'Pringles', u:30, s:'~15 crisps (30 g)', k:530, p:4, c:52, f:34, cat:'Snacks', a:'pringles'},
+  {n:'Doritos / tortilla chips', u:30, s:'small bag (30 g)', k:500, p:7, c:57, f:26, cat:'Snacks', a:'doritos tortilla chips nachos'},
+  {n:'Cheetos / cheese puffs', u:30, s:'small bag (30 g)', k:550, p:6, c:50, f:35, cat:'Snacks', a:'cheetos cheese puffs'},
+  {n:'Popcorn, air-popped', u:30, s:'3 cups (30 g)', k:387, p:13, c:78, f:4.5, cat:'Snacks', a:'popcorn plain'},
+  {n:'Popcorn, buttered / microwave', u:30, s:'1 bag (30 g)', k:480, p:8, c:50, f:28, cat:'Snacks', a:'popcorn butter microwave'},
+  {n:'Salted crackers', u:30, s:'6 crackers (30 g)', k:450, p:9, c:70, f:15, cat:'Snacks', a:'crackers salted'},
+  {n:'TUC biscuits', u:25, s:'1 small pack (25 g)', k:480, p:8, c:62, f:22, cat:'Snacks', a:'tuc biscuit'},
+  {n:'Pretzels', u:30, s:'1 handful (30 g)', k:380, p:10, c:80, f:3, cat:'Snacks', a:'pretzels'},
+  {n:'Instant noodles', u:80, s:'1 pack (80 g)', k:450, p:9, c:60, f:19, cat:'Snacks', a:'instant noodles ramen indomie'},
+  {n:'Rice cakes', u:10, s:'1 cake (10 g)', k:380, p:8, c:80, f:3, cat:'Snacks', a:'rice cakes'},
+  {n:'Nachos with cheese sauce', u:100, s:'1 portion (100 g)', k:350, p:7, c:35, f:20, cat:'Snacks', a:'nachos cheese'},
+  {n:'Spring roll / samosa (fried)', u:60, s:'1 piece (60 g)', k:250, p:6, c:28, f:13, cat:'Snacks', a:'samosa spring roll'},
+  {n:'Milk chocolate bar', u:25, s:'4 squares (25 g)', k:535, p:7, c:59, f:30, cat:'Chocolate', a:'chocolate milk cadbury galaxy milka bar'},
+  {n:'Dark chocolate (70%)', u:25, s:'4 squares (25 g)', k:600, p:8, c:46, f:43, cat:'Chocolate', a:'dark chocolate 70'},
+  {n:'White chocolate', u:25, s:'4 squares (25 g)', k:540, p:6, c:59, f:32, cat:'Chocolate', a:'white chocolate'},
+  {n:'KitKat', u:42, s:'1 four-finger (42 g)', k:500, p:6, c:62, f:25, cat:'Chocolate', a:'kitkat kit kat wafer'},
+  {n:'Snickers', u:50, s:'1 bar (50 g)', k:480, p:8, c:62, f:23, cat:'Chocolate', a:'snickers peanut caramel'},
+  {n:'Twix', u:50, s:'1 bar (50 g)', k:495, p:5, c:64, f:25, cat:'Chocolate', a:'twix caramel biscuit'},
+  {n:'Mars bar', u:51, s:'1 bar (51 g)', k:450, p:4, c:68, f:17, cat:'Chocolate', a:'mars bar'},
+  {n:'Kinder Bueno', u:43, s:'1 bar (43 g)', k:570, p:9, c:49, f:38, cat:'Chocolate', a:'kinder bueno'},
+  {n:'Oreo cookies', u:34, s:'3 cookies (34 g)', k:480, p:5, c:71, f:20, cat:'Chocolate', a:'oreo cookies'},
+  {n:'Digestive biscuit', u:15, s:'1 biscuit (15 g)', k:480, p:7, c:62, f:22, cat:'Chocolate', a:'digestive biscuit'},
+  {n:'Petit Beurre', u:15, s:'2 biscuits (15 g)', k:440, p:7, c:74, f:13, cat:'Chocolate', a:'petit beurre biscuit'},
+  {n:'Chocolate wafer', u:30, s:'1 pack (30 g)', k:520, p:6, c:60, f:28, cat:'Chocolate', a:'wafer chocolate wafers'},
+  {n:'Chocolate milk', u:250, s:'1 glass (250 ml)', k:80, p:3.2, c:12, f:2.5, cat:'Drinks', a:'chocolate milk haleeb chocolate'},
+  {n:'Protein bar', u:60, s:'1 bar (60 g)', k:350, p:30, c:35, f:10, cat:'Snacks', a:'protein bar'},
+  {n:'Granola / energy bar', u:35, s:'1 bar (35 g)', k:400, p:7, c:62, f:14, cat:'Snacks', a:'energy bar granola bar cereal bar'},
+
+  /* ---------------- DRINKS ---------------- */
+  {n:'Coca-Cola / Pepsi', u:330, s:'1 can (330 ml)', k:42, p:0, c:10.6, f:0, cat:'Drinks', a:'cola coke pepsi soda soft drink'},
+  {n:'Sprite / 7Up', u:330, s:'1 can (330 ml)', k:40, p:0, c:10.5, f:0, cat:'Drinks', a:'sprite 7up lemon soda'},
+  {n:'Fanta / Mirinda', u:330, s:'1 can (330 ml)', k:45, p:0, c:11.5, f:0, cat:'Drinks', a:'fanta mirinda orange soda'},
+  {n:'Diet / zero soda', u:330, s:'1 can (330 ml)', k:0.3, p:0, c:0, f:0, cat:'Drinks', a:'diet coke coke zero pepsi max diet soda'},
+  {n:'Red Bull', u:250, s:'1 can (250 ml)', k:45, p:0, c:11, f:0, cat:'Drinks', a:'red bull energy drink'},
+  {n:'Monster energy', u:500, s:'1 can (500 ml)', k:47, p:0, c:12, f:0, cat:'Drinks', a:'monster energy drink'},
+  {n:'Beer (Almaza / lager)', u:330, s:'1 bottle (330 ml)', k:43, p:0.5, c:3.6, f:0, cat:'Drinks', a:'beer almaza lager birra'},
+  {n:'Light beer', u:330, s:'1 bottle (330 ml)', k:29, p:0.3, c:1.6, f:0, cat:'Drinks', a:'light beer'},
+  {n:'Wine, red or white', u:150, s:'1 glass (150 ml)', k:85, p:0.1, c:2.6, f:0, cat:'Drinks', a:'wine red white'},
+  {n:'Arak', u:60, s:'1 shot (60 ml)', k:250, p:0, c:0, f:0, cat:'Drinks', a:'arak raki ouzo'},
+  {n:'Vodka / whisky / gin', u:45, s:'1 shot (45 ml)', k:240, p:0, c:0, f:0, cat:'Drinks', a:'vodka whisky gin shot spirit'},
+  {n:'Mojito / cocktail', u:250, s:'1 glass (250 ml)', k:100, p:0, c:12, f:0, cat:'Drinks', a:'mojito cocktail alcohol drink'},
+  {n:'Orange juice, fresh', u:250, s:'1 glass (250 ml)', k:45, p:0.7, c:10, f:0.2, cat:'Drinks', a:'orange juice fresh aseer burtuqal'},
+  {n:'Lemonade / lemon juice drink', u:250, s:'1 glass (250 ml)', k:40, p:0, c:10, f:0, cat:'Drinks', a:'lemonade limonada lemon drink'},
+  {n:'Jallab', u:250, s:'1 glass (250 ml)', k:70, p:0, c:17, f:0, cat:'Drinks', a:'jallab jallab drink grape molasses drink'},
+  {n:'Tamerhindi / erk sous', u:250, s:'1 glass (250 ml)', k:60, p:0, c:15, f:0, cat:'Drinks', a:'tamerhindi soos erk sous tamarind licorice drink'},
+  {n:'Turkish coffee (no sugar)', u:60, s:'1 cup (60 ml)', k:2, p:0.1, c:0.3, f:0, cat:'Drinks', a:'turkish coffee qahwa coffee'},
+  {n:'Coffee with milk & sugar', u:200, s:'1 cup (200 ml)', k:25, p:1, c:4, f:0.6, cat:'Drinks', a:'coffee nescafe milk sugar'},
+  {n:'Cappuccino', u:240, s:'1 cup (240 ml)', k:40, p:2, c:4, f:1.5, cat:'Drinks', a:'cappuccino latte coffee milk'},
+  {n:'Latte', u:350, s:'1 cup (350 ml)', k:45, p:2.5, c:4.5, f:1.8, cat:'Drinks', a:'latte caffe latte'},
+  {n:'Tea (no sugar)', u:200, s:'1 cup (200 ml)', k:1, p:0, c:0.2, f:0, cat:'Drinks', a:'tea shai hot tea'},
+  {n:'Tea with sugar', u:200, s:'1 cup (200 ml)', k:20, p:0, c:5, f:0, cat:'Drinks', a:'tea sugar shai sokkar'},
+  {n:'Mate with sugar', u:250, s:'1 glass (250 ml)', k:25, p:0, c:6, f:0, cat:'Drinks', a:'mate yerba mate'},
+  {n:'Hot chocolate', u:250, s:'1 cup (250 ml)', k:90, p:3, c:12, f:2.5, cat:'Drinks', a:'hot chocolate cocoa'},
+  {n:'Fruit smoothie', u:350, s:'1 glass (350 ml)', k:60, p:1, c:14, f:0.3, cat:'Drinks', a:'smoothie fruit shake'},
+
+  /* ---------------- FAST FOOD ---------------- */
+  {n:'Big Mac', u:215, s:'1 burger (215 g)', k:257, p:13, c:21, f:13, cat:'Fast food', a:'big mac mcdonalds burger'},
+  {n:'McChicken', u:175, s:'1 burger (175 g)', k:235, p:11, c:25, f:10, cat:'Fast food', a:'mcchicken mcdonalds chicken burger'},
+  {n:"McDonald's fries (medium)", u:115, s:'medium (115 g)', k:330, p:4, c:42, f:16, cat:'Fast food', a:'mcdonalds fries medium'},
+  {n:'Chicken nuggets (6)', u:100, s:'6 pieces (100 g)', k:290, p:14, c:17, f:18, cat:'Fast food', a:'nuggets mcnuggets chicken nuggets'},
+  {n:'Whopper', u:290, s:'1 burger (290 g)', k:240, p:11, c:22, f:12, cat:'Fast food', a:'whopper burger king'},
+  {n:'Fried chicken (KFC, 1 piece)', u:100, s:'1 piece (100 g)', k:260, p:22, c:8, f:16, cat:'Fast food', a:'kfc fried chicken crispy'},
+  {n:'Subway 6" turkey', u:220, s:'6 inch (220 g)', k:230, p:10, c:33, f:6, cat:'Fast food', a:'subway sub sandwich turkey'},
+  {n:'Pizza slice (cheese)', u:110, s:'1 slice (110 g)', k:260, p:11, c:30, f:10, cat:'Fast food', a:'pizza cheese slice margherita'},
+  {n:'Pizza slice (pepperoni)', u:110, s:'1 slice (110 g)', k:280, p:12, c:30, f:13, cat:'Fast food', a:'pizza pepperoni slice'},
+  {n:'Beef burger (fast food)', u:200, s:'1 burger (200 g)', k:250, p:13, c:20, f:13, cat:'Fast food', a:'burger beef hamburger'},
+  {n:'Cheeseburger', u:220, s:'1 burger (220 g)', k:280, p:14, c:20, f:16, cat:'Fast food', a:'cheeseburger cheese burger'},
+  {n:'Hot dog', u:100, s:'1 hot dog (100 g)', k:290, p:11, c:22, f:17, cat:'Fast food', a:'hot dog sausage bun'},
+  {n:'Sushi roll (salmon avocado)', u:200, s:'8 pieces (200 g)', k:150, p:7, c:22, f:4, cat:'Fast food', a:'sushi roll maki salmon'},
+
+  /* ---------------- OILS, SAUCES & SUPPLEMENTS ---------------- */
+  {n:'Ketchup', u:15, s:'1 tbsp (15 g)', k:100, p:1, c:26, f:0.1, cat:'Sauces', a:'ketchup tomato sauce heinz'},
+  {n:'Mayonnaise', u:15, s:'1 tbsp (15 g)', k:680, p:1, c:0.6, f:75, cat:'Sauces', a:'mayo mayonnaise'},
+  {n:'Ranch / garlic sauce', u:15, s:'1 tbsp (15 g)', k:450, p:1, c:6, f:47, cat:'Sauces', a:'ranch garlic sauce'},
+  {n:'Mustard', u:10, s:'1 tsp (10 g)', k:66, p:4, c:5, f:3, cat:'Sauces', a:'mustard'},
+  {n:'Hot sauce', u:10, s:'1 tsp (10 g)', k:12, p:0.5, c:1.8, f:0.4, cat:'Sauces', a:'hot sauce tabasco chili'},
+  {n:'Soy sauce', u:15, s:'1 tbsp (15 g)', k:53, p:8, c:5, f:0.1, cat:'Sauces', a:'soy sauce'},
+  {n:'Sugar (white)', u:5, s:'1 tsp (5 g)', k:400, p:0, c:100, f:0, cat:'Sauces', a:'sugar sokkar white sugar'},
+  {n:'Pomegranate molasses', u:20, s:'1 tbsp (20 g)', k:290, p:0, c:73, f:0, cat:'Sauces', a:'dibs rman pomegranate molasses'},
+  {n:'Whey protein, isolate', u:30, s:'1 scoop (30 g)', k:380, p:82, c:4, f:2, cat:'Supplements', a:'whey protein isolate scoop shake'},
+  {n:'Whey protein, concentrate', u:30, s:'1 scoop (30 g)', k:380, p:75, c:8, f:4, cat:'Supplements', a:'whey protein concentrate scoop'},
+  {n:'Casein protein', u:33, s:'1 scoop (33 g)', k:360, p:78, c:6, f:2, cat:'Supplements', a:'casein protein night'},
+  {n:'Mass gainer', u:100, s:'1 serving (100 g)', k:400, p:15, c:65, f:8, cat:'Supplements', a:'mass gainer weight gainer'},
+  {n:'Creatine monohydrate', u:5, s:'1 tsp (5 g)', k:0, p:0, c:0, f:0, cat:'Supplements', a:'creatine monohydrate'},
+  {n:'Water', u:250, s:'1 glass (250 ml)', k:0, p:0, c:0, f:0, cat:'Drinks', a:'water ma'}
+];
+
+const FOODCATS = ['All','Mezze','Grills','Manakish','Sandwiches','Main dishes','Breakfast','Fruits','Vegetables','Dairy','Nuts','Fats','Sweets','Snacks','Chocolate','Drinks','Fast food','Sauces','Supplements'];
+
+/* ---------------- text normalisation & matching ---------------- */
+const NUMWORDS = {a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,couple:2,few:3,several:3,half:0.5,quarter:0.25,dozen:12};
+const FRACTIONS = {'½':0.5,'¼':0.25,'¾':0.75,'⅓':0.333,'⅔':0.667,'⅛':0.125};
+const UNITGRAMS = {g:1,gr:1,grs:1,gram:1,grams:1,kg:1000,ml:1,cl:10,dl:100,l:1000,litre:1000,liter:1000,
+  tbsp:15,tablespoon:15,tablespoons:15,tsp:5,teaspoon:5,teaspoons:5,cup:240,cups:240,glass:250,glasses:250,
+  can:330,cans:330,bottle:500,bottles:500,scoop:30,scoops:30,handful:30,handfuls:30,slice:30,slices:30,
+  piece:0,pieces:0,plate:350,plates:350,bowl:300,bowls:300,portion:250,portions:250,sandwich:300,sandwiches:300,
+  packet:30,pack:30,packs:30,bag:30,bags:30,spoon:10,spoons:10,pinch:1,pinches:1};
+const SIZEMULT = {small:0.7,little:0.7,mini:0.6,medium:1,regular:1,normal:1,big:1.4,large:1.4,huge:1.8,jumbo:1.8,double:2,triple:3};
+
+function normFood(s){
+  return String(s||'').toLowerCase()
+    .replace(/[’'`´]/g,'')
+    .replace(/[éèê]/g,'e').replace(/[àâ]/g,'a').replace(/[îï]/g,'i').replace(/[ôö]/g,'o').replace(/[ûü]/g,'u')
+    .replace(/&/g,' and ')
+    .replace(/[^a-z0-9\s]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+function tokens(s){ return normFood(s).split(' ').filter(t=>t.length>1 && !NUMWORDS[t] && !UNITGRAMS[t] && !SIZEMULT[t]); }
+
+function foodSearchText(f){ return normFood(f.n+' '+(f.a||'')); }
+
+/* score 0..1 for how well a query matches a food */
+function scoreFood(qtoks, qnorm, f){
+  const hay = foodSearchText(f);
+  if(!qtoks.length) return 0;
+  let hits = 0;
+  qtoks.forEach(t=>{
+    if(t.length<3){ if(hay.split(' ').some(h=>h===t)) hits++; return; }
+    if(hay.split(' ').some(h=>h===t || h.startsWith(t) || t.startsWith(h) || (t.length>=4 && h.includes(t)))) hits++;
+  });
+  let score = hits/qtoks.length;
+  if(qnorm && (hay.includes(qnorm) || qnorm.includes(normFood(f.n)))) score = Math.max(score, 0.95);
+  if(qtoks.length>1 && hits===qtoks.length) score = Math.min(1, score+0.1);
+  return score;
+}
+
+/* parse a free-text entry like "2 manakish zaatar", "150g chicken breast", "half a plate of kibbeh" */
+function parseFoodQuery(text){
+  const raw = String(text||'').trim();
+  if(!raw) return null;
+  const n = normFood(raw);
+
+  /* quantity */
+  let qty = null, grams = null, unit = null;
+  const mass = n.match(/(\d+(?:[.,]\d+)?)\s*(kg|g|gr|grs|gram|grams|ml|cl|dl|l|litre|liter)\b/);
+  if(mass){ const v = parseFloat(mass[1].replace(',','.')); grams = v*UNITGRAMS[mass[2]]; }
+
+  const fracM = raw.match(/[½¼¾⅓⅔⅛]/);
+  const slashFrac = n.match(/(\d+)\s*\/\s*(\d+)/);
+  if(fracM) qty = FRACTIONS[fracM[0]];
+  else if(slashFrac && +slashFrac[2]!==0 && +slashFrac[1]<+slashFrac[2]) qty = (+slashFrac[1])/(+slashFrac[2]);
+
+  const numM = n.match(/(?:^|\s)(\d+(?:[.,]\d+)?)(?=\s|$)/);
+  if(qty==null && numM && !mass) qty = parseFloat(numM[1].replace(',','.'));
+
+  const words = n.split(' ');
+  if(qty==null){
+    for(const w of words){ if(NUMWORDS[w]!=null){ qty = NUMWORDS[w]; break; } }
+  }
+  let mult = 1;
+  for(const w of words){ if(SIZEMULT[w]!=null) mult *= SIZEMULT[w]; }
+  for(const w of words){ if(UNITGRAMS[w]!=null && UNITGRAMS[w]>0 && w!=='g' && w!=='ml' && w!=='gr' && w!=='gram' && w!=='grams'){ unit = w; break; } }
+  if(qty==null) qty = 1;
+
+  /* match food */
+  const qtoks = tokens(raw.replace(/(\d+(?:[.,]\d+)?)\s*(kg|g|gr|grs|gram|grams|ml|cl|dl|l)\b/,''));
+  let best = null, bestScore = 0;
+  FOODDB.forEach(f=>{ const sc = scoreFood(qtoks, n.replace(/(\d+(?:[.,]\d+)?)/g,'').trim(), f); if(sc>bestScore){ bestScore=sc; best=f; } });
+  if(!best || bestScore < 0.34) return {ok:false, query:raw, reason:'no confident match'};
+
+  let g;
+  if(grams!=null) g = grams;
+  else {
+    const unitG = unit && UNITGRAMS[unit] ? UNITGRAMS[unit] : best.u;
+    g = qty * unitG * mult;
+  }
+  const f100 = g/100;
+  return {
+    ok:true, food:best, grams:Math.round(g), qty:qty, unit:unit||null, mult:mult, score:bestScore,
+    kcal:Math.round(best.k*f100), p:Math.round(best.p*f100*10)/10, c:Math.round(best.c*f100*10)/10, f:Math.round(best.f*f100*10)/10,
+    desc:(grams!=null? (grams+' g of ') : (qty+(unit?(' '+unit):' ×')+' '))+best.n
+  };
+}
+
+/* ---------------- AI estimation (optional, user-supplied key) ---------------- */
+const AI_DEFAULTS = { provider:'gemini', gemini:'gemini-2.0-flash', openai:'gpt-4o-mini', anthropic:'claude-sonnet-4-5' };
+function aiPrompt(desc){
+  return 'You are a nutrition database. Estimate the calories and macronutrients of the food description below, '+
+  'using typical Lebanese / Mediterranean preparation and portion sizes when the quantity is not specified.\n\n'+
+  'Description: "'+desc+'"\n\n'+
+  'Reply with ONLY valid JSON in this exact shape, no markdown, no commentary:\n'+
+  '{"name":"short label","grams":0,"kcal":0,"protein":0,"carbs":0,"fat":0,"confidence":"low|medium|high","note":"one short sentence on assumptions"}';
+}
+async function aiEstimate(desc, cfg){
+  cfg = cfg || {};
+  const provider = cfg.provider || AI_DEFAULTS.provider;
+  const key = cfg.key;
+  if(!key) throw new Error('No API key saved. Add one in the AI settings, or use "Copy prompt" instead.');
+  const model = cfg.model || AI_DEFAULTS[provider];
+  const prompt = aiPrompt(desc);
+  let text = '';
+  if(provider==='gemini'){
+    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key),{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({contents:[{parts:[{text:prompt}]}], generationConfig:{responseMimeType:'application/json', temperature:0.2}})
+    });
+    if(!r.ok) throw new Error('Gemini error '+r.status+': '+(await r.text()).slice(0,180));
+    const j = await r.json();
+    text = (((j.candidates||[])[0]||{}).content||{}).parts?.[0]?.text || '';
+  } else if(provider==='openai'){
+    const r = await fetch('https://api.openai.com/v1/chat/completions',{
+      method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+      body:JSON.stringify({model:model, temperature:0.2, response_format:{type:'json_object'},
+        messages:[{role:'system',content:'You output only JSON.'},{role:'user',content:prompt}]})
+    });
+    if(!r.ok) throw new Error('OpenAI error '+r.status+': '+(await r.text()).slice(0,180));
+    const j = await r.json();
+    text = j.choices?.[0]?.message?.content || '';
+  } else {
+    const r = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:model, max_tokens:400, temperature:0.2,
+        messages:[{role:'user',content:prompt}]})
+    });
+    if(!r.ok) throw new Error('Anthropic error '+r.status+': '+(await r.text()).slice(0,180));
+    const j = await r.json();
+    text = (j.content||[]).map(c=>c.text||'').join('');
+  }
+  const clean = text.replace(/```json|```/g,'').trim();
+  const s = clean.indexOf('{'), e = clean.lastIndexOf('}');
+  if(s<0||e<0) throw new Error('The model did not return JSON. Raw: '+text.slice(0,180));
+  const o = JSON.parse(clean.slice(s,e+1));
+  return {
+    ok:true, name:o.name||desc, grams:Math.round(+o.grams||0),
+    kcal:Math.round(+o.kcal||0), p:Math.round((+o.protein||0)*10)/10,
+    c:Math.round((+o.carbs||0)*10)/10, f:Math.round((+o.fat||0)*10)/10,
+    conf:o.confidence||'medium', note:o.note||'', ai:true
+  };
+}
+
+</script>
+<script>
+/* =====================================================================
+   THE 10 KG PROJECT — application
+   Self-contained: no external libraries, no network calls.
+   Data persists in localStorage on this browser only.
+   ===================================================================== */
+'use strict';
+
+const KEY = 'gym10kg.v1';
+const DAYNAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const BLOCKS = {
+  1:{n:'Ramp',c:'b-teal',s:'2 sets each · 4–5 RIR'},
+  2:{n:'Ramp',c:'b-teal',s:'2 sets each · 4–5 RIR'},
+  3:{n:'Build',c:'b-lime',s:'Full sets · 2–3 RIR compounds'},
+  4:{n:'Build',c:'b-lime',s:'Full sets · 2–3 RIR compounds'},
+  5:{n:'Build',c:'b-lime',s:'Full sets · 2–3 RIR compounds'},
+  6:{n:'Build',c:'b-lime',s:'Full sets · 2–3 RIR compounds'},
+  7:{n:'Build',c:'b-lime',s:'Full sets · 2–3 RIR compounds'},
+  8:{n:'DELOAD',c:'b-amber',s:'Half the sets · −20% load · 4–5 RIR'},
+  9:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  10:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  11:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  12:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  13:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  14:{n:'Push',c:'b-cool',s:'+1–2 sets on lagging muscles'},
+  15:{n:'DELOAD',c:'b-amber',s:'Half the sets · −20% load · 4–5 RIR'},
+  16:{n:'Refine',c:'b-teal',s:'Continue push · re-tune calories'},
+  17:{n:'Refine',c:'b-teal',s:'Continue push · re-tune calories'},
+  18:{n:'Refine',c:'b-teal',s:'Continue push · re-tune calories'},
+  19:{n:'Refine',c:'b-teal',s:'Continue push · re-tune calories'},
+  20:{n:'Refine',c:'b-teal',s:'Continue push · re-tune calories'}
+};
+
+/* ------------------------------- PROGRAM ------------------------------- */
+/* Every exercise here is already shoulder- and elbow-adjusted. */
+const PROGRAM = [
+  { key:'upperA', name:'Upper A', emoji:'💪', dow:1, focus:'Chest · Back · Side delts · Triceps', time:'~55 min',
+    exercises:[
+      {id:'dbpress', name:'Neutral-grip DB bench press', alt:'or Swiss-bar / machine press', sets:3, min:6, max:10, rir:3, rest:'2–3 min', inc:2.5, base:[22.5,8],
+       cue:'Neutral wrist, elbows ~45°, shoulder blades pinned. This replaces barbell bench — same chest, far less joint strain.'},
+      {id:'csrow', name:'Chest-supported DB row (neutral grip)', alt:'or machine row', sets:3, min:8, max:12, rir:3, rest:'2 min', inc:2.5, base:[22.5,10],
+       cue:'Chest stays glued to the bench; pull to the lower ribs. Take the low back out of it.'},
+      {id:'inclinedb', name:'Incline neutral-grip DB press (30°)', alt:'', sets:3, min:8, max:12, rir:2, rest:'90 s', inc:2.5, base:[17.5,10],
+       cue:'Stop the descent just short of any pinch. Upper chest is your weak link — this is the set that fixes it.'},
+      {id:'pulldown', name:'Neutral-grip lat pulldown', alt:'or single-arm pulldown', sets:3, min:8, max:12, rir:2, rest:'90 s', inc:2.5, base:[50,10],
+       cue:'Full lat stretch at the top, drive the elbows to the hips. Neutral handles keep the shoulder quiet.'},
+      {id:'lateral', name:'Cable lateral raise (behind the back)', alt:'or leaning-away raise', sets:3, min:12, max:20, rir:1, rest:'60–75 s', inc:1.25, base:[7.5,15],
+       cue:'Best shoulder-width builder there is. Keep it below 90° if it provokes anything; lead with the elbow.'},
+      {id:'ohcable', name:'Rope overhead triceps extension', alt:'or neutral cable pushdown', sets:3, min:10, max:15, rir:1, rest:'60–75 s', inc:2.5, base:[20,12],
+       cue:'Rope lets the wrist rotate — easier on the elbow than a straight bar. Full stretch behind the head.'},
+      {id:'abs1', name:'Optional: hanging knee raise / cable crunch', alt:'', sets:2, min:10, max:15, rir:1, rest:'60 s', inc:2.5, base:[0,12], optional:true,
+       cue:'Only if time allows. Abs already get work from presses and squats.'}
+    ]},
+  { key:'lowerA', name:'Lower A', emoji:'🦵', dow:2, focus:'Quads · Hamstrings · Glutes · Calves', time:'~55 min',
+    exercises:[
+      {id:'hack', name:'Hack squat (or leg press / box squat)', alt:'', sets:3, min:6, max:10, rir:3, rest:'2–3 min', inc:5, base:[80,8],
+       cue:'Replaces the back squat: your legs get identical stimulus, your shoulder and elbows get none of the rack position.'},
+      {id:'rdl', name:'Romanian deadlift with straps', alt:'or trap-bar RDL', sets:3, min:8, max:10, rir:3, rest:'2–3 min', inc:5, base:[70,8],
+       cue:'Hips back, bar close, stop at hamstring end-range — never chase the floor. Straps offload the elbow flexors.'},
+      {id:'legpress', name:'Leg press', alt:'', sets:3, min:10, max:15, rir:2, rest:'90 s', inc:5, base:[120,12],
+       cue:'Knees toward the armpits, no bouncing out of the bottom. Feet mid-platform.'},
+      {id:'seatedcurl', name:'Seated leg curl', alt:'', sets:3, min:10, max:15, rir:1, rest:'90 s', inc:2.5, base:[40,12],
+       cue:'Seated beats lying for hamstring growth — the hip-flexed position lengthens the hamstring under load.'},
+      {id:'calfstand', name:'Standing calf raise', alt:'', sets:3, min:8, max:12, rir:1, rest:'60–75 s', inc:5, base:[60,10],
+       cue:'3 s stretch at the bottom, 1 s squeeze at the top. No bouncing — calves grow on range, not rebounds.'},
+      {id:'abs2', name:'Optional: ab wheel / plank', alt:'', sets:2, min:8, max:12, rir:1, rest:'45–60 s', inc:0, base:[0,10], optional:true,
+       cue:'Ribs down, no low-back arch.'}
+    ]},
+  { key:'upperB', name:'Upper B', emoji:'🎯', dow:4, focus:'Delts · Lats · Chest · Arms', time:'~55 min',
+    exercises:[
+      {id:'landmine', name:'Landmine press (or seated neutral DB press)', alt:'', sets:3, min:8, max:12, rir:3, rest:'2 min', inc:2.5, base:[30,10],
+       cue:'Replaces the barbell overhead press — the most common shoulder provoker. Same press pattern, tolerable angle.'},
+      {id:'pullup', name:'Neutral-grip pull-up / assisted pull-up', alt:'or neutral pulldown', sets:3, min:6, max:10, rir:3, rest:'2 min', inc:2.5, base:[0,8],
+       cue:'Dead-hang start, chin over bar, control down. Use a band or the assist machine rather than cutting range.'},
+      {id:'machinepress', name:'Machine or neutral DB chest press', alt:'', sets:3, min:8, max:12, rir:2, rest:'2 min', inc:2.5, base:[50,10],
+       cue:'Second weekly chest dose — the volume that was missing from your old training.'},
+      {id:'cablerow', name:'Seated cable row, neutral V-handle', alt:'', sets:3, min:10, max:15, rir:2, rest:'90 s', inc:5, base:[55,12],
+       cue:'Neutral handle, elbows in. Builds mid-traps and rear delts — the posture muscles that protect your neck after 6 h of lectures.'},
+      {id:'facepull', name:'Face pull', alt:'or reverse pec deck', sets:3, min:15, max:20, rir:1, rest:'60 s', inc:2.5, base:[20,15],
+       cue:'Rear delts + external rotators. Cheap insurance for a cranky shoulder — never skip it.'},
+      {id:'hammer', name:'Hammer / neutral-grip curl', alt:'', sets:3, min:10, max:15, rir:1, rest:'60–75 s', inc:2.5, base:[14,12],
+       cue:'Replaces supinated curls: same biceps stimulus, much less medial-elbow irritation.'},
+      {id:'lateral2', name:'Cable lateral raise (2nd dose)', alt:'', sets:3, min:12, max:20, rir:1, rest:'60 s', inc:1.25, base:[7.5,15],
+       cue:'Side delts love frequency. This is the exercise that changes your silhouette fastest.'}
+    ]},
+  { key:'lowerB', name:'Lower B', emoji:'⚙️', dow:5, focus:'Hinge · Single-leg · Quads · Calves', time:'~55 min',
+    exercises:[
+      {id:'trapdl', name:'Trap-bar deadlift with straps', alt:'or hip thrust', sets:3, min:5, max:8, rir:3, rest:'3 min', inc:5, base:[100,6],
+       cue:'Brace, push the floor away, never yank. Trap bar + straps = same hinge stimulus, less low-back and elbow cost.'},
+      {id:'split', name:'Bulgarian split squat (DBs at sides)', alt:'or single-leg press', sets:3, min:8, max:12, rir:2, rest:'90 s', inc:2.5, base:[17.5,10],
+       cue:'Brutal and worth it. Front foot far enough forward that the knee can travel over the toes. Neutral grip on the DBs.'},
+      {id:'legext', name:'Leg extension', alt:'', sets:3, min:10, max:15, rir:1, rest:'75–90 s', inc:5, base:[50,12],
+       cue:'Squeeze at the top, control the descent. Knee-friendly way to add quad volume.'},
+      {id:'lyingcurl', name:'Lying leg curl', alt:'', sets:3, min:10, max:15, rir:1, rest:'75–90 s', inc:2.5, base:[35,12],
+       cue:'Different hip position than the seated curl = broader hamstring stimulus.'},
+      {id:'calfseat', name:'Seated calf raise', alt:'', sets:3, min:12, max:20, rir:1, rest:'60 s', inc:5, base:[40,15],
+       cue:'Knee bent targets the soleus — the growth-resistant part. Slow and full.'},
+      {id:'hipthrust', name:'Optional: hip thrust (padded bar or machine)', alt:'', sets:2, min:12, max:15, rir:2, rest:'60–75 s', inc:5, base:[60,12], optional:true,
+       cue:'Only if glutes are a priority or you sit all day. Use a pad to protect the hip crease.'}
+    ]},
+  { key:'day6', name:'Delt & Arm Day', emoji:'🔥', dow:3, focus:'Arms · Delts · Calves + conditioning', time:'~45 min', optionalDay:true,
+    exercises:[
+      {id:'neutralcg', name:'Neutral-grip close-grip press / dip', alt:'', sets:3, min:8, max:12, rir:2, rest:'90 s', inc:2.5, base:[40,10],
+       cue:'Heavy-ish triceps work while fresh. Neutral grip keeps the elbow comfortable.'},
+      {id:'ohcable2', name:'Rope overhead triceps extension', alt:'', sets:3, min:10, max:15, rir:1, rest:'60 s', inc:2.5, base:[17.5,12],
+       cue:'Last set may go to failure — safe here.'},
+      {id:'cablecurl', name:'Cable curl (bar behind the body)', alt:'or EZ-bar curl', sets:3, min:10, max:15, rir:1, rest:'60 s', inc:2.5, base:[25,12],
+       cue:'Cable keeps constant tension; the behind-body position loads the stretched range.'},
+      {id:'preacher', name:'Hammer or preacher curl', alt:'', sets:3, min:10, max:15, rir:1, rest:'60 s', inc:2.5, base:[14,12],
+       cue:'Preacher removes the stretch position that irritates elbows; hammer adds brachialis thickness.'},
+      {id:'lateral3', name:'Cable lateral raise (3rd dose)', alt:'', sets:3, min:12, max:20, rir:1, rest:'60 s', inc:1.25, base:[7.5,15],
+       cue:'Optional drop set on the final set: −30% load, 6–10 more reps.'},
+      {id:'reardelt', name:'Reverse pec deck / rear delt fly', alt:'', sets:3, min:15, max:20, rir:1, rest:'45–60 s', inc:2.5, base:[25,15],
+       cue:'Superset with the calf raise to save time.'},
+      {id:'calf3', name:'Calf raise', alt:'', sets:3, min:10, max:15, rir:1, rest:'45–60 s', inc:5, base:[50,12],
+       cue:'Superset with the rear delt fly.'},
+      {id:'cond', name:'Conditioning', alt:'', sets:1, min:20, max:25, rir:0, rest:'—', inc:0, base:[0,20], noSets:true,
+       cue:'20–25 min easy bike/incline walk, or 6–8 × 30 s hard / 90 s easy. Always after lifting, never before.'}
+    ]}
+];
+const DAYMAP = {1:'upperA',2:'lowerA',4:'upperB',5:'lowerB'};
+/* Mon Upper A · Tue Lower A · Wed Delt&Arm (only in 5-day weeks) · Thu Upper B · Fri Lower B · Sat/Sun rest */
+const EXINDEX = {};
+PROGRAM.forEach(d => d.exercises.forEach((e,i) => { e.dayKey = d.key; e.idx = i; EXINDEX[e.id] = {ex:e, day:d}; }));
+
+const PREHAB = [
+  {id:'er',    n:'Cable/band external rotation',           rx:'3 × 15 / side',      tag:'Shoulder'},
+  {id:'ytw',   n:'Prone Y-raise (or wall slide)',          rx:'2 × 12',             tag:'Shoulder'},
+  {id:'fp',    n:'Face pull, light with 3 s hold',         rx:'2 × 15',             tag:'Shoulder'},
+  {id:'serr',  n:'Serratus punch / wall slide',            rx:'2 × 12',             tag:'Shoulder'},
+  {id:'eccExt',n:'Eccentric wrist extension (3 s down)',   rx:'3 × 15',             tag:'Elbow · outer'},
+  {id:'eccPro',n:'Eccentric pronation–supination (3 s down)',rx:'3 × 15',           tag:'Elbow · inner'},
+  {id:'iso',   n:'Isometric hold 30–45 s (Tyler twist / wrist ext)', rx:'3 × 30–45 s', tag:'Elbow · flare days'}
+];
+
+
+/* ------------------------------- STATE ------------------------------- */
+function iso(d){ const x=new Date(d); return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0'); }
+function parseISO(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }
+function addDays(s,n){ const d=parseISO(s); d.setDate(d.getDate()+n); return iso(d); }
+function todayISO(){ return iso(new Date()); }
+function daysBetween(a,b){ return Math.round((parseISO(b)-parseISO(a))/86400000); }
+function fmtShort(s){ return parseISO(s).toLocaleDateString(undefined,{month:'short',day:'numeric'}); }
+function fmtLong(s){ return parseISO(s).toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'}); }
+function clamp(v,a,b){ return Math.min(b,Math.max(a,v)); }
+function round1(v){ return Math.round(v*10)/10; }
+function e1rm(w,r){ return (w&&r)?round1(w*(1+r/30)):null; }
+
+/* start on the upcoming Monday when opened on a weekend, otherwise today */
+function defaultStart(){
+  const t = new Date(), dow = t.getDay();
+  if(dow===0) return addDays(iso(t), 1);
+  if(dow===6) return addDays(iso(t), 2);
+  return iso(t);
+}
+function defaults(){
+  return {
+    v:1,
+    profile:{ name:'', start:defaultStart(), startW:85, goalW:75, kcal:2200, prot:190, height:177, daysPerWeek:4 },
+    ai:{ provider:'gemini', model:'', key:'' },
+    custom:{},
+    weight:{}, waist:{}, steps:{}, sleep:{},
+    logs:{}, food:{}, prehab:{}, checkins:{}, notes:{},
+    ui:{ theme:'light', range:28, day:'upperA' }
+  };
+}
+let S = load();
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(!raw) return defaults();
+    const p = JSON.parse(raw);
+    const d = defaults();
+    const merged = Object.assign(d, p, { profile:Object.assign(d.profile,p.profile||{}), ui:Object.assign(d.ui,p.ui||{}), ai:Object.assign(d.ai,p.ai||{}) });
+    /* migrate any pre-2026 food entries {n,p,k} to full macro entries */
+    Object.keys(merged.food||{}).forEach(day=>{
+      merged.food[day] = (merged.food[day]||[]).map(x=>{
+        if(x && x.kcal==null && x.k!=null) return {n:x.n, g:null, kcal:+x.k||0, p:+x.p||0, c:0, f:0, meal:x.meal||'Snack', legacy:true};
+        return x;
+      });
+    });
+    return merged;
+  }catch(e){ console.warn('load failed',e); return defaults(); }
+}
+let saveTimer=null, saveWarned=false;
+function save(now){
+  const doIt = ()=>{ try{ localStorage.setItem(KEY, JSON.stringify(S)); }
+    catch(e){ if(!saveWarned){ saveWarned=true; toast('⚠️ This preview blocks storage — open the live preview or your GitHub Pages link to save progress'); } } };
+  if(now) return doIt();
+  clearTimeout(saveTimer); saveTimer=setTimeout(doIt,220);
+}
+
+/* week helpers */
+function weekOf(dateISO){
+  const st = S.profile.start;
+  const diff = daysBetween(st, dateISO);
+  return clamp(Math.floor(diff/7)+1, 1, 20);
+}
+function blockOf(w){ return BLOCKS[clamp(w,1,20)]; }
+function currentWeek(){ return weekOf(todayISO()); }
+function plannedDay(dow){
+  if(S.profile.daysPerWeek===5 && dow===3) return 'day6';
+  return DAYMAP[dow]||null;
+}
+
+/* moving average of body weight */
+function weightSeries(){
+  return Object.keys(S.weight).filter(k=>typeof S.weight[k]==='number').sort().map(d=>({d, kg:S.weight[d]}));
+}
+function withMA(series){
+  return series.map((pt,i)=>{
+    const win = series.slice(Math.max(0,i-6), i+1).map(p=>p.kg);
+    return {d:pt.d, kg:pt.kg, ma: win.length>=3 ? round1(win.reduce((a,b)=>a+b,0)/win.length) : null, n:win.length};
+  });
+}
+function latestMA(){
+  const s = withMA(weightSeries());
+  for(let i=s.length-1;i>=0;i--) if(s[i].ma!=null) return s[i].ma;
+  return null;
+}
+function weightOnOrBefore(d){
+  const ks = Object.keys(S.weight).filter(k=>k<=d && typeof S.weight[k]==='number').sort();
+  return ks.length? S.weight[ks[ks.length-1]] : null;
+}
+function volumeLoad(dateISO){
+  const L = S.logs[dateISO]; if(!L) return 0;
+  let t=0; Object.values(L.sets||{}).forEach(arr=>arr.forEach(s=>{ if(s&&s.done) t += (+s.w||0)*(+s.r||0); }));
+  return Math.round(t);
+}
+function setsDone(dateISO){
+  const L = S.logs[dateISO]; if(!L) return 0;
+  let n=0; Object.values(L.sets||{}).forEach(arr=>arr.forEach(s=>{ if(s&&s.done) n++; }));
+  return n;
+}
+
+/* ------------------------------- UI HELPERS ------------------------------- */
+function toast(msg, cls){
+  const box = document.getElementById('toasts');
+  const el = document.createElement('div');
+  el.className = 'toast'+(cls?' '+cls:''); el.textContent = msg;
+  box.appendChild(el);
+  setTimeout(()=>{ el.style.transition='opacity .4s, transform .4s'; el.style.opacity='0'; el.style.transform='translateY(10px)'; setTimeout(()=>el.remove(),400); }, 2600);
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function el(id){ return document.getElementById(id); }
+function setHTML(id, html){ const n=el(id); if(n) n.innerHTML = html; }
+
+function ring(pct, size, stroke, label, sub){
+  const r = (size-stroke)/2, c = 2*Math.PI*r, off = c*(1-clamp(pct,0,1));
+  return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'">'+
+    '<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">'+
+    '<stop offset="0%" stop-color="#22d3ee"/><stop offset="55%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a3e635"/></linearGradient></defs>'+
+    '<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="'+stroke+'"/>'+
+    '<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="url(#rg)" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+c+'" stroke-dashoffset="'+off+'" style="transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1)"/>'+
+    '</svg><div class="mid"><b>'+label+'</b><span>'+sub+'</span></div>';
+}
+
+/* ------------------------------- NAV ------------------------------- */
+function show(view){
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id==='v-'+view));
+  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===view)));
+  if(location.hash.slice(1)!==view) history.replaceState(null,'','#'+view);
+  window.scrollTo({top:0,behavior:'instant'});
+  if(view==='today') renderToday();
+  if(view==='train') renderTrain();
+  if(view==='progress') renderProgress();
+  if(view==='nutrition') renderNutrition();
+  if(view==='injury') renderInjury();
+  if(view==='data') renderData();
+  if(view==='method') renderMethod();
+}
+document.getElementById('tabs').addEventListener('click', e=>{
+  const b = e.target.closest('button[data-view]'); if(b) show(b.dataset.view);
+});
+document.addEventListener('click', e=>{
+  const a = e.target.closest('a[href^="#"]');
+  if(a && !a.closest('#tabs')){ const v=a.getAttribute('href').slice(1); if(el('v-'+v)){ e.preventDefault(); show(v); } }
+});
+const themeBtn = document.getElementById('themeBtn');
+function applyTheme(){
+  document.documentElement.dataset.theme = S.ui.theme;
+  themeBtn.textContent = S.ui.theme==='dark' ? '☀️' : '🌙';
+}
+themeBtn.addEventListener('click', ()=>{ S.ui.theme = S.ui.theme==='dark'?'light':'dark'; applyTheme(); save(true); });
+
+/* =============================== TODAY =============================== */
+function renderToday(){
+  const t = todayISO(), dow = parseISO(t).getDay(), wk = currentWeek(), blk = blockOf(wk);
+  const dk = plannedDay(dow);
+  const ma = latestMA(), start = S.profile.startW, goal = S.profile.goalW, cur = ma || weightOnOrBefore(t) || start;
+  const lost = round1(start - cur), togo = Math.max(0, round1(cur - goal));
+  const pct = clamp(lost/Math.max(0.1,start-goal), 0, 1);
+
+  setHTML('todayKicker', 'Week '+wk+' of 20 · '+blk.n+' block · '+fmtLong(t));
+  setHTML('todayTitle', S.profile.name ? ('Let\'s go, '+esc(S.profile.name)) : 'The 10 kg Project');
+  setHTML('todaySub', blk.s + ' — ' + (dk ? PROGRAM.find(d=>d.key===dk).focus + '. Today is <b>'+PROGRAM.find(d=>d.key===dk).name+'</b>.' : 'Rest day: walk, eat protein, sleep.'));
+  setHTML('todayChips',
+    '<span class="chip">'+PROGRAM.length+' sessions/week</span>'+
+    '<span class="chip">'+blk.n+' block</span>'+
+    '<span class="chip">🎯 '+S.profile.kcal+' kcal · '+S.profile.prot+' g protein</span>'+
+    '<span class="chip">🩹 Shoulder &amp; elbow safe</span>');
+  setHTML('heroRing', ring(pct, 132, 11, lost>0?('−'+lost+' kg'):'0 kg', 'of '+(start-goal)+' kg goal'));
+
+  /* banners */
+  const banners=[];
+  if(wk<=2) banners.push('<div class="callout warn"><b>Ramp weeks:</b> 2 sets per exercise at 4–5 RIR. This is not a suggestion — unaccustomed high-volume work in a detrained muscle is a described cause of exertional rhabdomyolysis. Two weeks of restraint buys you the next eighteen.</div>');
+  if(blk.n==='DELOAD') banners.push('<div class="callout warn"><b>Deload week:</b> half the sets, −20% load, 4–5 RIR. You will hate it. Do it anyway.</div>');
+  if(dk==='upperA'||dk==='upperB'||dk==='day6') banners.push('<div class="callout ok"><b>Shoulder &amp; elbow session:</b> neutral grips, RIR 3 on pressing, straps on every pull, and finish with the 6-minute prehab block below. Pain ≤3/10 that settles within 24 h is a dial, not a stop sign.</div>');
+  if(!S.weight[t]) banners.push('<div class="callout"><b>No weigh-in yet today.</b> Morning, post-void, pre-food — log it on the right. Only the 7-day average counts.</div>');
+  setHTML('todayBanners', banners.join(''));
+
+  /* stats */
+  const wSeries = weightSeries(), ma7 = latestMA();
+  const prevMA = (function(){ const s=withMA(wSeries); const m=s.filter(p=>p.ma!=null); return m.length>1? m[m.length-2].ma : null; })();
+  const waistKeys = Object.keys(S.waist).sort();
+  const waistNow = waistKeys.length? S.waist[waistKeys[waistKeys.length-1]] : null;
+  const waistFirst = waistKeys.length? S.waist[waistKeys[0]] : null;
+  const thisWeekSessions = Object.keys(S.logs).filter(d=>weekOf(d)===wk && setsDone(d)>0).length;
+  const streak = (function(){ let n=0, d=t; for(let i=0;i<60;i++){ if(setsDone(d)>0) n++; d=addDays(d,-1);} return n; })();
+  setHTML('todayStats',
+    stat('7-day avg weight', ma7? ma7+' kg':'—', ma7&&prevMA? (round1(ma7-prevMA)>0?'▲ +'+round1(ma7-prevMA)+' kg vs last': (round1(ma7-prevMA)===0?'flat vs last':'▼ '+round1(ma7-prevMA)+' kg vs last')) : 'log 3+ days to see the trend','t1')+
+    stat('To goal', togo+' kg', 'From '+cur+' kg → '+goal+' kg', 't2')+
+    stat('Waist', waistNow? waistNow+' cm':'—', (waistNow&&waistFirst)? (round1(waistNow-waistFirst)<0? '▼ '+Math.abs(round1(waistNow-waistFirst))+' cm since start':' no change yet') : 'measure weekly, same time', 't3')+
+    stat('This week', thisWeekSessions+'/4', 'sessions · streak '+streak+' d', 't4'));
+
+  /* today's session */
+  const d = PROGRAM.find(x=>x.key===dk);
+  if(d) setHTML('todaySession', '<div class="card"><div class="between"><h3 style="margin:0">'+d.emoji+' Today — '+d.name+'</h3><button class="btn sm" data-goto-train="'+d.key+'">Open full session →</button></div><p class="small">'+d.focus+' · '+d.time+'</p>'+sessionHTML(d, t, true)+'</div>');
+  else {
+    let nxt=null, gap=0;
+    for(let k=1;k<=6;k++){ const d2 = PROGRAM.find(x=>x.dow===parseISO(addDays(t,k)).getDay()); if(d2){ nxt=d2; gap=k; break; } }
+    setHTML('todaySession','<div class="card"><div class="between"><h3 style="margin:0">🛌 Rest day</h3>'+
+      (nxt? '<button class="btn sm primary" data-goto-train="'+nxt.key+'">Preview '+nxt.name+' ('+(gap===1?'tomorrow':'in '+gap+' days')+') →</button>':'')+'</div>'+
+      '<p class="small">Walk 8–10k steps, hit your protein, sleep 7–9 h. Optional 25–30 min easy cardio — bike or incline walk. Recovery is when the adaptation happens.</p>'+
+      (nxt? '<p class="small" style="margin-bottom:0"><b>Up next:</b> '+nxt.emoji+' '+nxt.name+' — '+nxt.focus+' · '+nxt.time+'</p>':'')+
+      '</div>');
+  }
+
+  /* weigh-in */
+  const wk7 = Object.keys(S.weight).filter(k=>k<=t && k>=addDays(t,-6)).map(k=>S.weight[k]);
+  setHTML('weighCard', '<div class="card acc-teal"><div class="accent"></div>'+
+    '<h3 style="margin-top:0">Morning weigh-in</h3>'+
+    '<div class="grid g2"><div class="field"><label class="f" for="wIn">Weight today (kg)</label><input type="number" step="0.1" id="wIn" value="'+(S.weight[t]??'')+'" placeholder="85.0"></div>'+
+    '<div class="field"><label class="f" for="waIn">Waist (cm)'+(waistKeys.length?' — &nbsp;last '+fmtShort(waistKeys[waistKeys.length-1]):'')+'</label><input type="number" step="0.1" id="waIn" value="'+(S.waist[t]??'')+'" placeholder="measure at the navel"></div></div>'+
+    '<p class="small" id="maNote" style="margin:.6em 0 0">7-day average: <b>'+(ma7||'—')+' kg</b> · '+wk7.length+'/7 days logged this week</p></div>');
+
+  /* nutrition quick-log */
+  setHTML('proteinCard', nutritionQuickCardHTML(t));
+
+  /* week-type toggle */
+  setHTML('weekTypeRow', weekTypeHTML());
+
+  /* activity */
+  setHTML('activityCard','<div class="card acc-cool"><div class="accent"></div>'+
+    '<h3 style="margin-top:0">Steps &amp; sleep</h3>'+
+    '<div class="grid g2"><div class="field"><label class="f" for="stIn">Steps</label><input type="number" step="500" id="stIn" value="'+(S.steps[t]??'')+'" placeholder="8000"></div>'+
+    '<div class="field"><label class="f" for="slIn">Sleep (h)</label><input type="number" step="0.5" id="slIn" value="'+(S.sleep[t]??'')+'" placeholder="7.5"></div></div>'+
+    '<p class="small" style="margin:.6em 0 0">Steps are the cheapest fat-loss tool you own. Sleep is a training variable, not a lifestyle detail.</p></div>');
+
+  /* prehab */
+  setHTML('prehabCard', prehabHTML(t));
+  activeDate = t;              /* Today-tab inputs always log to today */
+  wireSession(t);
+  wireTodayInputs(t);
+}
+
+/* weigh-in / steps / sleep wiring (elements are re-created on each render) */
+function wireTodayInputs(t){
+  const pairs = [['wIn','weight'],['waIn','waist'],['stIn','steps'],['slIn','sleep']];
+  pairs.forEach(([id,field])=>{
+    const inp = el(id); if(!inp) return;
+    inp.addEventListener('input', ()=>{
+      const v = inp.value===''? null : +inp.value;
+      if(v===null || isNaN(v)) delete S[field][t]; else S[field][t] = v;
+      save();
+    });
+    inp.addEventListener('change', ()=>{
+      const v = inp.value===''? null : +inp.value;
+      if(v===null || isNaN(v)) delete S[field][t]; else S[field][t] = v;
+      save(true);
+      if(field==='weight'||field==='waist'){
+        const ma = latestMA();
+        const note = el('maNote'); if(note && ma!=null) note.innerHTML = '7-day average: <b>'+ma+' kg</b> · '+Object.keys(S.weight).filter(k=>k<=t&&k>=addDays(t,-6)).length+'/7 days logged this week';
+        const st = el('todayStats');
+        if(st){ const wSeries=weightSeries(); const m=withMA(wSeries).filter(p=>p.ma!=null); const prev=m.length>1?m[m.length-2].ma:null;
+          const wk=currentWeek(); const th=Object.keys(S.logs).filter(d=>weekOf(d)===wk&&setsDone(d)>0).length;
+          const waistKeys2=Object.keys(S.waist).sort(); const wN=waistKeys2.length?S.waist[waistKeys2[waistKeys2.length-1]]:null; const wF=waistKeys2.length?S.waist[waistKeys2[0]]:null;
+          st.innerHTML = stat('7-day avg weight', ma? ma+' kg':'—', ma&&prev? (round1(ma-prev)>0?'▲ +'+round1(ma-prev)+' kg vs last':(round1(ma-prev)===0?'flat vs last':'▼ '+round1(ma-prev)+' kg vs last')):'log 3+ days to see the trend','t1')+
+            stat('To goal', Math.max(0,round1((ma||S.profile.startW)-S.profile.goalW))+' kg','From '+(ma||S.profile.startW)+' kg → '+S.profile.goalW+' kg','t2')+
+            stat('Waist', wN? wN+' cm':'—', (wN&&wF)? (round1(wN-wF)<0? '▼ '+Math.abs(round1(wN-wF))+' cm since start':' no change yet') : 'measure weekly, same time','t3')+
+            stat('This week', th+'/4','sessions','t4');
+        }
+        const start=S.profile.startW, goal=S.profile.goalW, cur=ma||S.profile.startW;
+        setHTML('heroRing', ring(clamp((start-cur)/Math.max(0.1,start-goal),0,1),132,11, cur<start?('−'+round1(start-cur)+' kg'):'0 kg','of '+(start-goal)+' kg goal'));
+      }
+      if(el('v-nutrition').classList.contains('active')) {} 
+    });
+  });
+}
+
+function stat(l,v,d,cls){
+  return '<div class="stat '+(cls||'')+'"><div class="l">'+l+'</div><div class="v">'+v+'</div><div class="d">'+d+'</div></div>';
+}
+
+/* --------------------------- SESSION RENDERING --------------------------- */
+function setRows(ex, dateISO){
+  const L = (S.logs[dateISO] && S.logs[dateISO].sets && S.logs[dateISO].sets[ex.id]) || [];
+  const n = ex.noSets ? 1 : ex.sets;
+  let out = '';
+  for(let i=0;i<n;i++){
+    const s = L[i]||{};
+    out += '<div class="setrow">'+
+      '<div class="n">'+(i+1)+'</div>'+
+      '<input type="number" step="0.5" data-ex="'+ex.id+'" data-i="'+i+'" data-f="w" value="'+(s.w??'')+'" placeholder="kg">'+
+      '<input type="number" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="r" value="'+(s.r??'')+'" placeholder="reps">'+
+      '<input type="number" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="rir" value="'+(s.rir??'')+'" placeholder="RIR">'+
+      '<input type="checkbox" class="chk" data-ex="'+ex.id+'" data-i="'+i+'" data-f="done" '+(s.done?'checked':'')+'>'+
+      '</div>';
+  }
+  return out;
+}
+function lastPerf(exId, dateISO){
+  const dates = Object.keys(S.logs).filter(d=>d<dateISO && S.logs[d].sets && S.logs[d].sets[exId]).sort();
+  if(!dates.length) return null;
+  const d = dates[dates.length-1], sets = S.logs[d].sets[exId].filter(s=>s&&s.done);
+  if(!sets.length) return null;
+  const best = sets.reduce((a,b)=>((+b.w||0)*(+b.r||0) > (+a.w||0)*(+a.r||0) ? b : a), sets[0]);
+  const em = e1rm(+best.w||0, +best.r||0);
+  return {d, sets, best, em};
+}
+function suggest(ex, dateISO){
+  const lp = lastPerf(ex.id, dateISO); if(!lp) return '';
+  const allTop = lp.sets.length>=2 && lp.sets.every(s=>(+s.r||0) >= ex.max);
+  if(allTop) return '<span class="b b-lime">Add '+ex.inc+' kg → back to '+ex.min+' reps</span>';
+  const anyBelow = lp.sets.some(s=>(+s.r||0) < ex.min);
+  if(anyBelow) return '<span class="b b-amber">Hold the load — own '+ex.min+'+ reps on every set</span>';
+  return '<span class="b b-teal">Add reps toward '+ex.max+' at RIR '+ex.rir+'</span>';
+}
+function sessionHTML(day, dateISO, compact){
+  const wk = weekOf(dateISO), blk = blockOf(wk), ramp = wk<=2, deload = blk.n==='DELOAD';
+  let html = '';
+  day.exercises.forEach((ex,i)=>{
+    const done = (S.logs[dateISO]&&S.logs[dateISO].sets&&S.logs[dateISO].sets[ex.id]||[]).filter(s=>s&&s.done).length;
+    const total = ex.noSets?1:ex.sets;
+    const lp = compact ? null : lastPerf(ex.id, dateISO);
+    html += '<div class="ex'+(done>=total?' done':'')+'" data-exrow="'+ex.id+'">'+
+      '<div class="top"><div style="min-width:0">'+
+        '<div class="name">'+(i+1)+'. '+esc(ex.name)+(ex.optional?' <span class="b b-grey">optional</span>':'')+'</div>'+
+        '<div class="meta">'+(ex.noSets? '20–25 min conditioning' : (ex.sets)+' × '+ex.min+'–'+ex.max+(ramp?' → do 2 sets this week':''))+
+          ' · RIR '+(ramp? Math.min(5,ex.rir+2) : (deload? Math.min(5,ex.rir+2) : ex.rir))+' · rest '+ex.rest+
+          (ex.alt? ' · <i>'+esc(ex.alt)+'</i>' : '')+'</div>'+
+        (compact?'':'<div class="cue">'+esc(ex.cue)+'</div>')+
+        (lp? '<div class="meta" style="margin-top:6px">Last: <b>'+esc(lp.best.w)+' kg × '+esc(lp.best.r)+'</b> on '+fmtShort(lp.d)+' · e1RM '+lp.em+' kg &nbsp; '+suggest(ex,dateISO)+'</div>'
+            : (compact? '' : '<div class="meta" style="margin-top:6px"><span class="b b-grey">First time logging this — pick a load you could do 3–4 more reps with</span></div>'))+
+      '</div><div class="pill">'+done+'/'+total+' sets</div></div>'+
+      setRows(ex, dateISO)+
+    '</div>';
+  });
+  if(!compact && ramp) html = '<div class="callout warn"><b>Ramp week — do 2 sets per exercise at 4–5 RIR.</b> The set rows are there for reference; stop early and leave the gym feeling like you could have done more.</div>'+html;
+  return html;
+}
+function wireSession(dateISO){
+  document.querySelectorAll('[data-goto-train]').forEach(b=>{
+    b.onclick = ()=>{ S.ui.day=b.dataset.gotoTrain; save(true); show('train'); };
+  });
+}
+/* global delegation for set inputs (works across views) */
+document.addEventListener('input', e=>{
+  const t = e.target; if(!t.dataset || !t.dataset.ex) return;
+  const date = activeDate; if(!date) return;
+  const f = t.dataset.f;
+  if(f!=='w' && f!=='r' && f!=='rir') return;
+  const ex = EXINDEX[t.dataset.ex].ex, i = +t.dataset.i;
+  S.logs[date] = S.logs[date] || {day:S.ui.day, sets:{}};
+  const arr = S.logs[date].sets[ex.id] = S.logs[date].sets[ex.id] || [];
+  arr[i] = arr[i] || {};
+  arr[i][f] = t.value===''? null : +t.value;
+  if(f!=='done' && t.value!=='' && !arr[i].done){}
+  save();
+  refreshRowState(date, ex.id);
+  updateSummary(date);
+});
+document.addEventListener('change', e=>{
+  const t = e.target;
+  if(t.dataset && t.dataset.ex && t.dataset.f==='done'){
+    const date = activeDate; if(!date) return;
+    const ex = EXINDEX[t.dataset.ex].ex, i=+t.dataset.i;
+    S.logs[date] = S.logs[date] || {day:S.ui.day, sets:{}};
+    const arr = S.logs[date].sets[ex.id] = S.logs[date].sets[ex.id] || [];
+    arr[i] = arr[i]||{};
+    arr[i].done = t.checked;
+    save();
+    if(t.checked){
+      const em = e1rm(+arr[i].w||0, +arr[i].r||0);
+      const best = bestE1RM(ex.id);
+      if(em && em >= best) toast('🏆 New PR — '+ex.name+' · e1RM '+em+' kg','pr');
+      else toast('✓ Set logged');
+    }
+    refreshRowState(date, ex.id);
+    updateSummary(date);
+  }
+});
+let activeDate = todayISO();
+function refreshRowState(date, exId){
+  const ex = EXINDEX[exId].ex, total = ex.noSets?1:ex.sets;
+  const done = ((S.logs[date]&&S.logs[date].sets&&S.logs[date].sets[exId])||[]).filter(s=>s&&s.done).length;
+  document.querySelectorAll('[data-exrow="'+exId+'"]').forEach(row=>{
+    row.classList.toggle('done', done>=total);
+    const pill = row.querySelector('.pill'); if(pill) pill.textContent = done+'/'+total+' sets';
+  });
+}
+function updateSummary(date){
+  const n = setsDone(date), v = volumeLoad(date);
+  setHTML('sessionSummary','<span class="b b-teal">'+n+' sets · '+v.toLocaleString()+' kg volume</span>');
+}
+function bestE1RM(exId){
+  let best = 0;
+  Object.values(S.logs).forEach(L=>{
+    ((L.sets&&L.sets[exId])||[]).forEach(s=>{ if(s&&s.done){ const v=e1rm(+s.w||0,+s.r||0); if(v>best) best=v; } });
+  });
+  return best;
+}
+
+/* =============================== TRAIN =============================== */
+function renderTrain(){
+  setHTML('dayPicker', PROGRAM.map(d=>'<button data-day="'+d.key+'" aria-selected="'+String(S.ui.day===d.key)+'">'+d.emoji+' '+d.name+'</button>').join(''));
+  el('dayPicker').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.ui.day=b.dataset.day; save(true); renderTrain(); });
+  const d = PROGRAM.find(x=>x.key===S.ui.day) || PROGRAM[0];
+  const di = el('logDate'); di.value = di.value || todayISO(); activeDate = di.value;
+  di.onchange = ()=>{ activeDate = di.value; renderTrain(); };
+  setHTML('sessionBody','<div class="card"><div class="between"><h3 style="margin:0">'+d.emoji+' '+d.name+'</h3><span class="small">'+d.focus+' · '+d.time+(d.optionalDay?' · <b>optional day</b>':'')+'</span></div>'+sessionHTML(d, activeDate, false)+'</div>');
+  updateSummary(activeDate);
+  wireSession(activeDate);
+  const ca = el('completeAll'); ca.onclick = ()=>{
+    const date = activeDate;
+    S.logs[date] = S.logs[date] || {day:d.key, sets:{}};
+    d.exercises.forEach(ex=>{
+      const n = ex.noSets?1:ex.sets;
+      const arr = S.logs[date].sets[ex.id] = S.logs[date].sets[ex.id]||[];
+      for(let i=0;i<n;i++){ arr[i]=arr[i]||{}; arr[i].done=true; if(arr[i].w==null) arr[i].w=ex.base[0]; if(arr[i].r==null) arr[i].r=ex.base[1]; if(arr[i].rir==null) arr[i].rir=ex.rir; }
+    });
+    save(true); renderTrain(); toast('✓ Session marked complete');
+  };
+  const cl = el('clearSession'); cl.onclick = ()=>{
+    if(!confirm('Clear the logged sets for '+fmtShort(activeDate)+'?')) return;
+    delete S.logs[activeDate]; save(true); renderTrain(); toast('Session cleared');
+  };
+}
+
+/* =============================== PROGRESS =============================== */
+function lineChart(points, opts){
+  opts = opts||{};
+  const W=760,H=270,P={l:46,r:14,t:14,b:34};
+  if(points.length<1) return '<p class="small" style="color:var(--ink3);padding:20px 0">Not enough data yet — log a few weigh-ins and the chart fills in.</p>';
+  const xs = points.map(p=>daysBetween(points[0].d, p.d));
+  const span = Math.max(1, xs[xs.length-1]);
+  const vals = points.flatMap(p=>[p.kg, p.ma, p.target].filter(v=>v!=null&&!isNaN(v)));
+  let lo = Math.min.apply(null,vals), hi = Math.max.apply(null,vals);
+  const pad = Math.max(0.6,(hi-lo)*0.18); lo-=pad; hi+=pad;
+  const X = i=> P.l + (xs[i]/span)*(W-P.l-P.r);
+  const Y = v=> P.t + (1-(v-lo)/(hi-lo))*(H-P.t-P.b);
+  let g='';
+  for(let k=0;k<=4;k++){
+    const v = lo + (hi-lo)*k/4, y = Y(v);
+    g += '<line x1="'+P.l+'" y1="'+y+'" x2="'+(W-P.r)+'" y2="'+y+'" stroke="var(--line)" stroke-width="1"/>'+
+         '<text x="'+(P.l-7)+'" y="'+(y+4)+'" font-size="10.5" fill="var(--ink3)" text-anchor="end">'+round1(v)+'</text>';
+  }
+  let xl='';
+  const step = Math.ceil(points.length/7);
+  points.forEach((p,i)=>{ if(i%step===0||i===points.length-1) xl += '<text x="'+X(i)+'" y="'+(H-12)+'" font-size="10.5" fill="var(--ink3)" text-anchor="middle">'+fmtShort(p.d)+'</text>'; });
+  const path = (key,width,color,dash,op)=>{
+    const seg = points.map((p,i)=> p[key]==null? null : (X(i)+','+Y(p[key]))).filter(Boolean);
+    if(seg.length<2) return '';
+    return '<polyline points="'+seg.join(' ')+'" fill="none" stroke="'+color+'" stroke-width="'+width+'" stroke-linecap="round" stroke-linejoin="round" '+(dash?'stroke-dasharray="'+dash+'"':'')+' opacity="'+(op||1)+'"/>';
+  };
+  let dots = points.map((p,i)=> p.kg==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.kg)+'" r="3" fill="#94a3b8"><title>'+p.d+' — '+p.kg+' kg</title></circle>').join('');
+  dots += points.map((p,i)=> p.ma==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.ma)+'" r="3.4" fill="#0ea5e9"><title>'+p.d+' — 7-day avg '+p.ma+' kg</title></circle>').join('');
+  return '<svg viewBox="0 0 '+W+' '+H+'" class="spark" role="img" aria-label="Weight chart">'+g+
+    (path('target',2.4,'#fb7185','7 6',.85)) + path('kg',1.7,'#94a3b8',null,.55) + path('ma',3.4,'url(#lg2)',null,1) + dots + xl +
+    '<defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#22d3ee"/><stop offset="60%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a3e635"/></linearGradient></defs>'+
+    '</svg>';
+}
+function barChart(labels, values, opts){
+  opts=opts||{};
+  const W=760,H=220,P={l:36,r:10,t:12,b:30};
+  const max = Math.max(10, Math.max.apply(null,values));
+  const bw = (W-P.l-P.r)/labels.length;
+  let g='';
+  for(let k=0;k<=3;k++){ const v=max*k/3, y=P.t+(1-k/3)*(H-P.t-P.b);
+    g+='<line x1="'+P.l+'" y1="'+y+'" x2="'+(W-P.r)+'" y2="'+y+'" stroke="var(--line)"/><text x="'+(P.l-6)+'" y="'+(y+4)+'" font-size="10" fill="var(--ink3)" text-anchor="end">'+Math.round(v)+'</text>'; }
+  let bars='';
+  values.forEach((v,i)=>{
+    const h = (v/max)*(H-P.t-P.b), x = P.l+i*bw+bw*0.16, w = bw*0.68;
+    const fill = opts.deload&&opts.deload[i] ? '#f59e0b' : 'url(#lg3)';
+    bars += '<rect x="'+x+'" y="'+(H-P.b-h)+'" width="'+w+'" height="'+Math.max(h,1.5)+'" rx="4" fill="'+fill+'"><title>'+labels[i]+': '+v+' sets</title></rect>';
+    if(i%2===0||labels.length<=10) bars += '<text x="'+(x+w/2)+'" y="'+(H-11)+'" font-size="10" fill="var(--ink3)" text-anchor="middle">'+labels[i]+'</text>';
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" class="spark">'+g+bars+
+    '<defs><linearGradient id="lg3" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a3e635"/></linearGradient></defs></svg>';
+}
+function renderProgress(){
+  const s = withMA(weightSeries());
+  const ma = latestMA(), start = S.profile.startW, goal = S.profile.goalW;
+  const lost = ma!=null? round1(start-ma):0;
+  const waistKeys = Object.keys(S.waist).sort();
+  const waistDelta = waistKeys.length>1? round1(S.waist[waistKeys[waistKeys.length-1]]-S.waist[waistKeys[0]]) : null;
+  const totalSessions = Object.keys(S.logs).filter(d=>setsDone(d)>0).length;
+  const weeksIn = clamp(weekOf(todayISO()),1,20);
+  let best = 0, bestName='—';
+  Object.keys(EXINDEX).forEach(id=>{ const v=bestE1RM(id); if(v>best){ best=v; bestName=EXINDEX[id].ex.name; } });
+  setHTML('progressStats',
+    stat('7-day avg', ma? ma+' kg':'—', (lost>0?'−'+lost+' kg since start':'no loss logged yet'), 't1')+
+    stat('Waist', waistKeys.length? S.waist[waistKeys[waistKeys.length-1]]+' cm':'—', waistDelta==null? 'needs 2 measurements' : (waistDelta<0? '▼ '+Math.abs(waistDelta)+' cm total':'+'+waistDelta+' cm total'), 't2')+
+    stat('Sessions', totalSessions, 'in '+weeksIn+' weeks · target '+(weeksIn*4), 't3')+
+    stat('Best e1RM', best? best+' kg':'—', esc(bestName), 't4'));
+
+  /* weight chart with target path */
+  const range = S.ui.range||28;
+  const from = addDays(todayISO(), -(range-1));
+  const allSeries = s.filter(p=>p.d>=from);
+  const startDate = S.profile.start;
+  const withTarget = allSeries.map((p,i)=>{
+    const st = parseISO(startDate), now = parseISO(p.d);
+    const fracToGoal = daysBetween(startDate, p.d)/140;
+    const target = round1(start - (start-goal)*clamp(fracToGoal,0,1));
+    return {d:p.d, kg:p.kg, ma:p.ma, target};
+  });
+  setHTML('weightChart', lineChart(withTarget));
+  el('rangePicker').querySelectorAll('button').forEach(b=>{
+    b.setAttribute('aria-selected', String(+b.dataset.range===range));
+    b.onclick=()=>{ S.ui.range=+b.dataset.range; save(true); renderProgress(); };
+  });
+
+  /* waist */
+  const wk = waistKeys.map(k=>({d:k, kg:S.waist[k]}));
+  setHTML('waistChart', lineChart(wk.filter(p=>p.d>=addDays(todayISO(),-140))));
+
+  /* volume */
+  const labels=[], values=[], deload=[];
+  for(let w=1;w<=20;w++){
+    let n=0;
+    Object.keys(S.logs).forEach(d=>{ if(weekOf(d)===w) n += setsDone(d); });
+    labels.push('W'+w); values.push(n); deload.push(blockOf(w).n==='DELOAD');
+  }
+  setHTML('volumeChart', barChart(labels, values, {deload}));
+
+  /* heatmap */
+  const st = S.profile.start;
+  let h = '<div class="heat"><div class="lbl"></div>'+Array.from({length:20},(_,i)=>'<div class="lbl" style="justify-content:center">'+(i+1)+'</div>').join('');
+  for(let dow=0;dow<7;dow++){
+    h += '<div class="lbl">'+DAYNAMES[dow]+'</div>';
+    for(let w=0;w<20;w++){
+      for(let k=0;k<7;k++){
+        const d = addDays(st, w*7+k);
+        if(parseISO(d).getDay()!==dow) continue;
+        const future = d>todayISO(), planned = !!plannedDay(parseISO(d).getDay());
+        const done = setsDone(d)>0, steps = S.steps[d]||0;
+        let cls = 'cell';
+        if(done) cls += ' done';
+        else if(!planned && steps>6000) cls += ' cardio';
+        else if(planned && !future && d<todayISO()) cls += ' miss';
+        else if(planned) cls += ' plan';
+        h += '<div class="'+cls+'" title="'+d+(done?(' — '+setsDone(d)+' sets'):(planned?' — planned':' — rest'))+'"></div>';
+      }
+    }
+  }
+  h += '</div>';
+  setHTML('heatmap', h);
+
+  /* PR board */
+  let rows='';
+  PROGRAM.forEach(day=>day.exercises.forEach(ex=>{
+    const best = bestE1RM(ex.id); if(!best) return;
+    const lp = lastPerf(ex.id, addDays(todayISO(),1));
+    rows += '<tr><td><b>'+esc(ex.name)+'</b><div class="small">'+day.emoji+' '+day.name+'</div></td>'+
+      '<td class="num"><b>'+best+' kg</b></td>'+
+      '<td class="num">'+(lp? (lp.best.w+' × '+lp.best.r+' @'+fmtShort(lp.d)) : '—')+'</td>'+
+      '<td class="num">'+(lp? lp.sets.reduce((a,s)=>(+s.r||0)+(+a||0),0)+' reps' : '—')+'</td>'+
+      '<td>'+suggest(ex, addDays(todayISO(),1))+'</td></tr>';
+  }));
+  setHTML('prTable', rows? '<table class="tbl"><thead><tr><th>Exercise</th><th class="num">Best e1RM</th><th class="num">Best set</th><th class="num">Last session</th><th>Next target</th></tr></thead><tbody>'+rows+'</tbody></table>'
+    : '<p class="small">No sets logged yet. Log a session on the Train tab and this becomes your strength board — rising e1RM while body weight falls is the definition of recomposition.</p>');
+}
+
+/* =============================== NUTRITION =============================== */
+/* ------------------------- FOOD LOG HELPERS ------------------------- */
+function mealNow(){ const h=new Date().getHours(); return h<11?'Breakfast':(h<16?'Lunch':(h<18?'Snack':'Dinner')); }
+function foodTotals(date){
+  const a = S.food[date]||[];
+  return a.reduce((o,x)=>({kcal:o.kcal+(+x.kcal||0), p:o.p+(+x.p||0), c:o.c+(+x.c||0), f:o.f+(+x.f||0)}),{kcal:0,p:0,c:0,f:0});
+}
+function addFoodEntry(e){
+  const t = todayISO();
+  S.food[t] = S.food[t]||[];
+  S.food[t].push(Object.assign({meal:mealNow()}, e));
+  save(true); refreshFood();
+  toast('✓ '+e.n+' · '+Math.round(e.kcal)+' kcal · '+round1(e.p)+' g protein');
+}
+function customAsFoods(){
+  return Object.keys(S.custom||{}).map(k=>{
+    const c = S.custom[k];
+    return {n:c.n, u:c.u, s:c.s||(c.u+' g'), k:c.k, p:c.p, c:c.c, f:c.f, cat:'My foods', mine:true};
+  });
+}
+function allFoods(){ return customAsFoods().concat(FOODDB); }
+let searchState = {q:'', cat:'All', results:[]};
+function searchFoods(q, cat){
+  const list = allFoods();
+  if(!q || !q.trim()){
+    const l = cat==='All'? list : list.filter(f=>f.cat===cat);
+    return l.slice(0,14).map(f=>({food:f, score:1}));
+  }
+  const qtoks = tokens(q), qnorm = normFood(q.replace(/(\d+(?:[.,]\d+)?)\s*(kg|g|gr|grs|gram|grams|ml|cl|dl|l)\b/,'').replace(/\d+/g,''));
+  const scored = [];
+  list.forEach(f=>{ const sc = scoreFood(qtoks, qnorm, f); if(sc>=0.4) scored.push({food:f, score:sc}); });
+  scored.sort((a,b)=>b.score-a.score || a.food.n.length-b.food.n.length);
+  return scored.slice(0,14);
+}
+function nutritionQuickCardHTML(t){
+  const f = S.food[t]||[], tot = foodTotals(t);
+  const pctP = clamp(tot.p/S.profile.prot*100,0,100), pctK = clamp(tot.kcal/S.profile.kcal*100,0,100);
+  const recent = {};
+  Object.keys(S.food).sort().slice(-7).forEach(d=>(S.food[d]||[]).forEach(x=>{ recent[x.n] = x; }));
+  const quick = Object.values(recent).slice(-6);
+  return '<div class="card acc-warm"><div class="accent"></div>'+
+    '<div class="between"><h3 style="margin:0">🍽️ Today\'s intake</h3><span class="b '+(tot.p>=S.profile.prot?'b-lime':'b-grey')+'">'+Math.round(tot.p)+' / '+S.profile.prot+' g protein</span></div>'+
+    '<div style="margin:12px 0 4px" class="small"><b>Protein</b> '+Math.round(tot.p)+' g</div>'+
+    '<div class="bar warm"><i style="width:'+pctP+'%"></i></div>'+
+    '<div style="margin:10px 0 4px" class="small"><b>Calories</b> '+Math.round(tot.kcal)+' / '+S.profile.kcal+' kcal &nbsp;·&nbsp; carbs '+Math.round(tot.c)+' g &nbsp;·&nbsp; fat '+Math.round(tot.f)+' g</div>'+
+    '<div class="bar"><i style="width:'+pctK+'%"></i></div>'+
+    (quick.length? '<div class="row" style="gap:6px;margin-top:12px">'+quick.map((x,i)=>'<button class="btn sm ghost" data-quick="'+esc(x.n)+'">+ '+esc(x.n)+'</button>').join('')+'</div>':'')+
+    (f.length? '<div style="margin-top:10px">'+f.map((x,i)=>'<div class="kv"><span>'+esc(x.n)+' <span class="b b-grey">'+esc(x.meal||'')+'</span></span><b>'+Math.round(x.kcal)+' kcal · '+round1(x.p)+' g <button class="btn sm ghost" data-del-food="'+i+'" style="padding:2px 7px">✕</button></b></div>').join('')+'</div>'
+      : '<p class="small" style="margin-top:10px">Nothing logged yet. The full searchable Lebanese database is on the <a href="#nutrition">Nutrition</a> tab.</p>')+
+    '</div>';
+}
+function weekTypeHTML(){
+  const four = S.profile.daysPerWeek!==5;
+  return '<div class="callout" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px">'+
+    '<b>This week:</b>'+
+    '<span class="seg"><button data-week-type="4" aria-selected="'+four+'">4-day week</button><button data-week-type="5" aria-selected="'+(!four)+'">5-day week</button></span>'+
+    '<span class="small">'+(four? 'Mon Upper A · Tue Lower A · Thu Upper B · Fri Lower B — Wednesday is yours.'
+      : 'Adds <b>Wed: Delt &amp; Arm Day</b> — Mon Upper A · Tue Lower A · Wed Delt &amp; Arm · Thu Upper B · Fri Lower B.')+' Saturday and Sunday are always rest.</span>'+
+    '</div>';
+}
+
+/* ------------------------- NUTRITION VIEW ------------------------- */
+function foodRowHTML(f, i, grams){
+  const g = grams || f.u;
+  const kk = Math.round(f.k*g/100), pp = Math.round(f.p*g/100*10)/10;
+  return '<div class="between" style="padding:9px 2px;border-bottom:1px solid var(--line)">'+
+    '<div style="min-width:0"><div style="font-weight:700">'+esc(f.n)+(f.mine?' <span class="b b-cool">mine</span>':'')+'</div>'+
+    '<div class="small">'+esc(f.s||('1 serving ('+f.u+' g)'))+' · '+kk+' kcal · '+pp+' g P · '+Math.round(f.c*g/100)+' g C · '+Math.round(f.f*g/100)+' g F</div></div>'+
+    '<button class="btn sm primary" data-add-food="'+i+'" data-grams="0">+ Add</button></div>';
+}
+function renderNutrition(){
+  const p = S.profile, t = todayISO(), tot = foodTotals(t);
+  const rem = Math.max(0, S.profile.kcal - tot.kcal);
+  setHTML('targetCards',
+    stat('Calories today', Math.round(tot.kcal), 'of '+(p.kcal)+' kcal · '+Math.round(rem)+' left','t1')+
+    stat('Protein today', Math.round(tot.p)+' g', 'of '+p.prot+' g · '+(tot.p>=p.prot?'target hit 💪':(p.prot-tot.p)+' g to go'),'t2')+
+    stat('Carbs today', Math.round(tot.c)+' g','~'+Math.round((p.kcal-p.prot*4-68*9)/4)+' g target','t3')+
+    stat('Fat today', Math.round(tot.f)+' g','60–75 g target','t4'));
+
+  const res = searchState.results;
+  const parsed = searchState.q ? parseFoodQuery(searchState.q) : null;
+  setHTML('nutritionBuilder',
+    /* smart add */
+    '<div class="card acc-teal"><div class="accent"></div>'+
+    '<h3 style="margin-top:0">🔍 Add food <span class="small">('+allFoods().length+' foods incl. your own)</span></h3>'+
+    '<div class="field"><input id="foodSearch" placeholder="Type anything: \"2 manakish zaatar\", \"150g chicken\", \"shawarma sandwich\", \"kitkat\"…" value="'+esc(searchState.q)+'"></div>'+
+    '<div class="seg" id="foodCats" style="margin:10px 0">'+FOODCATS.map(c=>'<button data-cat="'+esc(c)+'" aria-selected="'+String(searchState.cat===c)+'">'+esc(c)+'</button>').join('')+'</div>'+
+    (parsed && parsed.ok && /\d/.test(searchState.q||'') ?
+      '<div class="callout ok"><b>Smart reading:</b> '+esc(parsed.desc)+' → <b>'+parsed.kcal+' kcal</b> · '+parsed.p+' g P · '+parsed.c+' g C · '+parsed.f+' g F'+
+      ' <button class="btn sm primary" data-add-parsed="1">Add this</button></div>' : '')+
+    (parsed && !parsed.ok && searchState.q ? '<div class="callout warn">No confident match for "<b>'+esc(searchState.q)+'</b>". Try the AI estimator below, or add it as your own food.</div>' : '')+
+    '<div id="foodResults">'+(res.length? res.map((r,i)=>foodRowHTML(r.food,i)).join('') : '<p class="small">No matches — switch category or use the AI estimator below.</p>')+'</div>'+
+    '</div>'+
+
+    /* AI estimator */
+    '<div class="card acc-cool"><div class="accent"></div>'+
+    '<div class="between"><h3 style="margin:0">🤖 AI estimator</h3><span class="b '+(S.ai && S.ai.key?'b-lime':'b-amber')+'">'+(S.ai && S.ai.key? 'key saved · '+(S.ai.provider||'gemini') : 'no key — optional')+'</span></div>'+
+    '<p class="small">Describe a meal in plain words and a model returns the macros. Works with your own API key (Gemini free tier, OpenAI or Anthropic) saved only in this browser — or use <b>Copy prompt</b> to paste into ChatGPT/Claude and add the result by hand.</p>'+
+    '<textarea id="aiDesc" rows="2" placeholder="e.g. 1 plate of kibbeh labanieh with rice, and a small fattoush"></textarea>'+
+    '<div class="row" style="margin-top:10px">'+
+      '<button class="btn primary" id="aiGo">✨ Estimate</button>'+
+      '<button class="btn" id="aiCopy">📋 Copy prompt</button>'+
+      '<button class="btn ghost sm" id="aiSettings">⚙️ AI settings</button>'+
+    '</div>'+
+    '<div id="aiOut" class="small" style="margin-top:10px"></div>'+
+    '</div>'+
+
+    /* today's log */
+    '<div class="card">'+
+    '<h3 style="margin-top:0">📋 Today\'s log — '+fmtLong(t)+'</h3>'+
+    ((S.food[t]||[]).length? ['Breakfast','Lunch','Snack','Dinner'].map(m=>{
+      const items = (S.food[t]||[]).map((x,i)=>({x,i})).filter(o=>(o.x.meal||'Snack')===m);
+      if(!items.length) return '';
+      const sub = items.reduce((a,o)=>a+(+o.x.kcal||0),0);
+      return '<div style="margin:10px 0"><div class="between"><b>'+m+'</b><span class="small">'+Math.round(sub)+' kcal</span></div>'+
+        items.map(o=>'<div class="kv"><span>'+esc(o.x.n)+(o.x.g? ' <span class="b b-grey">'+o.x.g+' g</span>':'')+'</span><b>'+Math.round(o.x.kcal)+' kcal · '+round1(o.x.p)+' g P'+
+        ' <button class="btn sm ghost" data-del-food="'+o.i+'" style="padding:2px 7px">✕</button></b></div>').join('')+'</div>';
+    }).join('') : '<p class="small">Nothing logged yet today.</p>')+
+    '<div class="row" style="margin-top:12px;gap:8px"><span class="b b-teal">'+Math.round(tot.kcal)+' kcal</span><span class="b b-lime">'+round1(tot.p)+' g protein</span><span class="b b-grey">'+Math.round(tot.c)+' g carbs</span><span class="b b-grey">'+Math.round(tot.f)+' g fat</span></div>'+
+    '</div>'+
+
+    /* my foods */
+    '<div class="card">'+
+    '<h3 style="margin-top:0">➕ My own foods</h3>'+
+    '<p class="small">Values per <b>one serving</b>. I convert them to per-100 g internally so portion sizes still work.</p>'+
+    '<div class="grid g3">'+
+      '<div class="field"><label class="f">Name</label><input id="cfName" placeholder="Teta\'s kibbeh"></div>'+
+      '<div class="field"><label class="f">Serving weight (g)</label><input type="number" id="cfU" value="100"></div>'+
+      '<div class="field"><label class="f">Calories / serving</label><input type="number" id="cfK" placeholder="250"></div>'+
+      '<div class="field"><label class="f">Protein (g)</label><input type="number" step="0.1" id="cfP" placeholder="15"></div>'+
+      '<div class="field"><label class="f">Carbs (g)</label><input type="number" step="0.1" id="cfC" placeholder="20"></div>'+
+      '<div class="field"><label class="f">Fat (g)</label><input type="number" step="0.1" id="cfF" placeholder="10"></div>'+
+    '</div>'+
+    '<div class="row" style="margin-top:10px"><button class="btn primary" id="cfSave">Save to my foods</button>'+
+    (Object.keys(S.custom||{}).length? '<span class="small">Saved: '+Object.keys(S.custom).map(k=>esc(k)).join(', ')+' <button class="btn sm ghost" id="cfClear">clear all</button></span>':'')+'</div>'+
+    '</div>');
+
+  wireNutrition();
+}
+
+function wireNutrition(){
+  const inp = el('foodSearch');
+  if(inp){
+    inp.addEventListener('input', ()=>{
+      searchState.q = inp.value;
+      searchState.results = searchFoods(inp.value, searchState.cat);
+      renderNutrition();
+      const i2 = el('foodSearch'); if(i2){ i2.focus(); i2.setSelectionRange(i2.value.length, i2.value.length); }
+    });
+    inp.addEventListener('keydown', e=>{ if(e.key==='Enter' && searchState.results.length){ e.preventDefault(); addFoodSearchResult(0); } });
+  }
+  el('foodCats') && el('foodCats').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    /* switching category browses that aisle: clear the text query so nothing is hidden */
+    searchState.cat = b.dataset.cat;
+    if(b.dataset.cat!=='All') searchState.q = '';
+    searchState.results = searchFoods(searchState.q, searchState.cat);
+    renderNutrition();
+  });
+  const aiBtn = el('aiGo');
+  if(aiBtn) aiBtn.onclick = runAIEstimate;
+  const cp = el('aiCopy');
+  if(cp) cp.onclick = ()=>{ const d = (el('aiDesc')||{}).value || searchState.q; navigator.clipboard.writeText(aiPrompt(d)).then(()=>toast('📋 Prompt copied — paste it into ChatGPT or Claude'),()=>toast('⚠️ Clipboard blocked')); };
+  const as = el('aiSettings');
+  if(as) as.onclick = ()=>{ show('data'); setTimeout(()=>{ const c=el('aiCard'); if(c) c.scrollIntoView({behavior:'smooth',block:'center'}); },120); };
+  const cs = el('cfSave');
+  if(cs) cs.onclick = saveCustomFood;
+  const cc = el('cfClear');
+  if(cc) cc.onclick = ()=>{ if(confirm('Delete all your custom foods?')){ S.custom={}; save(true); renderNutrition(); } };
+}
+function addFoodSearchResult(i, grams){
+  const r = searchState.results[i]; if(!r) return;
+  const f = r.food, g = grams || f.u;
+  const x = g/100;
+  addFoodEntry({n:f.n, g:Math.round(g), kcal:Math.round(f.k*g/100), p:Math.round(f.p*x*10)/10, c:Math.round(f.c*x*10)/10, f:Math.round(f.f*x*10)/10});
+}
+function saveCustomFood(){
+  const n = (el('cfName').value||'').trim();
+  const u = +el('cfU').value||100, k = +el('cfK').value||0, pp = +el('cfP').value||0, cc = +el('cfC').value||0, ff = +el('cfF').value||0;
+  if(!n) return toast('⚠️ Give it a name');
+  if(!k && !pp) return toast('⚠️ Enter at least calories or protein');
+  S.custom[n] = {n:n, u:u, s:'1 serving ('+u+' g)', k:Math.round(k/u*100), p:Math.round(pp/u*100*10)/10, c:Math.round(cc/u*100*10)/10, f:Math.round(ff/u*100*10)/10};
+  save(true); renderNutrition(); toast('✓ Saved "'+n+'" to your foods');
+}
+async function runAIEstimate(){
+  const out = el('aiOut'); if(!out) return;
+  const desc = (el('aiDesc').value||'').trim() || searchState.q;
+  if(!desc){ out.innerHTML = '<span class="b b-amber">Describe the meal first.</span>'; return; }
+  out.innerHTML = '<span class="b b-cool">Asking the model…</span>';
+  try{
+    const r = await aiEstimate(desc, S.ai||{});
+    window.__lastAI = r;
+    out.innerHTML = '<div class="callout ok"><b>'+esc(r.name)+'</b>'+(r.grams? ' · ~'+r.grams+' g':'')+' → <b>'+r.kcal+' kcal</b> · '+r.p+' g P · '+r.c+' g C · '+r.f+' g F<br>'+
+      '<span class="small">'+esc(r.note||'')+' (confidence: '+esc(r.conf)+')</span><div style="margin-top:8px">'+
+      '<button class="btn sm primary" data-add-ai="1">Add to log</button> <button class="btn sm ghost" data-add-ai="1" data-meal="Snack">Add as snack</button></div></div>';
+  }catch(err){
+    out.innerHTML = '<div class="callout warn"><b>Could not estimate:</b> '+esc(err.message)+
+      '<br><span class="small">Check the key in AI settings, or use Copy prompt and add the numbers by hand.</span></div>';
+  }
+}
+
+document.addEventListener('click', e=>{
+  const t = todayISO();
+  const add = e.target.closest('[data-add-food]');
+  if(add){ addFoodSearchResult(+add.dataset.addFood); return; }
+  const par = e.target.closest('[data-add-parsed]');
+  if(par){
+    const r = parseFoodQuery(searchState.q);
+    if(r && r.ok) addFoodEntry({n:r.food.n, g:r.grams, kcal:r.kcal, p:r.p, c:r.c, f:r.f});
+    return;
+  }
+  const del = e.target.closest('[data-del-food]');
+  if(del){ const arr=S.food[t]||[]; arr.splice(+del.dataset.delFood,1); save(true); refreshFood(); return; }
+  const q = e.target.closest('[data-quick]');
+  if(q){
+    const name = q.dataset.quick;
+    const f = allFoods().find(x=>x.n===name);
+    if(f){ const g=f.u; addFoodEntry({n:f.n, g:Math.round(g), kcal:Math.round(f.k*g/100), p:Math.round(f.p*g/100*10)/10, c:Math.round(f.c*g/100*10)/10, f:Math.round(f.f*g/100*10)/10}); }
+    return;
+  }
+  const ai = e.target.closest('[data-add-ai]');
+  if(ai && window.__lastAI){
+    const r = window.__lastAI;
+    const meal = ai.dataset.meal || null;
+    const entry = {n:r.name, g:r.grams, kcal:r.kcal, p:r.p, c:r.c, f:r.f, ai:true};
+    if(meal) entry.meal = meal;
+    addFoodEntry(entry);
+    return;
+  }
+  const wt = e.target.closest('[data-week-type]');
+  if(wt){
+    S.profile.daysPerWeek = +wt.dataset.weekType;
+    save(true);
+    if(el('v-train').classList.contains('active')) renderTrain(); else renderToday();
+    toast('✓ '+S.profile.daysPerWeek+'-day week — '+ (S.profile.daysPerWeek===5? 'Wednesday added' : 'Wednesday is rest'));
+    return;
+  }
+  const pb = e.target.closest('[data-prehab]');
+  if(pb){ const d=todayISO(); S.prehab[d]=S.prehab[d]||{}; S.prehab[d][pb.dataset.prehab]=!S.prehab[d][pb.dataset.prehab]; save(true); renderToday(); renderInjury(); return; }
+});
+function refreshFood(){ if(el('v-nutrition').classList.contains('active')) renderNutrition(); if(el('v-today').classList.contains('active')) renderToday(); }
+
+/* =============================== PREHAB =============================== */
+function prehabHTML(dateISO, bare){
+  const done = S.prehab[dateISO]||{};
+  const n = PREHAB.filter(x=>done[x.id]).length;
+  const open = bare ? '<div>' : '<div class="card acc-cool"><div class="accent"></div>';
+  return open +
+    '<div class="between"><h3 style="margin:0">🩹 Prehab block</h3><span class="b '+(n===PREHAB.length?'b-lime':'b-grey')+'">'+n+'/'+PREHAB.length+' done</span></div>'+
+    '<p class="small">6–8 minutes, 2–3×/week, at the end of Upper A and Upper B. Tick as you go.</p>'+
+    PREHAB.map(x=>'<div class="kv"><span><input type="checkbox" data-prehab="'+x.id+'" '+(done[x.id]?'checked':'')+' style="width:auto;margin-right:8px">'+esc(x.n)+' <span class="b b-grey">'+esc(x.tag)+'</span></span><b>'+esc(x.rx)+'</b></div>').join('')+
+    '</div>';
+}
+function renderInjury(){
+  setHTML('prehabRoutine', prehabHTML(todayISO(), true));
+}
+
+/* =============================== METHOD =============================== */
+const RULES = [
+  ['Weekly hard sets is the main dial','Muscle growth tracks weekly set volume per muscle group with a dose–response that keeps rising (diminishing returns, not a hard plateau) to at least ~20 sets. A 2025 meta-regression found ~0.24% more hypertrophy per additional weekly set, and that counting indirect sets as <b>0.5 sets</b> — fractional set counting — predicts growth better than counting only direct work.'],
+  ['Train each muscle ~2× per week','At equal weekly volume, two sessions beat one for size and strength, and let you accumulate more quality sets with less single-session fatigue — which matters more, not less, when you are in a deficit and sleeping like a Med-II student.'],
+  ['Stop 1–3 reps short of failure','At matched volume, training to momentary failure does not produce more hypertrophy than stopping short of it, but it produces more fatigue and worse next-session performance. Lower-load isolation work can and should be taken closer to failure than heavy compounds.'],
+  ['Overload by reps first, then load','Double progression: add reps inside the range at the target RIR; when you own the top of the range on every set, add the smallest increment and reset. This prevents the classic beginner error of adding weight weekly until form collapses.'],
+  ['Full range of motion, emphasize the stretch','Muscles trained in a lengthened position grow at least as much — sometimes more — than the same muscle trained short. Full ROM is the default because it contains the stretch; exercise selection (seated vs lying leg curl, overhead vs pushdown triceps) matters more than partial-rep tricks.'],
+  ['Protein is the lever that protects muscle','Hypertrophy plateaus near 1.6 g/kg/day in energy balance, but in a deficit the requirement rises to 2.2–3.1 g/kg of fat-free mass to preserve lean tissue. That is why this plan runs 180–200 g/day — and why protein is the last thing you cut.'],
+  ['Lose 0.5–0.75 kg per week','Faster is not better: weekly losses of ~0.7% of body weight outperform 1.4% for lean-mass retention, and aggressive deficits without lifting and protein are how people get "skinny-fat." Adjust by measured results, never by formula alone.'],
+  ['Cardio is a tool, not the point','Concurrent cardio does not meaningfully blunt hypertrophy or maximal strength, but explosive power and same-session performance can suffer in trained lifters. So: lift first, separate by ≥3 h when possible, prefer cycling/walking over running, and treat steps and the calorie deficit as the real engine.']
+];
+function renderMethod(){
+  setHTML('rulesGrid', RULES.map((r,i)=>'<div class="card hover"><div class="between"><h4 style="margin:0">'+(i+1)+'. '+r[0]+'</h4><span class="b b-teal">Rule '+(i+1)+'</span></div><p class="small" style="margin-top:8px">'+r[1]+'</p></div>').join(''));
+}
+
+/* =============================== DATA =============================== */
+function renderData(){
+  const p = S.profile;
+  const ai = S.ai||{};
+  if(el('aiProvider')) el('aiProvider').value = ai.provider||'gemini';
+  if(el('aiModel')) el('aiModel').value = ai.model||'';
+  if(el('aiKey')) el('aiKey').value = ai.key||'';
+  if(el('aiStatus')) el('aiStatus').innerHTML = ai.key
+    ? '<span class="b b-lime">key saved in this browser</span>'
+    : '<span class="b b-amber">no key — AI estimator disabled (you can still copy prompts)</span>';
+  if(el('pDays')) el('pDays').value = String(p.daysPerWeek||4);
+  el('pName').value = p.name||''; el('pStart').value = p.start; el('pStartW').value = p.startW;
+  el('pGoalW').value = p.goalW; el('pKcal').value = p.kcal; el('pProt').value = p.prot;
+}
+el('saveAI') && (el('saveAI').onclick = ()=>{
+  S.ai = { provider: el('aiProvider').value, model: el('aiModel').value.trim(), key: el('aiKey').value.trim() };
+  save(true); renderData(); toast(S.ai.key? '✓ AI key saved to this browser' : '✓ AI settings saved (no key)');
+});
+el('clearAI') && (el('clearAI').onclick = ()=>{ S.ai = { provider:(S.ai||{}).provider||'gemini', model:'', key:'' }; save(true); renderData(); toast('AI key removed'); });
+el('pDays') && (el('pDays').onchange = ()=>{ S.profile.daysPerWeek = +el('pDays').value; save(true); toast('✓ '+S.profile.daysPerWeek+'-day week set'); });
+el('saveProfile').onclick = ()=>{
+  S.profile.name = el('pName').value.trim();
+  S.profile.start = el('pStart').value || S.profile.start;
+  S.profile.startW = +el('pStartW').value || S.profile.startW;
+  S.profile.goalW = +el('pGoalW').value || S.profile.goalW;
+  S.profile.kcal = +el('pKcal').value || S.profile.kcal;
+  S.profile.prot = +el('pProt').value || S.profile.prot;
+  save(true); toast('✓ Profile saved'); renderToday();
+};
+function download(name, text, type){
+  const blob = new Blob([text], {type:type||'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+}
+el('expJson').onclick = ()=>{ download('gym-backup-'+todayISO()+'.json', JSON.stringify(S,null,1)); toast('⬇️ Backup downloaded'); };
+el('impBtn').onclick = ()=> el('impFile').click();
+el('impFile').onchange = e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ try{ const data = JSON.parse(r.result); S = Object.assign(defaults(), data); save(true); toast('✓ Backup restored'); show('today'); }catch(err){ toast('⚠️ That file could not be read'); } };
+  r.readAsText(f);
+};
+el('expWeights').onclick = ()=>{
+  let csv='date,weight_kg,ma7_kg,waist_cm,steps,sleep_h\n';
+  const s = withMA(weightSeries());
+  const keys = Array.from(new Set([].concat(s.map(x=>x.d), Object.keys(S.waist), Object.keys(S.steps), Object.keys(S.sleep)))).sort();
+  keys.forEach(d=>{
+    const rec = s.find(x=>x.d===d);
+    csv += [d, rec?rec.kg:'', rec&&rec.ma!=null?rec.ma:'', S.waist[d]||'', S.steps[d]||'', S.sleep[d]||''].join(',')+'\n';
+  });
+  download('weights-'+todayISO()+'.csv', csv, 'text/csv'); toast('📄 Weights CSV exported');
+};
+el('expFood').onclick = ()=>{
+  let csv='date,meal,food,grams,kcal,protein_g,carbs_g,fat_g,source\n';
+  Object.keys(S.food).sort().forEach(d=>{
+    (S.food[d]||[]).forEach(x=>{
+      csv += [d, x.meal||'', '"'+String(x.n).replace(/"/g,'')+'"', x.g||'', Math.round(x.kcal||0), round1(x.p||0), round1(x.c||0), round1(x.f||0), x.ai?'ai':''].join(',')+'\n';
+    });
+  });
+  download('nutrition-'+todayISO()+'.csv', csv, 'text/csv'); toast('📄 Nutrition CSV exported');
+};
+el('expSessions').onclick = ()=>{
+  let csv='date,day,exercise,set,load_kg,reps,rir,e1rm_kg,done\n';
+  Object.keys(S.logs).sort().forEach(d=>{
+    const L = S.logs[d];
+    Object.keys(L.sets||{}).forEach(exId=>{
+      (L.sets[exId]||[]).forEach((s,i)=>{
+        if(!s) return;
+        csv += [d, L.day||'', (EXINDEX[exId]?EXINDEX[exId].ex.name:exId), i+1, s.w||'', s.r||'', s.rir||'', e1rm(+s.w||0,+s.r||0)||'', s.done?'yes':'no'].join(',')+'\n';
+      });
+    });
+  });
+  download('sessions-'+todayISO()+'.csv', csv, 'text/csv'); toast('📄 Sessions CSV exported');
+};
+el('copyMd').onclick = ()=>{
+  const ma = latestMA(), start=S.profile.startW;
+  const s = withMA(weightSeries()).filter(p=>p.d>=addDays(todayISO(),-27)).filter(p=>p.ma!=null);
+  const waistKeys = Object.keys(S.waist).sort();
+  const sess = Object.keys(S.logs).filter(d=>d>=addDays(todayISO(),-27)&&setsDone(d)>0).length;
+  let md = '# 10 kg Project — 4-week check-in ('+todayISO()+')\n\n';
+  md += '- 7-day average weight: '+(ma||'—')+' kg (start '+start+' kg → '+(ma!=null?round1(start-ma):0)+' kg lost)\n';
+  md += '- Waist: '+(waistKeys.length?S.waist[waistKeys[waistKeys.length-1]]+' cm':'—')+'\n';
+  md += '- Sessions completed in last 28 days: '+sess+'\n';
+  md += '- Recent averages: '+s.slice(-4).map(p=>fmtShort(p.d)+' '+p.ma).join(' · ')+'\n\n';
+  md += '| Lift | Best e1RM | Last set |\n|---|---|---|\n';
+  PROGRAM.slice(0,4).forEach(day=>day.exercises.slice(0,2).forEach(ex=>{
+    const lp = lastPerf(ex.id, addDays(todayISO(),1));
+    md += '| '+ex.name+' | '+(bestE1RM(ex.id)||'—')+' kg | '+(lp?lp.best.w+' × '+lp.best.r:'—')+' |\n';
+  }));
+  navigator.clipboard.writeText(md).then(()=>toast('📋 Summary copied to clipboard'), ()=>toast('⚠️ Clipboard blocked'));
+};
+el('resetAll').onclick = ()=>{
+  if(!confirm('Delete all logged data from this browser? Export a backup first if you are unsure.')) return;
+  S = defaults(); save(true); applyTheme(); toast('Data reset'); show('today');
+};
+el('demoFill').onclick = ()=>{
+  if(!confirm('Add 6 weeks of demo data on top of what you have? (Use Reset first for a clean demo.)')) return;
+  demoData(); toast('✓ Demo data loaded — explore the Progress tab'); show('progress');
+};
+function demoData(){
+  const st = addDays(todayISO(), -41);
+  S.profile.start = st;
+  let w = S.profile.startW;
+  for(let i=0;i<42;i++){
+    const d = addDays(st,i);
+    if(i%1===0){ w = round1(w - 0.09 + (Math.random()-0.45)*0.28); if(i>1) S.weight[d]=w; }
+    if(i%7===0) S.waist[addDays(d,0)] = round1(84 - i*0.055 + (Math.random()-0.5)*0.3);
+    S.steps[d] = 7000+Math.round(Math.random()*4500);
+    S.sleep[d] = round1(6.4+Math.random()*1.9);
+    const day = plannedDay(parseISO(d).getDay());
+    if(day && Math.random()>0.12){
+      const D = PROGRAM.find(x=>x.key===day);
+      const sets = {};
+      D.exercises.forEach(ex=>{
+        if(ex.optional && Math.random()<0.5) return;
+        const n = ex.noSets?1:ex.sets;
+        const prog = 1 + i/42*0.18;
+        sets[ex.id] = Array.from({length:n},()=>({
+          w: ex.base[0]? round1(ex.base[0]*prog*2)/2 : 0,
+          r: ex.base[1],
+          rir: ex.rir,
+          done: true
+        }));
+      });
+      S.logs[d] = {day, sets};
+    }
+  }
+  save(true);
+}
+
+/* =============================== BOOT =============================== */
+applyTheme();
+const initView = (location.hash||'#today').slice(1);
+show(el('v-'+initView)? initView : 'today');
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('details[open]').forEach(d=>d.open=false); });
+window.addEventListener('beforeunload', ()=>save(true));
+
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4552840eef5d120',t:'MTc5MTEyNzA4Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
