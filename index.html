@@ -2,8 +2,15 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1220">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="10 kg">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
 <title>The 10 kg Project — Training, Nutrition & Progress</title>
 <meta name="description" content="Evidence-based 20-week recomposition program and tracker: 4-day upper/lower + optional specialization day, nutrition targets, shoulder &amp; elbow protocol.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8B%EF%B8%8F%3C/text%3E%3C/svg%3E">
@@ -253,6 +260,104 @@ details[open] summary::before{transform:rotate(90deg)}
 /* footer */
 footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 0;color:var(--ink3);font-size:13px}
 @media print{.topbar,.hero::after,.seg,#toasts{display:none!important}.view{display:block!important}}
+
+/* ===================== iOS / mobile & tablet ===================== */
+button, .seg button, nav.tabs button { touch-action: manipulation; }   /* no 300 ms tap delay */
+.mobtabs { display: none; }
+#sheet { position: fixed; inset: 0; z-index: 90; display: none; }
+#sheet.open { display: block; }
+#sheet .sheet-bg { position: absolute; inset: 0; background: rgba(6,14,26,.5); backdrop-filter: blur(3px); }
+#sheet .sheet {
+  position: absolute; left: 0; right: 0; bottom: 0; background: var(--card);
+  border-radius: 22px 22px 0 0; padding: 10px 14px calc(18px + env(safe-area-inset-bottom));
+  box-shadow: 0 -20px 50px -20px rgba(0,0,0,.6); max-height: 82vh; overflow: auto;
+  animation: sheetup .28s cubic-bezier(.2,.9,.3,1.05) both;
+}
+@keyframes sheetup { from { transform: translateY(24px); opacity: .4 } to { transform: none; opacity: 1 } }
+#sheet .grab { width: 42px; height: 4px; border-radius: 99px; background: var(--line2); margin: 4px auto 12px; }
+#sheet .srow {
+  display: flex; align-items: center; gap: 12px; width: 100%; border: 1px solid var(--line);
+  background: var(--card2); border-radius: 14px; padding: 13px 14px; margin-bottom: 8px;
+  font: inherit; font-size: 15.5px; font-weight: 650; color: var(--ink); cursor: pointer; min-height: 50px;
+}
+#sheet .srow .i { font-size: 19px; width: 24px; text-align: center; }
+#sheet .srow .chev { margin-left: auto; color: var(--ink3); }
+#sheet .srow.on { border-color: var(--sky); background: color-mix(in srgb, var(--sky) 10%, transparent); }
+#sheet h4 { margin: 14px 4px 8px; font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink3); }
+
+/* iOS: inputs under 16px make Safari zoom the whole page on focus */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea { font-size: 16px !important; }
+  .setrow input { padding: 9px 6px; }
+}
+
+@media (max-width: 1024px) {
+  .topbar nav.tabs { display: none; }
+  .topbar .bar { padding: calc(8px + env(safe-area-inset-top)) 0 8px; }
+  .brand .t small { display: none; }
+  .brand { font-size: 14.5px; }
+  .brand .logo { width: 30px; height: 30px; font-size: 16px; border-radius: 9px; }
+  .iconbtn { width: 42px; height: 42px; }
+  .wrap { padding-left: calc(16px + env(safe-area-inset-left)); padding-right: calc(16px + env(safe-area-inset-right)); }
+  main { padding-top: 14px; padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+  .mobtabs {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+    background: color-mix(in srgb, var(--card) 93%, transparent);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border-top: 1px solid var(--line);
+    padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 26px -14px rgba(13,27,42,.45);
+  }
+  .mobtabs button {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    border: 0; background: transparent; color: var(--ink3); font: inherit;
+    font-size: 10.5px; font-weight: 750; padding: 7px 2px; border-radius: 13px; min-height: 52px; cursor: pointer;
+  }
+  .mobtabs button .i { font-size: 20px; line-height: 1; }
+  .mobtabs button[aria-selected="true"] { color: var(--sky); background: color-mix(in srgb, var(--sky) 11%, transparent); }
+  [data-theme="dark"] .mobtabs button[aria-selected="true"] { color: #67e8f9; }
+  #toasts { left: 12px; right: 12px; bottom: calc(84px + env(safe-area-inset-bottom)); align-items: stretch; }
+  .toast { max-width: none; text-align: center; }
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 18px 17px; border-radius: 20px; }
+  .hero .inner { gap: 14px; }
+  .hero h1 { font-size: 25px; }
+  .hero p { font-size: 14.6px; }
+  .ring svg { width: 106px; height: 106px; }
+  .ring .mid b { font-size: 20px; }
+  .ring .mid span { font-size: 9.5px; }
+  .card { padding: 15px 15px; border-radius: 16px; }
+  .card .accent { margin: -15px -15px 12px; }
+  h2 { font-size: 22px; }
+  .stat { padding: 13px 14px; }
+  .stat .v { font-size: 23px; }
+  .tbl { font-size: 13.4px; }
+  .tbl th, .tbl td { padding: 7px 8px; }
+  .toc ol { columns: 1; }
+  .setrow { grid-template-columns: 26px repeat(3, 1fr) 46px; gap: 6px; }
+  .ex { padding: 11px 12px; }
+  .seg { width: 100%; }
+  .seg button { flex: 1; padding: 8px 8px; }
+  .pill { font-size: 11px; padding: 3px 8px; }
+  #sheet .sheet { max-height: 88vh; }
+}
+@media (max-width: 420px) {
+  .hero h1 { font-size: 22px; }
+  .stat .v { font-size: 21px; }
+  .tbl { font-size: 12.9px; }
+  .mobtabs button { font-size: 9.5px; }
+  .mobtabs button .i { font-size: 18px; }
+  .brand { font-size: 13.5px; }
+}
+/* iPad: keep comfortable reading width and allow 2-up cards in landscape */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrap { max-width: 860px; }
+  .grid.g3, .grid.g4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media print { .mobtabs, #sheet { display: none !important; } }
+
 </style>
 </head>
 <body>
@@ -735,18 +840,39 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 0;color:v
       <div class="accent"></div>
       <h3 style="margin-top:0">🤖 AI nutrition estimator settings</h3>
       <p class="small">Optional. The estimator works only if you paste your own API key — it is stored in <b>this browser's local storage only</b>, never in the file you upload to GitHub, and it is sent only to the provider you choose. A Gemini key from Google AI Studio has a free tier and takes about a minute to create. If you'd rather not use a key, the <b>Copy prompt</b> button on the Nutrition tab gives you the same result through ChatGPT or Claude manually.</p>
-      <div class="grid g3">
+      <div class="grid g2">
         <div class="field"><label class="f" for="aiProvider">Provider</label>
           <select id="aiProvider">
-            <option value="gemini">Google Gemini (free tier)</option>
+            <option value="gemini">Google Gemini (free tier — recommended)</option>
             <option value="openai">OpenAI</option>
             <option value="anthropic">Anthropic (Claude)</option>
           </select></div>
-        <div class="field"><label class="f" for="aiModel">Model (blank = default)</label><input id="aiModel" placeholder="gemini-2.0-flash"></div>
-        <div class="field"><label class="f" for="aiKey">API key</label><input id="aiKey" type="password" placeholder="paste key"></div>
+        <div class="field"><label class="f" for="aiKey">API key</label><input id="aiKey" type="password" placeholder="paste key — it starts with AIza…"></div>
+        <div class="field"><label class="f" for="aiModelSel">Model</label>
+          <select id="aiModelSel"><option value="">— default —</option></select>
+          <p class="small" style="margin:4px 0 0">Model names change often: Google retired <code>gemini-2.0-flash</code> in June 2026. <code>gemini-flash-latest</code> always points at the current Flash model, so it is the safest choice.</p>
+        </div>
+        <div class="field"><label class="f" for="aiModel">Or type a model name</label><input id="aiModel" placeholder="gemini-flash-latest"></div>
       </div>
-      <div class="row" style="margin-top:10px"><button class="btn primary" id="saveAI">Save AI settings</button>
-      <button class="btn sm ghost" id="clearAI">Remove key</button><span id="aiStatus"></span></div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn primary" id="saveAI">Save AI settings</button>
+        <button class="btn" id="aiTest">🔌 Test connection</button>
+        <button class="btn" id="aiModels">📋 Find available models</button>
+        <button class="btn ghost" id="clearAI">Remove key</button>
+        <span id="aiStatus"></span>
+      </div>
+      <div id="aiTestOut"></div>
+      <details style="margin-top:10px">
+        <summary>How to get a free Gemini key (2 minutes)</summary>
+        <ol class="small">
+          <li>Go to <b>aistudio.google.com</b> and sign in with your normal Google account.</li>
+          <li>Left sidebar → <b>Get API key</b> (direct link: <code>aistudio.google.com/app/apikey</code>).</li>
+          <li>Click <b>Create API key</b> → <b>Create key in new project</b>. No credit card, no Google Cloud setup needed.</li>
+          <li>Copy the key (it starts with <code>AIza</code> and Google lets you view it again later from the same page).</li>
+          <li>Paste it in the field above → <b>Save AI settings</b> → <b>Test connection</b>.</li>
+        </ol>
+        <p class="small" style="margin-bottom:0"><b>Free tier:</b> roughly 10–15 requests per minute and several hundred to 1,500 per day per project — far more than a food tracker needs. <b>Privacy:</b> on the free tier Google may use your requests to improve their models, which is worth knowing before you type anything sensitive. Your key lives only in this browser's localStorage and is never written into <code>index.html</code>, so it never reaches GitHub.</p>
+      </details>
       <div class="callout warn" style="margin-bottom:0"><b>Security:</b> a key in localStorage is visible to anyone using this browser profile, and browser-side calls are visible in the network tab. Use a restricted/throwaway key if you care. Never commit a key to GitHub — this app never stores it in a file.</div>
     </div>
 
@@ -787,6 +913,15 @@ git push -u origin main</code></pre>
     <p><b>The 10 kg Project</b> — general training, nutrition and prehab guidance for one specific person. Not a medical examination or a diagnosis; if anything here conflicts with advice from a clinician who has actually examined you, follow them. Data lives in your browser; export backups.</p>
   </footer>
 </main>
+
+<nav class="mobtabs" id="mobtabs" role="tablist" aria-label="Sections">
+  <button data-view="today" aria-selected="true"><span class="i">⚡</span>Today</button>
+  <button data-view="train" aria-selected="false"><span class="i">🏋️</span>Train</button>
+  <button data-view="progress" aria-selected="false"><span class="i">📈</span>Progress</button>
+  <button data-view="nutrition" aria-selected="false"><span class="i">🥗</span>Food</button>
+  <button data-view="more" aria-selected="false"><span class="i">⋯</span>More</button>
+</nav>
+
 <script>
 /* =====================================================================
    FOOD ENGINE — Lebanese + international database, quantity parser,
@@ -1236,7 +1371,7 @@ function parseFoodQuery(text){
 }
 
 /* ---------------- AI estimation (optional, user-supplied key) ---------------- */
-const AI_DEFAULTS = { provider:'gemini', gemini:'gemini-2.0-flash', openai:'gpt-4o-mini', anthropic:'claude-sonnet-4-5' };
+const AI_DEFAULTS = { provider:'gemini', gemini:'gemini-flash-latest', openai:'gpt-4o-mini', anthropic:'claude-sonnet-4-5' };
 function aiPrompt(desc){
   return 'You are a nutrition database. Estimate the calories and macronutrients of the food description below, '+
   'using typical Lebanese / Mediterranean preparation and portion sizes when the quantity is not specified.\n\n'+
@@ -1249,7 +1384,7 @@ async function aiEstimate(desc, cfg){
   const provider = cfg.provider || AI_DEFAULTS.provider;
   const key = cfg.key;
   if(!key) throw new Error('No API key saved. Add one in the AI settings, or use "Copy prompt" instead.');
-  const model = cfg.model || AI_DEFAULTS[provider];
+  const model = cfg.model || AI_DEFAULTS[provider];   /* 'gemini-flash-latest' always tracks Google's current Flash model */
   const prompt = aiPrompt(desc);
   let text = '';
   if(provider==='gemini'){
@@ -1438,6 +1573,9 @@ function daysBetween(a,b){ return Math.round((parseISO(b)-parseISO(a))/86400000)
 function fmtShort(s){ return parseISO(s).toLocaleDateString(undefined,{month:'short',day:'numeric'}); }
 function fmtLong(s){ return parseISO(s).toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'}); }
 function clamp(v,a,b){ return Math.min(b,Math.max(a,v)); }
+/* viewport helpers — true on iPhone (and when squeezed on iPad) */
+function isNarrow(){ return (window.innerWidth||999) < 640; }
+function isTouch(){ return (navigator.maxTouchPoints||0) > 1; }
 function round1(v){ return Math.round(v*10)/10; }
 function e1rm(w,r){ return (w&&r)?round1(w*(1+r/30)):null; }
 
@@ -1452,7 +1590,7 @@ function defaults(){
   return {
     v:1,
     profile:{ name:'', start:defaultStart(), startW:85, goalW:75, kcal:2200, prot:190, height:177, daysPerWeek:4 },
-    ai:{ provider:'gemini', model:'', key:'' },
+    ai:{ provider:'gemini', model:'', key:'', models:[] },
     custom:{},
     weight:{}, waist:{}, steps:{}, sleep:{},
     logs:{}, food:{}, prehab:{}, checkins:{}, notes:{},
@@ -1551,9 +1689,54 @@ function ring(pct, size, stroke, label, sub){
 }
 
 /* ------------------------------- NAV ------------------------------- */
+const PRIMARY_VIEWS = ['today','train','progress','nutrition'];
+function closeSheet(){ const sh=el('sheet'); if(sh){ sh.classList.remove('open'); sh.remove(); } }
+function syncMobTabs(view){
+  const bar = el('mobtabs'); if(!bar) return;
+  const inPrimary = PRIMARY_VIEWS.indexOf(view) >= 0;
+  bar.querySelectorAll('button').forEach(b=>{
+    b.setAttribute('aria-selected', String(inPrimary ? (b.dataset.view===view) : (b.dataset.view==='more')));
+  });
+}
+function moreSheet(){
+  if(el('sheet')){ closeSheet(); return; }
+  const rows = [
+    ['today','⚡','Today'],['train','🏋️','Train'],['progress','📈','Progress'],['nutrition','🥗','Nutrition'],
+    ['method','📚','The method'],['injury','🩹','Shoulder &amp; Elbows'],['data','⚙️','Data, backup &amp; setup']
+  ].map(([v,i,t])=>'<button class="srow" data-sheet-view="'+v+'"><span class="i">'+i+'</span>'+t+'<span class="chev">›</span></button>').join('');
+  const wrapEl = document.createElement('div');
+  wrapEl.id = 'sheet';
+  wrapEl.innerHTML = '<div class="sheet-bg" data-close-sheet="1"></div><div class="sheet" role="dialog" aria-label="More sections">'+
+    '<div class="grab"></div>'+
+    '<h4>Sections</h4>'+rows+
+    '<h4>Quick actions</h4>'+
+    '<button class="srow" data-sheet-action="theme"><span class="i">'+(S.ui.theme==='dark'?'☀️':'🌙')+'</span>Switch to '+(S.ui.theme==='dark'?'light':'dark')+' mode</button>'+
+    '<button class="srow" data-sheet-action="backup"><span class="i">⬇️</span>Export a backup now</button>'+
+    '<button class="srow" data-sheet-action="close"><span class="i">✕</span>Close</button>'+
+    '</div>';
+  document.body.appendChild(wrapEl);
+  requestAnimationFrame(()=>wrapEl.classList.add('open'));
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-close-sheet]')){ closeSheet(); return; }
+  const sv = e.target.closest('[data-sheet-view]');
+  if(sv){ closeSheet(); show(sv.dataset.sheetView); return; }
+  const sa = e.target.closest('[data-sheet-action]');
+  if(sa){
+    const a = sa.dataset.sheetAction;
+    if(a==='theme'){ S.ui.theme = S.ui.theme==='dark'?'light':'dark'; applyTheme(); save(true); closeSheet(); }
+    else if(a==='backup'){ download('gym-backup-'+todayISO()+'.json', JSON.stringify(S,null,1)); toast('⬇️ Backup downloaded'); }
+    else closeSheet();
+    return;
+  }
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeSheet(); });
+
 function show(view){
+  closeSheet();
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id==='v-'+view));
   document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===view)));
+  syncMobTabs(view);
   if(location.hash.slice(1)!==view) history.replaceState(null,'','#'+view);
   window.scrollTo({top:0,behavior:'instant'});
   if(view==='today') renderToday();
@@ -1566,6 +1749,16 @@ function show(view){
 }
 document.getElementById('tabs').addEventListener('click', e=>{
   const b = e.target.closest('button[data-view]'); if(b) show(b.dataset.view);
+});
+el('mobtabs') && el('mobtabs').addEventListener('click', e=>{
+  const b = e.target.closest('button[data-view]');
+  if(!b) return;
+  if(b.dataset.view==='more'){
+    moreSheet();
+    if(el('sheet')) syncMobTabs('__more__');
+    else { const av=document.querySelector('.view.active'); syncMobTabs(av? av.id.slice(2) : 'today'); }
+  }
+  else show(b.dataset.view);
 });
 document.addEventListener('click', e=>{
   const a = e.target.closest('a[href^="#"]');
@@ -1635,8 +1828,8 @@ function renderToday(){
   const wk7 = Object.keys(S.weight).filter(k=>k<=t && k>=addDays(t,-6)).map(k=>S.weight[k]);
   setHTML('weighCard', '<div class="card acc-teal"><div class="accent"></div>'+
     '<h3 style="margin-top:0">Morning weigh-in</h3>'+
-    '<div class="grid g2"><div class="field"><label class="f" for="wIn">Weight today (kg)</label><input type="number" step="0.1" id="wIn" value="'+(S.weight[t]??'')+'" placeholder="85.0"></div>'+
-    '<div class="field"><label class="f" for="waIn">Waist (cm)'+(waistKeys.length?' — &nbsp;last '+fmtShort(waistKeys[waistKeys.length-1]):'')+'</label><input type="number" step="0.1" id="waIn" value="'+(S.waist[t]??'')+'" placeholder="measure at the navel"></div></div>'+
+    '<div class="grid g2"><div class="field"><label class="f" for="wIn">Weight today (kg)</label><input type="number" inputmode="decimal" enterkeyhint="done" step="0.1" id="wIn" value="'+(S.weight[t]??'')+'" placeholder="85.0"></div>'+
+    '<div class="field"><label class="f" for="waIn">Waist (cm)'+(waistKeys.length?' — &nbsp;last '+fmtShort(waistKeys[waistKeys.length-1]):'')+'</label><input type="number" inputmode="decimal" enterkeyhint="done" step="0.1" id="waIn" value="'+(S.waist[t]??'')+'" placeholder="measure at the navel"></div></div>'+
     '<p class="small" id="maNote" style="margin:.6em 0 0">7-day average: <b>'+(ma7||'—')+' kg</b> · '+wk7.length+'/7 days logged this week</p></div>');
 
   /* nutrition quick-log */
@@ -1648,8 +1841,8 @@ function renderToday(){
   /* activity */
   setHTML('activityCard','<div class="card acc-cool"><div class="accent"></div>'+
     '<h3 style="margin-top:0">Steps &amp; sleep</h3>'+
-    '<div class="grid g2"><div class="field"><label class="f" for="stIn">Steps</label><input type="number" step="500" id="stIn" value="'+(S.steps[t]??'')+'" placeholder="8000"></div>'+
-    '<div class="field"><label class="f" for="slIn">Sleep (h)</label><input type="number" step="0.5" id="slIn" value="'+(S.sleep[t]??'')+'" placeholder="7.5"></div></div>'+
+    '<div class="grid g2"><div class="field"><label class="f" for="stIn">Steps</label><input type="number" inputmode="numeric" enterkeyhint="done" step="500" id="stIn" value="'+(S.steps[t]??'')+'" placeholder="8000"></div>'+
+    '<div class="field"><label class="f" for="slIn">Sleep (h)</label><input type="number" inputmode="decimal" enterkeyhint="done" step="0.5" id="slIn" value="'+(S.sleep[t]??'')+'" placeholder="7.5"></div></div>'+
     '<p class="small" style="margin:.6em 0 0">Steps are the cheapest fat-loss tool you own. Sleep is a training variable, not a lifestyle detail.</p></div>');
 
   /* prehab */
@@ -1706,9 +1899,9 @@ function setRows(ex, dateISO){
     const s = L[i]||{};
     out += '<div class="setrow">'+
       '<div class="n">'+(i+1)+'</div>'+
-      '<input type="number" step="0.5" data-ex="'+ex.id+'" data-i="'+i+'" data-f="w" value="'+(s.w??'')+'" placeholder="kg">'+
-      '<input type="number" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="r" value="'+(s.r??'')+'" placeholder="reps">'+
-      '<input type="number" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="rir" value="'+(s.rir??'')+'" placeholder="RIR">'+
+      '<input type="number" inputmode="decimal" enterkeyhint="next" step="0.5" data-ex="'+ex.id+'" data-i="'+i+'" data-f="w" value="'+(s.w??'')+'" placeholder="kg">'+
+      '<input type="number" inputmode="numeric" enterkeyhint="next" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="r" value="'+(s.r??'')+'" placeholder="reps">'+
+      '<input type="number" inputmode="numeric" enterkeyhint="done" step="1" data-ex="'+ex.id+'" data-i="'+i+'" data-f="rir" value="'+(s.rir??'')+'" placeholder="RIR">'+
       '<input type="checkbox" class="chk" data-ex="'+ex.id+'" data-i="'+i+'" data-f="done" '+(s.done?'checked':'')+'>'+
       '</div>';
   }
@@ -1845,7 +2038,9 @@ function renderTrain(){
 /* =============================== PROGRESS =============================== */
 function lineChart(points, opts){
   opts = opts||{};
-  const W=760,H=270,P={l:46,r:14,t:14,b:34};
+  const NARROW = isNarrow();
+  const W = NARROW?440:760, H = NARROW?250:270, FS = NARROW?12.5:10.5;
+  const P = {l: NARROW?42:46, r: NARROW?10:14, t:14, b: NARROW?30:34};
   if(points.length<1) return '<p class="small" style="color:var(--ink3);padding:20px 0">Not enough data yet — log a few weigh-ins and the chart fills in.</p>';
   const xs = points.map(p=>daysBetween(points[0].d, p.d));
   const span = Math.max(1, xs[xs.length-1]);
@@ -1858,18 +2053,19 @@ function lineChart(points, opts){
   for(let k=0;k<=4;k++){
     const v = lo + (hi-lo)*k/4, y = Y(v);
     g += '<line x1="'+P.l+'" y1="'+y+'" x2="'+(W-P.r)+'" y2="'+y+'" stroke="var(--line)" stroke-width="1"/>'+
-         '<text x="'+(P.l-7)+'" y="'+(y+4)+'" font-size="10.5" fill="var(--ink3)" text-anchor="end">'+round1(v)+'</text>';
+         '<text x="'+(P.l-6)+'" y="'+(y+4)+'" font-size="'+FS+'" fill="var(--ink3)" text-anchor="end">'+round1(v)+'</text>';
   }
   let xl='';
-  const step = Math.ceil(points.length/7);
-  points.forEach((p,i)=>{ if(i%step===0||i===points.length-1) xl += '<text x="'+X(i)+'" y="'+(H-12)+'" font-size="10.5" fill="var(--ink3)" text-anchor="middle">'+fmtShort(p.d)+'</text>'; });
+  const step = Math.max(1, Math.ceil(points.length/(NARROW?4:7)));
+  points.forEach((p,i)=>{ if(i%step===0||i===points.length-1) xl += '<text x="'+X(i)+'" y="'+(H-12)+'" font-size="'+FS+'" fill="var(--ink3)" text-anchor="middle">'+fmtShort(p.d)+'</text>'; });
   const path = (key,width,color,dash,op)=>{
     const seg = points.map((p,i)=> p[key]==null? null : (X(i)+','+Y(p[key]))).filter(Boolean);
     if(seg.length<2) return '';
     return '<polyline points="'+seg.join(' ')+'" fill="none" stroke="'+color+'" stroke-width="'+width+'" stroke-linecap="round" stroke-linejoin="round" '+(dash?'stroke-dasharray="'+dash+'"':'')+' opacity="'+(op||1)+'"/>';
   };
-  let dots = points.map((p,i)=> p.kg==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.kg)+'" r="3" fill="#94a3b8"><title>'+p.d+' — '+p.kg+' kg</title></circle>').join('');
-  dots += points.map((p,i)=> p.ma==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.ma)+'" r="3.4" fill="#0ea5e9"><title>'+p.d+' — 7-day avg '+p.ma+' kg</title></circle>').join('');
+  const RR = NARROW? 4 : 3;
+  let dots = points.map((p,i)=> p.kg==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.kg)+'" r="'+RR+'" fill="#94a3b8"><title>'+p.d+' — '+p.kg+' kg</title></circle>').join('');
+  dots += points.map((p,i)=> p.ma==null? '' : '<circle cx="'+X(i)+'" cy="'+Y(p.ma)+'" r="'+(RR+0.4)+'" fill="#0ea5e9"><title>'+p.d+' — 7-day avg '+p.ma+' kg</title></circle>').join('');
   return '<svg viewBox="0 0 '+W+' '+H+'" class="spark" role="img" aria-label="Weight chart">'+g+
     (path('target',2.4,'#fb7185','7 6',.85)) + path('kg',1.7,'#94a3b8',null,.55) + path('ma',3.4,'url(#lg2)',null,1) + dots + xl +
     '<defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#22d3ee"/><stop offset="60%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a3e635"/></linearGradient></defs>'+
@@ -1877,18 +2073,21 @@ function lineChart(points, opts){
 }
 function barChart(labels, values, opts){
   opts=opts||{};
-  const W=760,H=220,P={l:36,r:10,t:12,b:30};
+  const NARROW = isNarrow();
+  const W = NARROW?440:760, H = NARROW?205:220, FS = NARROW?12:10;
+  const P = {l: NARROW?32:36, r:10, t:12, b: NARROW?28:30};
   const max = Math.max(10, Math.max.apply(null,values));
   const bw = (W-P.l-P.r)/labels.length;
   let g='';
   for(let k=0;k<=3;k++){ const v=max*k/3, y=P.t+(1-k/3)*(H-P.t-P.b);
-    g+='<line x1="'+P.l+'" y1="'+y+'" x2="'+(W-P.r)+'" y2="'+y+'" stroke="var(--line)"/><text x="'+(P.l-6)+'" y="'+(y+4)+'" font-size="10" fill="var(--ink3)" text-anchor="end">'+Math.round(v)+'</text>'; }
+    g+='<line x1="'+P.l+'" y1="'+y+'" x2="'+(W-P.r)+'" y2="'+y+'" stroke="var(--line)"/><text x="'+(P.l-5)+'" y="'+(y+4)+'" font-size="'+FS+'" fill="var(--ink3)" text-anchor="end">'+Math.round(v)+'</text>'; }
   let bars='';
   values.forEach((v,i)=>{
     const h = (v/max)*(H-P.t-P.b), x = P.l+i*bw+bw*0.16, w = bw*0.68;
     const fill = opts.deload&&opts.deload[i] ? '#f59e0b' : 'url(#lg3)';
     bars += '<rect x="'+x+'" y="'+(H-P.b-h)+'" width="'+w+'" height="'+Math.max(h,1.5)+'" rx="4" fill="'+fill+'"><title>'+labels[i]+': '+v+' sets</title></rect>';
-    if(i%2===0||labels.length<=10) bars += '<text x="'+(x+w/2)+'" y="'+(H-11)+'" font-size="10" fill="var(--ink3)" text-anchor="middle">'+labels[i]+'</text>';
+    const every = NARROW? 4 : 2;
+    if(i%every===0||labels.length<=10) bars += '<text x="'+(x+w/2)+'" y="'+(H-10)+'" font-size="'+FS+'" fill="var(--ink3)" text-anchor="middle">'+labels[i]+'</text>';
   });
   return '<svg viewBox="0 0 '+W+' '+H+'" class="spark">'+g+bars+
     '<defs><linearGradient id="lg3" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a3e635"/></linearGradient></defs></svg>';
@@ -2062,7 +2261,7 @@ function renderNutrition(){
     /* smart add */
     '<div class="card acc-teal"><div class="accent"></div>'+
     '<h3 style="margin-top:0">🔍 Add food <span class="small">('+allFoods().length+' foods incl. your own)</span></h3>'+
-    '<div class="field"><input id="foodSearch" placeholder="Type anything: \"2 manakish zaatar\", \"150g chicken\", \"shawarma sandwich\", \"kitkat\"…" value="'+esc(searchState.q)+'"></div>'+
+    '<div class="field"><input id="foodSearch" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" placeholder="Type anything: \"2 manakish zaatar\", \"150g chicken\", \"shawarma sandwich\", \"kitkat\"…" value="'+esc(searchState.q)+'"></div>'+
     '<div class="seg" id="foodCats" style="margin:10px 0">'+FOODCATS.map(c=>'<button data-cat="'+esc(c)+'" aria-selected="'+String(searchState.cat===c)+'">'+esc(c)+'</button>').join('')+'</div>'+
     (parsed && parsed.ok && /\d/.test(searchState.q||'') ?
       '<div class="callout ok"><b>Smart reading:</b> '+esc(parsed.desc)+' → <b>'+parsed.kcal+' kcal</b> · '+parsed.p+' g P · '+parsed.c+' g C · '+parsed.f+' g F'+
@@ -2075,7 +2274,7 @@ function renderNutrition(){
     '<div class="card acc-cool"><div class="accent"></div>'+
     '<div class="between"><h3 style="margin:0">🤖 AI estimator</h3><span class="b '+(S.ai && S.ai.key?'b-lime':'b-amber')+'">'+(S.ai && S.ai.key? 'key saved · '+(S.ai.provider||'gemini') : 'no key — optional')+'</span></div>'+
     '<p class="small">Describe a meal in plain words and a model returns the macros. Works with your own API key (Gemini free tier, OpenAI or Anthropic) saved only in this browser — or use <b>Copy prompt</b> to paste into ChatGPT/Claude and add the result by hand.</p>'+
-    '<textarea id="aiDesc" rows="2" placeholder="e.g. 1 plate of kibbeh labanieh with rice, and a small fattoush"></textarea>'+
+    '<textarea id="aiDesc" rows="2" autocapitalize="sentences" enterkeyhint="send" placeholder="e.g. 1 plate of kibbeh labanieh with rice, and a small fattoush"></textarea>'+
     '<div class="row" style="margin-top:10px">'+
       '<button class="btn primary" id="aiGo">✨ Estimate</button>'+
       '<button class="btn" id="aiCopy">📋 Copy prompt</button>'+
@@ -2104,11 +2303,11 @@ function renderNutrition(){
     '<p class="small">Values per <b>one serving</b>. I convert them to per-100 g internally so portion sizes still work.</p>'+
     '<div class="grid g3">'+
       '<div class="field"><label class="f">Name</label><input id="cfName" placeholder="Teta\'s kibbeh"></div>'+
-      '<div class="field"><label class="f">Serving weight (g)</label><input type="number" id="cfU" value="100"></div>'+
-      '<div class="field"><label class="f">Calories / serving</label><input type="number" id="cfK" placeholder="250"></div>'+
-      '<div class="field"><label class="f">Protein (g)</label><input type="number" step="0.1" id="cfP" placeholder="15"></div>'+
-      '<div class="field"><label class="f">Carbs (g)</label><input type="number" step="0.1" id="cfC" placeholder="20"></div>'+
-      '<div class="field"><label class="f">Fat (g)</label><input type="number" step="0.1" id="cfF" placeholder="10"></div>'+
+      '<div class="field"><label class="f">Serving weight (g)</label><input type="number" inputmode="numeric" id="cfU" value="100"></div>'+
+      '<div class="field"><label class="f">Calories / serving</label><input type="number" inputmode="decimal" id="cfK" placeholder="250"></div>'+
+      '<div class="field"><label class="f">Protein (g)</label><input type="number" inputmode="decimal" step="0.1" id="cfP" placeholder="15"></div>'+
+      '<div class="field"><label class="f">Carbs (g)</label><input type="number" inputmode="decimal" step="0.1" id="cfC" placeholder="20"></div>'+
+      '<div class="field"><label class="f">Fat (g)</label><input type="number" inputmode="decimal" step="0.1" id="cfF" placeholder="10"></div>'+
     '</div>'+
     '<div class="row" style="margin-top:10px"><button class="btn primary" id="cfSave">Save to my foods</button>'+
     (Object.keys(S.custom||{}).length? '<span class="small">Saved: '+Object.keys(S.custom).map(k=>esc(k)).join(', ')+' <button class="btn sm ghost" id="cfClear">clear all</button></span>':'')+'</div>'+
@@ -2172,8 +2371,8 @@ async function runAIEstimate(){
       '<span class="small">'+esc(r.note||'')+' (confidence: '+esc(r.conf)+')</span><div style="margin-top:8px">'+
       '<button class="btn sm primary" data-add-ai="1">Add to log</button> <button class="btn sm ghost" data-add-ai="1" data-meal="Snack">Add as snack</button></div></div>';
   }catch(err){
-    out.innerHTML = '<div class="callout warn"><b>Could not estimate:</b> '+esc(err.message)+
-      '<br><span class="small">Check the key in AI settings, or use Copy prompt and add the numbers by hand.</span></div>';
+    const f = aiFriendlyError(err);
+    out.innerHTML = '<div class="callout warn">'+f.m+'<br><span class="small">Settings live under <b>Data → AI nutrition estimator</b>, where you can press <b>Test connection</b> or <b>Find available models</b>. Or use <b>Copy prompt</b> and add the numbers by hand.</span></div>';
   }
 }
 
@@ -2249,11 +2448,30 @@ function renderMethod(){
 }
 
 /* =============================== DATA =============================== */
+function wireAIFields(){
+  [['aiProvider','provider'],['aiModel','model'],['aiKey','key']].forEach(([id,key])=>{
+    const n = el(id); if(!n || n.dataset.wired) return;
+    n.dataset.wired = '1';
+    const push = ()=>{ S.ai = Object.assign({}, S.ai, {[key]: n.value}); save(); };
+    n.addEventListener('input', push);
+    n.addEventListener('change', ()=>{ push(); save(true); });
+  });
+}
 function renderData(){
   const p = S.profile;
   const ai = S.ai||{};
+  wireAIFields();
   if(el('aiProvider')) el('aiProvider').value = ai.provider||'gemini';
   if(el('aiModel')) el('aiModel').value = ai.model||'';
+  const sel = el('aiModelSel');
+  if(sel){
+    const found = (S.ai && S.ai.models) || [];
+    const common = ['gemini-flash-latest','gemini-2.5-flash','gemini-2.5-flash-lite'];
+    const opts = Array.from(new Set(common.concat(found)));
+    sel.innerHTML = '<option value="">— default ('+esc(AI_DEFAULTS.gemini)+') —</option>'+
+      opts.map(o=>'<option value="'+esc(o)+'"'+(o===(ai.model||'')?' selected':'')+'>'+esc(o)+'</option>').join('');
+    sel.onchange = ()=>{ if(el('aiModel')) el('aiModel').value = sel.value; S.ai = Object.assign({}, S.ai, {model: sel.value}); save(true); };
+  }
   if(el('aiKey')) el('aiKey').value = ai.key||'';
   if(el('aiStatus')) el('aiStatus').innerHTML = ai.key
     ? '<span class="b b-lime">key saved in this browser</span>'
@@ -2266,6 +2484,8 @@ el('saveAI') && (el('saveAI').onclick = ()=>{
   S.ai = { provider: el('aiProvider').value, model: el('aiModel').value.trim(), key: el('aiKey').value.trim() };
   save(true); renderData(); toast(S.ai.key? '✓ AI key saved to this browser' : '✓ AI settings saved (no key)');
 });
+el('aiTest') && (el('aiTest').onclick = runAiTest);
+el('aiModels') && (el('aiModels').onclick = runAiModels);
 el('clearAI') && (el('clearAI').onclick = ()=>{ S.ai = { provider:(S.ai||{}).provider||'gemini', model:'', key:'' }; save(true); renderData(); toast('AI key removed'); });
 el('pDays') && (el('pDays').onchange = ()=>{ S.profile.daysPerWeek = +el('pDays').value; save(true); toast('✓ '+S.profile.daysPerWeek+'-day week set'); });
 el('saveProfile').onclick = ()=>{
@@ -2378,13 +2598,92 @@ function demoData(){
   save(true);
 }
 
+/* -------------------- AI SETUP HELPERS -------------------- */
+function aiFriendlyError(err){
+  const m = String((err && err.message) || err || 'Unknown error');
+  if(/429|RESOURCE_EXHAUSTED|quota/i.test(m)) return {t:'bad', m:'<b>Rate limit or quota reached.</b> The free tier allows roughly 10–15 requests per minute and a few hundred to 1,500 per day. Wait a minute and retry, or switch to a lighter model such as <code>gemini-2.5-flash-lite</code>.'};
+  if(/API key not valid|API_KEY_INVALID|invalid api key|400/i.test(m)) return {t:'bad', m:'<b>The API key was rejected.</b> Re-copy it from aistudio.google.com/app/apikey — no spaces, it starts with <code>AIza</code> — paste it again and press Save.'};
+  if(/403|PERMISSION_DENIED|not authorized/i.test(m)) return {t:'bad', m:'<b>This key is not authorised for that model.</b> Some models are paid-tier only. Try <code>gemini-flash-latest</code> or <code>gemini-2.5-flash</code>, or press <b>Find available models</b>.'};
+  if(/404|NOT_FOUND|not found|no longer available|is not supported/i.test(m)) return {t:'bad', m:'<b>That model name is not available.</b> Google retires model names regularly (gemini-2.0-flash was retired in June 2026). Press <b>Find available models</b> to list what your key can actually use, then pick one.'};
+  if(/Failed to fetch|NetworkError|Load failed|CORS|blocked/i.test(m)) return {t:'bad', m:'<b>Network request blocked.</b> The browser could not reach Google. Check your connection — some sandboxed previews block outbound calls, but your GitHub Pages site and normal browsing work fine.'};
+  return {t:'bad', m:esc(m)};
+}
+async function aiListModels(cfg){
+  const key = (cfg||{}).key; if(!key) throw new Error('no key');
+  const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?key='+encodeURIComponent(key)+'&pageSize=200');
+  if(!r.ok) throw new Error('HTTP '+r.status+': '+(await r.text()).slice(0,160));
+  const j = await r.json();
+  return (j.models||[])
+    .filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent'))
+    .map(m=>String(m.name||'').replace(/^models\//,''))
+    .filter(n=>/^(gemini|gemma)/.test(n)).sort();
+}
+async function aiTestKey(cfg){
+  const provider=(cfg||{}).provider||'gemini', key=(cfg||{}).key;
+  if(!key) throw new Error('no key');
+  if(provider!=='gemini'){
+    const r = await aiEstimate('one small apple', cfg);
+    return {model:cfg.model||AI_DEFAULTS[provider], text:r.kcal+' kcal / '+r.p+' g protein'};
+  }
+  const model = cfg.model || AI_DEFAULTS.gemini;
+  const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key),{
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({contents:[{parts:[{text:'Reply with the single word: ok'}]}], generationConfig:{temperature:0}})
+  });
+  if(!r.ok) throw new Error('HTTP '+r.status+': '+(await r.text()).slice(0,220));
+  const j = await r.json();
+  const t = ((((j.candidates||[])[0]||{}).content||{}).parts||[]).map(x=>x.text||'').join('');
+  return {model, text:String(t).trim().slice(0,40)};
+}
+function aiStatusLine(html, kind){ const n = el('aiTestOut'); if(n) n.innerHTML = '<div class="callout '+(kind||'')+'" style="margin:10px 0 0">'+html+'</div>'; }
+async function runAiTest(){
+  const cfg = { provider: el('aiProvider').value, model: (el('aiModel').value||'').trim(), key: (el('aiKey').value||'').trim() };
+  S.ai = Object.assign({}, S.ai, cfg); save(true);
+  if(!cfg.key){ aiStatusLine('<b>No key entered.</b> Paste your key first, then press Save.', 'warn'); return; }
+  aiStatusLine('<span class="b b-cool">Testing the key…</span>');
+  try{
+    const r = await aiTestKey(cfg);
+    aiStatusLine('<b>✅ Working.</b> The key answered using model <code>'+esc(r.model)+'</code>'+(r.text? ' — reply: “'+esc(r.text)+'”':'')+'.<br><span class="small">Press <b>Save AI settings</b>, then use ✨ Estimate on the Nutrition tab.</span>', 'ok');
+  }catch(err){ const f=aiFriendlyError(err); aiStatusLine(f.m,'bad'); }
+}
+async function runAiModels(){
+  const key = (el('aiKey').value||'').trim();
+  S.ai = Object.assign({}, S.ai, { provider: el('aiProvider').value, model: (el('aiModel').value||'').trim(), key: key }); save(true);
+  if(!key){ aiStatusLine('<b>No key entered.</b> Paste your key first.', 'warn'); return; }
+  aiStatusLine('<span class="b b-cool">Asking Google which models this key can use…</span>');
+  try{
+    const names = await aiListModels({key});
+    S.ai = Object.assign({}, S.ai, { models:names }); save(true);
+    aiStatusLine('<b>✅ Found '+names.length+' usable models.</b> Pick one in the list below — <code>gemini-flash-latest</code> is the safest default.', 'ok');
+    renderData();
+  }catch(err){ const f=aiFriendlyError(err); aiStatusLine('<b>Could not list models.</b> '+String(f.m).replace(/<\/?b>/g,''),'bad'); }
+}
+
 /* =============================== BOOT =============================== */
 applyTheme();
 const initView = (location.hash||'#today').slice(1);
 show(el('v-'+initView)? initView : 'today');
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('details[open]').forEach(d=>d.open=false); });
 window.addEventListener('beforeunload', ()=>save(true));
+/* re-render charts on rotation / resize (debounced) */
+let rzTimer=null, lastNarrow=isNarrow();
+window.addEventListener('resize', ()=>{
+  clearTimeout(rzTimer);
+  rzTimer = setTimeout(()=>{
+    const nowNarrow = isNarrow();
+    const flipped = (nowNarrow!==lastNarrow); lastNarrow = nowNarrow;
+    const active = document.querySelector('.view.active');
+    if(active && (flipped || nowNarrow)){
+      if(active.id==='v-progress') renderProgress();
+      else if(active.id==='v-today') renderToday();
+    }
+  }, 220);
+});
+/* when launched from the iPhone home screen, hide the browser-ish hints */
+if(window.navigator.standalone || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)){
+  document.documentElement.dataset.standalone = '1';
+}
 
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4552840eef5d120',t:'MTc5MTEyNzA4Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4553d1bb831d120',t:'MTc5MTEyNzk0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
