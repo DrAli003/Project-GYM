@@ -1147,6 +1147,7 @@ const FOODDB = [
   {n:'Fatteh hummus (yogurt, bread, nuts)', u:200, s:'1 bowl (200 g)', k:220, p:9, c:20, f:12, cat:'Mezze', a:'fatteh hummos'},
   {n:'Fatteh (chicken or lamb)', u:200, s:'1 bowl (200 g)', k:230, p:12, c:18, f:12, cat:'Mezze', a:'fatte chicken fatteh'},
   {n:'Hindbeh (dandelion greens)', u:150, s:'1 plate (150 g)', k:90, p:3, c:6, f:6, cat:'Mezze', a:'hindbe dandelion'},
+  {n:'Adas b hamoud (lentil, potato & chard soup)', u:250, s:'1 small bowl (250 g)', k:95, p:4.5, c:15, f:1.8, cat:'Main dishes', a:'adass b hamoud lemon lentils soup lentil chard potato soup sele2 silq'},
   {n:'Mloukhieh with chicken', u:250, s:'1 bowl (250 g)', k:130, p:9, c:8, f:7, cat:'Main dishes', a:'mloukhia molokhia jute leaves'},
   {n:'Artichoke hearts with oil', u:100, s:'1 serving (100 g)', k:90, p:3, c:9, f:5, cat:'Mezze', a:'ardi shawki artichoke'},
 
@@ -1170,6 +1171,8 @@ const FOODDB = [
   {n:'Shrimp / prawns, grilled', u:150, s:'10 pieces (150 g)', k:100, p:20, c:1, f:1.5, cat:'Grills', a:'shrimp prawns gambari'},
 
   /* ---------------- BREADS, MANAKISH & SANDWICHES ---------------- */
+  {n:'Mini zaatar roll (markook / saj)', u:40, s:'1 small roll (40 g)', k:300, p:6.5, c:37, f:12.5, cat:'Manakish', a:'zaatar roll markook markouk saj bread mini manoushe zaater roll'},
+  {n:'Markook / saj bread (plain)', u:25, s:'1 small round (25 g)', k:280, p:9, c:58, f:1.5, cat:'Bakery', a:'markouk saj bread thin flatbread kmaj'},
   {n:'Manakish zaatar', u:180, s:'1 medium (180 g)', k:300, p:6, c:38, f:12, cat:'Manakish', a:"manoushe manousheh mankoushe manakish zaater za'atar pie timeesh"},
   {n:'Manakish jibneh (cheese)', u:180, s:'1 medium (180 g)', k:330, p:13, c:36, f:14, cat:'Manakish', a:'manoushe cheese jibneh pie'},
   {n:"Manakish lahm b ajin (meat)", u:180, s:'1 medium (180 g)', k:300, p:14, c:32, f:12, cat:'Manakish', a:'manoushe meat lahm bi ajin'},
@@ -1280,6 +1283,7 @@ const FOODDB = [
   {n:'Apricot', u:40, s:'1 medium (40 g)', k:48, p:1.4, c:11, f:0.4, cat:'Fruits', a:'apricot mishmish'},
   {n:'Fig, fresh', u:60, s:'1 fig (60 g)', k:74, p:0.8, c:19, f:0.3, cat:'Fruits', a:'figs teen'},
   {n:'Pomegranate', u:200, s:'1 fruit (200 g)', k:83, p:1.7, c:19, f:1.2, cat:'Fruits', a:'pomegranate roman'},
+  {n:'Yellow dates (balah, fresh)', u:18, s:'1 date (18 g)', k:120, p:1.2, c:30, f:0.2, cat:'Fruits', a:'balah balah yellow date fresh date rutab'},
   {n:'Dates (medjool)', u:24, s:'1 date (24 g)', k:277, p:1.8, c:75, f:0.2, cat:'Fruits', a:'dates balah tamr'},
   {n:'Raisins', u:30, s:'1 handful (30 g)', k:299, p:3, c:79, f:0.5, cat:'Fruits', a:'raisins zبيب zabeeb'},
   {n:'Kiwi', u:80, s:'1 kiwi (80 g)', k:61, p:1.1, c:15, f:0.5, cat:'Fruits', a:'kiwi'},
@@ -1435,6 +1439,8 @@ const FOODDB = [
   {n:'Fried chicken (KFC, 1 piece)', u:100, s:'1 piece (100 g)', k:260, p:22, c:8, f:16, cat:'Fast food', a:'kfc fried chicken crispy'},
   {n:'Subway 6" turkey', u:220, s:'6 inch (220 g)', k:230, p:10, c:33, f:6, cat:'Fast food', a:'subway sub sandwich turkey'},
   {n:'Pizza slice (cheese)', u:110, s:'1 slice (110 g)', k:260, p:11, c:30, f:10, cat:'Fast food', a:'pizza cheese slice margherita'},
+  {n:'Pizza slice (vegetarian, homemade)', u:110, s:'1 slice (110 g)', k:240, p:10, c:28, f:9, cat:'Fast food', a:'pizza veggie vegetable slice homemade pizza'},
+  {n:'Pizza slice (chicken ranch)', u:110, s:'1 slice (110 g)', k:250, p:13, c:26, f:11, cat:'Fast food', a:'pizza chicken ranch slice bbq chicken pizza'},
   {n:'Pizza slice (pepperoni)', u:110, s:'1 slice (110 g)', k:280, p:12, c:30, f:13, cat:'Fast food', a:'pizza pepperoni slice'},
   {n:'Beef burger (fast food)', u:200, s:'1 burger (200 g)', k:250, p:13, c:20, f:13, cat:'Fast food', a:'burger beef hamburger'},
   {n:'Cheeseburger', u:220, s:'1 burger (220 g)', k:280, p:14, c:20, f:16, cat:'Fast food', a:'cheeseburger cheese burger'},
@@ -3080,5 +3086,6 @@ if(window.navigator.standalone || (window.matchMedia && window.matchMedia('(disp
 }
 
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a45cdc2d1b4db111',t:'MTc5MTIwNzg1Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+</body>
 </html>
